@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FerramentaDeBolso</string>
+    <string name="txtButtonComprimentos">Comprimento</string>
+    <string name="txtButtonPressao">Pressão</string>
+    <string name="txtButtonTemperatura">Temperatura</string>
 </resources>

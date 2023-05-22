@@ -13,7 +13,7 @@ public class SplashActivity extends AppCompatActivity {
 
     String TAG = "APP_MINHA_IDEIA";
 
-    int tempoEspera = 1000 * 5;
+    int tempoEspera = 1000 * 3;
 
 
     //public static final int TIME_OUT_SPLASH = 10000;   // conta em mili segundos antes de abrir a proxima tela
