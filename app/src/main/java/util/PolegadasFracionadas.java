@@ -5,17 +5,15 @@ public class PolegadasFracionadas {
     String retornoPolegada;
 
 
-    public static String polegadasFracionadas(double milimetros){
+    public static String polegadasFracionadas(double polegadas){
 
-        double polegadas = milimetros / 25.4;
         int parteInteira = (int) polegadas;
         double parteDecimal = polegadas - parteInteira;
         int numerador = (int) (parteDecimal * 16);
         int denominador = 16;
 
-
         // Simplificar a fração, caso possível
-        if (numerador % 2 == 0 && denominador % 2 == 0) {
+        while (numerador % 2 == 0 && denominador % 2 == 0) {
             numerador /= 2;
             denominador /= 2;
         }
@@ -25,8 +23,16 @@ public class PolegadasFracionadas {
             denominador /= 3;
         }
 
+        if (polegadas > 1){
+            return parteInteira + " " + numerador + "/" + denominador ;
+        }
+        else {
+            return  numerador + "/" + denominador ;
+        }
 
-        return parteInteira + " " + numerador + "/" + denominador ;
+
+
+
 
     }
 

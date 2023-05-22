@@ -12,9 +12,9 @@
         android:id="@+id/imgLogo"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logo_comprimento" />
 
 
     <TextView
@@ -41,18 +41,19 @@
             android:gravity="center_horizontal"
             android:text="@string/txtHintMilimetro"
             />
-        <EditText
-            android:id="@+id/edit_milimetroxml"
-            android:textColor="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="20dp"
-            android:textColorHint="@color/black"
-            android:background="@color/white"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_milimetroxml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/corFundoEditText"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+         />
 
         <TextView
             android:id="@+id/txtPolegadasXml"
@@ -63,7 +64,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:gravity="center_horizontal"
-
             android:text="@string/txtHintPolegada"
             />
 
@@ -76,7 +76,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:textColorHint="@color/black"
-            android:background="@color/white"
+            android:background="@color/corFundoEditText"
             android:importantForAutofill="no"
             android:inputType="numberDecimal" />
 
@@ -100,7 +100,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-
         android:text="@string/txtButtonCalcularComprimentos"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />

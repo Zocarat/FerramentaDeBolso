@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">FerramentaDeBolso</string>
+    <string name="txtCredito">By Zocarato</string>
+
 
     <string name="txtComprimento">Comprimento</string>
     <string name="txtHintMilimetro">Milímetro</string>
@@ -12,12 +14,17 @@
 
 
     <string name="txtTemperatura">Temperatura</string>
+    <string name="txtCelsus">Celsus</string>
+    <string name="txtFiren">Fahrenheit </string>
 
     <string name="txtButtonComprimentos">Comprimento</string>
     <string name="txtButtonCalcularComprimentos">Calcular</string>
-
     <string name="txtButtonPressao">Pressão</string>
     <string name="txtButtonTemperatura">Temperatura</string>
     <string name="txtButtonVoltarMenu">Voltar</string>
     <string name="txtButtonLimpar">Limpar</string>
+
+
+
+
 </resources>

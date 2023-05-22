@@ -9,12 +9,12 @@
 
 
     <ImageView
-        android:id="@+id/imgLogo"
+        android:id="@+id/imgLogoPressao"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logo_pressao" />
 
 
     <TextView
@@ -42,17 +42,18 @@
         android:text="@string/txtBar"
         />
     <EditText
-        android:id="@+id/edit_milimetro"
+        android:id="@+id/edit_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
-
         android:textColorHint="@color/black"
-        android:background="@color/white"
+        android:background="@color/corFundoEditText"
         android:importantForAutofill="no"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        />
 
     <TextView
         android:id="@+id/txtTituloPsi"
@@ -67,14 +68,14 @@
         />
 
     <EditText
-        android:id="@+id/edit_polegada_xml"
+        android:id="@+id/edit_psi_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:textColorHint="@color/black"
-        android:background="@color/white"
+        android:background="@color/corFundoEditText"
         android:importantForAutofill="no"
         android:inputType="numberDecimal" />
 

@@ -12,9 +12,9 @@
         android:id="@+id/imgLogo"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logo_main" />
 
     <Button
         android:id="@+id/btnComprimentoMenu"
@@ -24,7 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/txtButtonComprimentos" />
+        android:text="@string/txtButtonComprimentos"
+
+
+
+
+        android:contentDescription="Descrição do ícone"
+        />
 
     <Button
         android:id="@+id/btnPressaoMenu"
@@ -45,4 +51,16 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/txtButtonTemperatura" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="320dp"
+        android:text="@string/txtCredito"
+        android:textStyle="bold" />
+
+
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -85,10 +85,13 @@ public class ComprimentoActivity extends AppCompatActivity {
                     fracionado = new PolegadasFracionadas();
 
                     double resultado = Double.parseDouble(editMilimetro.getText().toString());
-                    fracao = fracionado.polegadasFracionadas(resultado);
-                    resultado = resultado / 25.4;
-                    editPolegada.setText(Double.toString(resultado) + " ( " + fracao + " ) " );
 
+                    resultado = resultado / 25.4;
+
+                    String resultMenor = String.format("%.2f", resultado);
+
+                    fracao = fracionado.polegadasFracionadas(resultado);
+                    editPolegada.setText(resultMenor + " ( " + fracao + " ) " );
 
                 }
 
