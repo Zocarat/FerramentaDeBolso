@@ -1,4 +1,4 @@
-package view;
+package devandroid.zocarato.ferramentadebolso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,20 +8,17 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
-import devandroid.zocarato.ferramentadebolso.R;
-import util.Utilidades;
+import view.ComprimentoActivity;
+import view.MenuPrincipal;
 
-public class ComprimentoActivity extends AppCompatActivity {
+public class TemperaturaActivity extends AppCompatActivity {
 
-    Utilidades menuPrincipal;
     Button btnMenuPrincipal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comprimento);
-
-        //menuPrincipal = new Utilidades();
+        setContentView(R.layout.activity_temperatura);
 
         btnMenuPrincipal = findViewById(R.id.btnVoltarMenu);
 
@@ -33,14 +30,16 @@ public class ComprimentoActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        Intent telaPrincipal = new Intent(ComprimentoActivity.this, MenuPrincipal.class);
+                        Intent telaPrincipal = new Intent(TemperaturaActivity.this, MenuPrincipal.class);
                         startActivity(telaPrincipal);
                         finish();
                     }
-                },0);
+                }, 0);
 
             }
 
+
         });
+
     }
 }

@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="view.ComprimentoActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="teste"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
+    tools:context=".TemperaturaActivity">
 
     <Button
         android:id="@+id/btnVoltarMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtButtonVoltarMenu"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="419dp" />
+
+    <TextView
+        android:id="@+id/txtTemperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtTemperatura"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="72dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

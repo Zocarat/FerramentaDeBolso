@@ -9,38 +9,32 @@ import android.view.View;
 import android.widget.Button;
 
 import devandroid.zocarato.ferramentadebolso.R;
-import util.Utilidades;
 
-public class ComprimentoActivity extends AppCompatActivity {
+public class PressaoActivity extends AppCompatActivity {
 
-    Utilidades menuPrincipal;
     Button btnMenuPrincipal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comprimento);
-
-        //menuPrincipal = new Utilidades();
+        setContentView(R.layout.activity_pressao);
 
         btnMenuPrincipal = findViewById(R.id.btnVoltarMenu);
 
         btnMenuPrincipal.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
 
-                        Intent telaPrincipal = new Intent(ComprimentoActivity.this, MenuPrincipal.class);
+                        Intent telaPrincipal = new Intent(PressaoActivity.this, MenuPrincipal.class);
                         startActivity(telaPrincipal);
                         finish();
                     }
                 },0);
-
             }
-
         });
+
     }
 }

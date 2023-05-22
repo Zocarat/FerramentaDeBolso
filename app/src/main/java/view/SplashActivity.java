@@ -33,9 +33,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                //GasEtaDB db = new GasEtaDB(SplashActvity.this);
-
-                Intent telaPrincipal = new Intent(SplashActivity.this, MainActivity.class);
+                Intent telaPrincipal = new Intent(SplashActivity.this, MenuPrincipal.class);
                 startActivity(telaPrincipal);
                 finish();
             }
