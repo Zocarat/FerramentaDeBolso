@@ -9,11 +9,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import devandroid.zocarato.ferramentadebolso.R;
 import util.PolegadasFracionadas;
-import util.Utilidades;
+import util.UtilidadesPressao;
 
 public class ComprimentoActivity extends AppCompatActivity {
 
@@ -23,7 +22,7 @@ public class ComprimentoActivity extends AppCompatActivity {
     EditText editPolegada;
 
 
-    Utilidades menuPrincipal;
+    UtilidadesPressao menuPrincipal;
     Button btnMenuPrincipal;
     Button btnCalcular;
     Button btnLimpar;

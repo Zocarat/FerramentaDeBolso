@@ -1,4 +1,4 @@
-package devandroid.zocarato.ferramentadebolso;
+package view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
-import view.ComprimentoActivity;
-import view.MenuPrincipal;
+import devandroid.zocarato.ferramentadebolso.R;
 
 public class TemperaturaActivity extends AppCompatActivity {
 

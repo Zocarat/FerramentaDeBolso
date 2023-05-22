@@ -26,6 +26,9 @@ public class PolegadasFracionadas {
         if (polegadas > 1){
             return parteInteira + " " + numerador + "/" + denominador ;
         }
+        if (polegadas == 1){
+            return " 1 " ;
+        }
         else {
             return  numerador + "/" + denominador ;
         }

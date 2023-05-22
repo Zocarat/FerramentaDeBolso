@@ -11,11 +11,34 @@
     <string name="txtTituloPressao">Pressão</string>
     <string name="txtBar">Bar</string>
     <string name="txtPsi">PSI</string>
+    <string name="txtBtnLimparPressao">limpar</string>
+    <string name="txtBtnCalcularPressao">Calcular</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <string name="txtTemperatura">Temperatura</string>
     <string name="txtCelsus">Celsus</string>
     <string name="txtFiren">Fahrenheit </string>
+    <string name="txtButtonCalcularTemparatura">Calcular</string>
 
     <string name="txtButtonComprimentos">Comprimento</string>
     <string name="txtButtonCalcularComprimentos">Calcular</string>

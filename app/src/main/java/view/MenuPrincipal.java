@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import devandroid.zocarato.ferramentadebolso.R;
-import devandroid.zocarato.ferramentadebolso.TemperaturaActivity;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -27,8 +26,8 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        btn_Comprimento_Menu = findViewById(R.id.btnComprimentoMenu);
-        btn_Pressao_Menu = findViewById(R.id.btnPressaoMenu);
+        btn_Comprimento_Menu = findViewById(R.id.btnComprimentoMenuXml);
+        btn_Pressao_Menu = findViewById(R.id.btnPressaoMenuXml);
         btn_Temperatura_Menu = findViewById(R.id.btnTemperaturaMenu);
         // Pegar Click dos Botoes
 
@@ -51,8 +50,9 @@ public class MenuPrincipal extends AppCompatActivity {
 // ========================================
 
         });
-
         btn_Pressao_Menu.setOnClickListener(new View.OnClickListener() {
+
+            //========================================
             @Override
             public void onClick(View v) {
                 new Handler().postDelayed(new Runnable() {
@@ -65,9 +65,13 @@ public class MenuPrincipal extends AppCompatActivity {
                     }
                 },0);
 
-
             }
+// ========================================
+
         });
+
+
+
 
         btn_Temperatura_Menu.setOnClickListener(new View.OnClickListener() {
 

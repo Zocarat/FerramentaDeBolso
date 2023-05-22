@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/logo_main" />
 
     <Button
-        android:id="@+id/btnComprimentoMenu"
+        android:id="@+id/btnComprimentoMenuXml"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
@@ -25,15 +25,11 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/txtButtonComprimentos"
-
-
-
-
         android:contentDescription="Descrição do ícone"
         />
 
     <Button
-        android:id="@+id/btnPressaoMenu"
+        android:id="@+id/btnPressaoMenuXml"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
