@@ -1,9 +1,23 @@
 <resources>
     <string name="app_name">FerramentaDeBolso</string>
+
+    <string name="txtComprimento">Comprimento</string>
+    <string name="txtHintMilimetro">Milímetro</string>
+    <string name="txtHintPolegada">Polegadas</string>
+
+
+    <string name="txtTituloPressao">Pressão</string>
+    <string name="txtBar">Bar</string>
+    <string name="txtPsi">PSI</string>
+
+
     <string name="txtTemperatura">Temperatura</string>
 
     <string name="txtButtonComprimentos">Comprimento</string>
+    <string name="txtButtonCalcularComprimentos">Calcular</string>
+
     <string name="txtButtonPressao">Pressão</string>
     <string name="txtButtonTemperatura">Temperatura</string>
     <string name="txtButtonVoltarMenu">Voltar</string>
+    <string name="txtButtonLimpar">Limpar</string>
 </resources>

@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="view.ComprimentoActivity">
 
-    <TextView
-        android:id="@+id/textView"
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="teste"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+    <TextView
+        android:id="@+id/txtComprimento"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtComprimento"
+        android:textSize="35sp"
         tools:layout_editor_absoluteX="191dp"
         tools:layout_editor_absoluteY="206dp" />
 
+
+
+        <TextView
+            android:id="@+id/txtMilimetro"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/txtHintMilimetro"
+            />
+        <EditText
+            android:id="@+id/edit_milimetroxml"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/black"
+            android:background="@color/white"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtPolegadasXml"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_horizontal"
+
+            android:text="@string/txtHintPolegada"
+            />
+
+        <EditText
+            android:id="@+id/edit_polegada_xml"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/black"
+            android:background="@color/white"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal" />
+
+
+    <Button
+        android:id="@+id/btnLimparComprimento"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:text="@string/txtButtonLimpar"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="615dp" />
+
+    <Button
+        android:id="@+id/btnCalcularComprimento"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+
+        android:text="@string/txtButtonCalcularComprimentos"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="615dp" />
+
     <Button
         android:id="@+id/btnVoltarMenu"
-        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
         android:text="@string/txtButtonVoltarMenu"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
