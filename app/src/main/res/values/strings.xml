@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">FerramentaDeBolso</string>
     <string name="txtCredito">By Zocarato</string>
+    <string name="txtData">Data</string>
+    <string name="txtHora">Hora</string>
+
+
+
+    <string name="txtBtnEletrica">Eletrica</string>
+    <string name="txtBtnLimparEletrica">Limpar</string>
+    <string name="txtBtnCalcularEletrica">Calcular</string>
+    <string name="txtTituloEletrica">Elétrica</string>
+    <string name="txtTensao">Tensão (V)</string>
+    <string name="txtPotencia">Potencia (W)</string>
+    <string name="txtResistencia">Resistencia (Ohm)</string>
+
+
+    <string name="txtCorrente">Corrente (A)</string>
+
+
 
 
     <string name="txtComprimento">Comprimento</string>
