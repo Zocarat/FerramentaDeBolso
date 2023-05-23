@@ -23,6 +23,8 @@ public class ComprimentoActivity extends AppCompatActivity {
 
 
     UtilidadesPressao menuPrincipal;
+
+    Button btnTabelaPolegadaMilimetro;
     Button btnMenuPrincipal;
     Button btnCalcular;
     Button btnLimpar;
@@ -37,9 +39,29 @@ public class ComprimentoActivity extends AppCompatActivity {
         editMilimetro = findViewById(R.id.edit_milimetroxml);
         editPolegada = findViewById(R.id.edit_polegada_xml);
 
+        btnTabelaPolegadaMilimetro = findViewById(R.id.btnTabelaPolegadaMilimetro);
         btnMenuPrincipal = findViewById(R.id.btnVoltarMenu);
         btnCalcular = findViewById(R.id.btnCalcularComprimento);
         btnLimpar = findViewById(R.id.btnLimparComprimento);
+
+
+        btnTabelaPolegadaMilimetro.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent telaTabelaPolegadaMIlimetro = new Intent(ComprimentoActivity.this, TabelaPolegadaMmActivity.class);
+                        startActivity(telaTabelaPolegadaMIlimetro);
+                        finish();
+                    }
+                },0);
+
+            }
+
+        });
 
         btnMenuPrincipal.setOnClickListener(new View.OnClickListener() {
 

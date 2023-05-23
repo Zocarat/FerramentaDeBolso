@@ -80,10 +80,22 @@
             android:importantForAutofill="no"
             android:inputType="numberDecimal" />
 
+    <Button
+        android:id="@+id/btnTabelaPolegadaMilimetro"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="right"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:text="@string/txtBtnTabelaPolegadaMilimetro"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="615dp" />
+
 
     <Button
         android:id="@+id/btnLimparComprimento"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="0dp"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

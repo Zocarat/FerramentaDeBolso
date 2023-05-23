@@ -6,6 +6,8 @@
     <string name="txtComprimento">Comprimento</string>
     <string name="txtHintMilimetro">Milímetro</string>
     <string name="txtHintPolegada">Polegadas</string>
+    <string name="TxtTituloTabelas">Tabela</string>
+    <string name="txtTabelaVoltarPlegadasMilimetros">Voltar</string>
 
 
     <string name="txtTituloPressao">Pressão</string>
@@ -13,26 +15,7 @@
     <string name="txtPsi">PSI</string>
     <string name="txtBtnLimparPressao">limpar</string>
     <string name="txtBtnCalcularPressao">Calcular</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="txtBtnTabelaPolegadaMilimetro">Info</string>
 
 
     <string name="txtTemperatura">Temperatura</string>
@@ -46,8 +29,6 @@
     <string name="txtButtonTemperatura">Temperatura</string>
     <string name="txtButtonVoltarMenu">Voltar</string>
     <string name="txtButtonLimpar">Limpar</string>
-
-
 
 
 </resources>
