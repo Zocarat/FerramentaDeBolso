@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UltilidadesGeral;
 
@@ -61,7 +62,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        Intent telaEletrica = new Intent(MenuPrincipal.this, GrandezasEletricaActivity.class);
+                        Intent telaEletrica = new Intent(MenuPrincipal.this, MenuEletricaActivity.class);
                         startActivity(telaEletrica);
                         finish();
                     }
