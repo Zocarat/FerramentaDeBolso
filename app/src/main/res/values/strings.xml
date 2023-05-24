@@ -7,7 +7,6 @@
     <string name="TamanhoFonteBotoes">20dp</string>
 
 
-
     <string name="txtBtnEletrica">Eletrica</string>
     <string name="txtBtnLimparEletrica">Limpar</string>
     <string name="txtBtnCalcularEletrica">Calcular</string>
@@ -15,11 +14,12 @@
     <string name="txtTensao">Tensão (V)</string>
     <string name="txtPotencia">Potencia (W)</string>
     <string name="txtResistencia">Resistencia (Ohm)</string>
+    <string name="txtBtnGrandezasEletricas">Grandezas Eletricas</string>
+    <string name="txtBtnDimensionamento">Dimensionamento</string>
+    <string name="txtBtnQuedaDeTensao">Queda de Tensao</string>
 
 
     <string name="txtCorrente">Corrente (A)</string>
-
-
 
 
     <string name="txtComprimento">Comprimento</string>

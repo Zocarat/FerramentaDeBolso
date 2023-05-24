@@ -13,7 +13,7 @@ import android.widget.Toast;
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UltilidadeEletrica;
 
-public class EletricaActivity extends AppCompatActivity {
+public class GrandezasEletricaActivity extends AppCompatActivity {
 
     UltilidadeEletrica funcao;
     Button btnVoltarMenu;
@@ -28,7 +28,7 @@ public class EletricaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eletrica);
+        setContentView(R.layout.activity_grandezas_eletricas);
 
         funcao = new UltilidadeEletrica();
 
@@ -121,7 +121,7 @@ public class EletricaActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        Intent telaMenu = new Intent(EletricaActivity.this, MenuPrincipal.class);
+                        Intent telaMenu = new Intent(GrandezasEletricaActivity.this, MenuPrincipal.class);
                         startActivity(telaMenu);
                         finish();
                     }

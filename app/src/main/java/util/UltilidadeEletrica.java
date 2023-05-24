@@ -1,7 +1,6 @@
 package util;
 
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.widget.EditText;
 
@@ -20,7 +19,7 @@ public class UltilidadeEletrica extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eletrica);
+        setContentView(R.layout.activity_grandezas_eletricas);
 
         editTextTensao = findViewById(R.id.editTextTensao);
         editTextCorrente = findViewById(R.id.editTextCorrente);
