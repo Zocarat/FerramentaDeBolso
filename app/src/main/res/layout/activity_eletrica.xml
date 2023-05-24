@@ -174,7 +174,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/txtBtnCalcularEletrica" />
+        android:text="@string/txtBtnCalcularEletrica"
+        android:textSize="@dimen/tamanhoFonteBotao"
+        />
 
     <Button
         android:id="@+id/btnLimparMenuEletrica"
@@ -183,7 +185,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/txtBtnLimparEletrica" />
+        android:text="@string/txtBtnLimparEletrica"
+        android:textSize="@dimen/tamanhoFonteBotao"
+        />
 
     <Button
         android:id="@+id/btnVoltarMenuEletrica"
@@ -193,6 +197,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:text="@string/txtButtonVoltarMenu"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="180dp"
         tools:layout_editor_absoluteY="578dp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

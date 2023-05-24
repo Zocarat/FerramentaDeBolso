@@ -14,7 +14,9 @@
         android:layout_marginTop="50dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/logo_comprimento" />
+        app:srcCompat="@drawable/logo_comprimento"
+
+        />
 
 
     <TextView
@@ -89,6 +91,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtBtnTabelaPolegadaMilimetro"
+
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 
@@ -102,6 +105,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtButtonLimpar"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 
@@ -113,6 +117,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtButtonCalcularComprimentos"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 
@@ -124,6 +129,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtButtonVoltarMenu"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 

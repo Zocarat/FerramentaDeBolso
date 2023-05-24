@@ -4,6 +4,8 @@
     <string name="txtData">Data</string>
     <string name="txtHora">Hora</string>
 
+    <string name="TamanhoFonteBotoes">20dp</string>
+
 
 
     <string name="txtBtnEletrica">Eletrica</string>

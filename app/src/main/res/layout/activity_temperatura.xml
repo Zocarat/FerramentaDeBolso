@@ -84,6 +84,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtButtonLimpar"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
     <Button
@@ -94,6 +95,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtButtonCalcularComprimentos"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 
@@ -105,6 +107,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtButtonVoltarMenu"
+        android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 

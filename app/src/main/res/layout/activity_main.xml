@@ -58,6 +58,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/txtBtnEletrica"
+        android:textSize="@dimen/tamanhoFonteBotao"
         android:contentDescription="Descrição do ícone"
         />
 
@@ -70,6 +71,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/txtButtonComprimentos"
+        android:textSize="@dimen/tamanhoFonteBotao"
+
         android:contentDescription="Descrição do ícone"
         />
 
@@ -81,7 +84,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/txtButtonPressao" />
+        android:text="@string/txtButtonPressao"
+        android:textSize="@dimen/tamanhoFonteBotao"
+        />
 
     <Button
         android:id="@+id/btnTemperaturaMenu"
@@ -91,7 +96,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/txtButtonTemperatura" />
+        android:text="@string/txtButtonTemperatura"
+        android:textSize="@dimen/tamanhoFonteBotao"
+        />
 
     <TextView
         android:id="@+id/txtCredito"
