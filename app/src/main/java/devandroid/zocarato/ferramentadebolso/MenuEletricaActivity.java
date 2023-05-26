@@ -47,6 +47,41 @@ public class MenuEletricaActivity extends AppCompatActivity {
             }
         });
 
+
+        btnDimensionamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent telaPrincipal = new Intent(MenuEletricaActivity.this, DimensionamentoActivity.class);
+                        startActivity(telaPrincipal);
+                        finish();
+                    }
+                },0);
+            }
+        });
+
+        btnQuedaDeTensao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent telaPrincipal = new Intent(MenuEletricaActivity.this, QuedaDeTensaoActivity.class);
+                        startActivity(telaPrincipal);
+                        finish();
+                    }
+                },0);
+            }
+        });
+
+
+
+
+
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

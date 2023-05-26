@@ -5,139 +5,142 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="view.ComprimentoActivity">
+    tools:context=".QuedaDeTensaoActivity">
 
 
     <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:contentDescription="Icone menu queda de tensão"
+        android:id="@+id/imgLogoEletricaQueda"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:contentDescription="Ícone tela comprimento"
-        app:srcCompat="@drawable/logo_comprimento"
-
-        />
-
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logo_eletrica" />
 
     <TextView
-        android:id="@+id/txtComprimento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:contentDescription="Titulo queda de tensão"
+        android:id="@+id/txtQuedaDeTensao"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:contentDescription="Titulo comprimento"
-        android:text="@string/txtComprimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtTutiloQuedaDeTensao"
         android:textSize="35sp"
         tools:layout_editor_absoluteX="191dp"
         tools:layout_editor_absoluteY="206dp" />
-
-
     <TextView
-        android:id="@+id/txtMilimetro"
-        android:contentDescription="Milímetro"
+        android:contentDescription="Texto do campo de corrente"
+        android:id="@+id/txtCorrenteDimensionamento"
+        android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:gravity="center_horizontal"
-        android:text="@string/txtHintMilimetro"
-        android:textSize="25dp" />
+        android:text="@string/txtCorrente"
+        />
 
     <EditText
-        android:contentDescription="Campo milimetro"
-        android:id="@+id/edit_milimetroxml"
+        android:contentDescription="Campo digitação de corrrente"
+        android:id="@+id/editCorrenteQueda"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black" />
-
-    <TextView
-        android:contentDescription="Polegadas"
-        android:id="@+id/txtPolegadasXml"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/txtHintPolegada"
-        android:textSize="25dp" />
-
-    <EditText
-        android:contentDescription="Campo polegadas"
-        android:id="@+id/edit_polegada_xml"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="@color/corFundoEditText"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="@color/black"
-        android:textColorHint="@color/black" />
+        />
 
-    <Button
-        android:contentDescription="Botão informações"
-        android:id="@+id/btnTabelaPolegadaMilimetro"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="20sp"
-        android:text="@string/txtBtnTabelaPolegadaMilimetro"
-
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
-
-
-    <Button
-        android:contentDescription="Botão Limpar"
-        android:id="@+id/btnLimparComprimento"
+    <TextView
+        android:contentDescription="Título do campo cabo"
+        android:id="@+id/txtBitolaDimensionamento"
+        android:textSize="25dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/txtBitolaCabo"
+        />
+
+    <EditText
+        android:contentDescription="Título de campo digitação"
+        android:id="@+id/editBitolaQueda"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="20sp"
-        android:text="@string/txtButtonLimpar"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:layout_marginEnd="20dp"
+        android:background="@color/corFundoEditText"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:contentDescription="Texto distancia "
+        android:id="@+id/txtDistanciaQueda"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/txtDistancia"
+        />
+
+    <EditText
+        android:contentDescription="Campo texto distancia"
+        android:id="@+id/editDistanciaQueda"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/corFundoEditText"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        />
 
     <Button
         android:contentDescription="Botão calcular"
-        android:id="@+id/btnCalcularComprimento"
+        android:id="@+id/btnCalcularQuedaDeTensao"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:text="@string/txtButtonCalcularComprimentos"
+        android:text="@string/txtBtnCalcularEletrica"
         android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
 
     <Button
-        android:contentDescription="Botão Voltar"
-        android:id="@+id/btnVoltarMenu"
+        android:contentDescription="Botão voltar menu"
+        android:id="@+id/btnVoltarQuedaDeTensao"
+        android:layout_marginTop="0dp"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:text="@string/txtButtonVoltarMenu"
+        android:text="Voltar"
         android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="615dp" />
+
+
+
+
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

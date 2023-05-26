@@ -10,6 +10,7 @@
 
 
     <ImageView
+        android:contentDescription="Tabela de conversao de polegadas para milimetros"
         android:id="@+id/imgTabelaPolegadaMilimetro"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
@@ -18,6 +19,7 @@
         app:srcCompat="@drawable/tabela_polegada_milimetro" />
 
     <Button
+        android:contentDescription="Botão voltar menu comprimento"
         android:id="@+id/btnVoltarTabelaPolegadaMilimetro"
         android:layout_marginTop="0dp"
         android:layout_gravity="center"

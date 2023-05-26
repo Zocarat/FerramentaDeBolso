@@ -14,6 +14,9 @@
 
 
     <TextView
+
+        android:contentDescription="Data do sistema"
+
         android:id="@+id/txtDataSistemaXml"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
@@ -25,6 +28,7 @@
         ></TextView>
 
     <TextView
+        android:contentDescription="Hora do sistema"
         android:id="@+id/txtHoraSistemaXml"
         android:layout_width="80dp"
         android:layout_height="match_parent"
@@ -42,14 +46,16 @@
 
 
     <ImageView
+        android:contentDescription="Icone do menu principal"
         android:id="@+id/imgLogo"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/logo_main" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/logo_menu_principal" />
 
     <Button
+        android:contentDescription="Botão de menu eletrica"
         android:id="@+id/btnEletricaMenuXml"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
@@ -59,7 +65,7 @@
         android:layout_marginEnd="20dp"
         android:text="@string/txtBtnEletrica"
         android:textSize="@dimen/tamanhoFonteBotao"
-        android:contentDescription="Descrição do ícone"
+
         />
 
     <Button
@@ -72,12 +78,12 @@
         android:layout_marginEnd="20dp"
         android:text="@string/txtButtonComprimentos"
         android:textSize="@dimen/tamanhoFonteBotao"
-
         android:contentDescription="Descrição do ícone"
         />
 
     <Button
         android:id="@+id/btnPressaoMenuXml"
+        android:contentDescription="Botão menu pressão"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -90,6 +96,7 @@
 
     <Button
         android:id="@+id/btnTemperaturaMenu"
+        android:contentDescription="Botão menu temperatura"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
@@ -101,12 +108,13 @@
         />
 
     <TextView
+        android:contentDescription="Texto de Credito"
         android:id="@+id/txtCredito"
         android:textSize="18dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="200dp"
         android:text="@string/txtCredito"
         android:textStyle="bold" />
 

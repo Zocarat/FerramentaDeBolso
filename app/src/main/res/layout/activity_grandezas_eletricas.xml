@@ -13,6 +13,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
+        android:contentDescription="Icone eletrica"
         app:srcCompat="@drawable/logo_eletrica" />
 
     <TextView
@@ -21,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
+        android:contentDescription="Título eletrica"
         android:text="@string/txtTituloEletrica"
         android:textSize="35sp"
         tools:layout_editor_absoluteX="191dp"
@@ -48,6 +50,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="10dp"
+                    android:contentDescription="Tensão"
                     android:gravity="left"
                     android:text="@string/txtTensao"
                     android:textSize="25sp" />
@@ -59,6 +62,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="20dp"
+                    android:contentDescription="Corrente"
                     android:gravity="right"
                     android:text="@string/txtCorrente"
                     android:textSize="25sp" />
@@ -80,6 +84,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="20dp"
                     android:background="@color/corFundoEditText"
+                    android:contentDescription="Campo de tensão"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black" />
@@ -92,6 +97,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="20dp"
                     android:background="@color/corFundoEditText"
+                    android:contentDescription="Campo corrente"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black"
@@ -111,6 +117,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="20dp"
+                    android:contentDescription="Texto potencia"
                     android:gravity="center_horizontal"
                     android:text="@string/txtPotencia"
                     android:textSize="25dp" />
@@ -122,6 +129,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="20dp"
+                    android:contentDescription="Texto resitencia"
                     android:gravity="center_horizontal"
                     android:text="@string/txtResistencia"
                     android:textSize="25dp" />
@@ -142,6 +150,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:background="@color/corFundoEditText"
+                    android:contentDescription="campo potencia"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black"
@@ -155,6 +164,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:background="@color/corFundoEditText"
+                    android:contentDescription="Campo resistencia"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black"
@@ -174,9 +184,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="Botão calcular"
         android:text="@string/txtBtnCalcularEletrica"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
         android:id="@+id/btnLimparMenuEletrica"
@@ -185,17 +195,19 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="Botão limpar"
         android:text="@string/txtBtnLimparEletrica"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
+
         android:id="@+id/btnVoltarMenuEletrica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="Botão voltar"
         android:text="@string/txtButtonVoltarMenu"
         android:textSize="@dimen/tamanhoFonteBotao"
         tools:layout_editor_absoluteX="180dp"

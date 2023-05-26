@@ -17,6 +17,12 @@
     <string name="txtBtnGrandezasEletricas">Grandezas Eletricas</string>
     <string name="txtBtnDimensionamento">Dimensionamento</string>
     <string name="txtBtnQuedaDeTensao">Queda de Tensao</string>
+    <string name="txtTituloDimensionamento">Dimensionamento</string>
+    <string name="txtTutiloQuedaDeTensao">Queda de Tensão</string>
+    <string name="txtDistancia">Distância</string>
+
+    <string name="txtBitolaCabo">Cabo: </string>
+    <string name="txtDsjuntor">Disjuntor: </string>
 
 
     <string name="txtCorrente">Corrente (A)</string>

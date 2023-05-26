@@ -5,16 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import devandroid.zocarato.ferramentadebolso.BloqueioActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.R;
+import devandroid.zocarato.ferramentadebolso.Verificacao;
 import util.UltilidadesGeral;
 
 public class MenuPrincipal extends AppCompatActivity {
 
+    String bloqueio = ("28/06/2023");
     String TAG = "Layout principal";
 
     UltilidadesGeral dataHoraSistema;
@@ -34,6 +38,18 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Verificacao verificacao = new Verificacao();
+        int verifica = verificacao.compararData(bloqueio);
+        if (verifica == 1){
+
+            Intent telaEletrica = new Intent(MenuPrincipal.this, BloqueioActivity.class);
+            startActivity(telaEletrica);
+            finish();
+
+
+        }
+        //verificacao.verificarDataExpiracao();
 
         dataHoraSistema = new UltilidadesGeral();
         //horaSistema = new UltilidadesGeral();
