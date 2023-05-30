@@ -9,124 +9,114 @@
 
 
     <ImageView
-        android:contentDescription="Ícone pressão menu"
         android:id="@+id/imgLogoPressao"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Ícone pressão menu"
         app:srcCompat="@drawable/logo_pressao" />
 
 
     <TextView
-        android:contentDescription="Título menu pressão"
         android:id="@+id/txtPressao"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:contentDescription="Título menu pressão"
         android:text="@string/txtTituloPressao"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
-
+        android:textSize="35sp" />
 
 
     <TextView
-        android:contentDescription="Título texto bar"
         android:id="@+id/txtBar"
-        android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="Título texto bar"
         android:gravity="center_horizontal"
         android:text="@string/txtBar"
-        />
+        android:textSize="25dp" />
+
     <EditText
-        android:contentDescription="Campo digitação unidade bar"
         android:id="@+id/edit_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
-        android:textColorHint="@color/black"
-        android:background="@color/corFundoEditText"
+        android:background="@drawable/edittext_rounded_background"
+        android:contentDescription="Campo digitação unidade bar"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="@color/black"
-        />
+        android:textColorHint="@color/black"
+        android:gravity="center" />
 
     <TextView
-        android:contentDescription="Titulo PSI"
         android:id="@+id/txtTituloPsi"
-        android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="Titulo PSI"
         android:gravity="center_horizontal"
         android:text="@string/txtPsi"
-        />
+        android:textSize="25dp" />
 
     <EditText
-        android:contentDescription="Campo digitação psi"
         android:id="@+id/edit_psi_xml"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:textColorHint="@color/black"
-        android:background="@color/corFundoEditText"
+        android:background="@drawable/edittext_rounded_background"
+        android:contentDescription="Campo digitação psi"
         android:importantForAutofill="no"
+        android:inputType="numberDecimal"
         android:textColor="@color/black"
-        android:inputType="numberDecimal" />
+        android:textColorHint="@color/black"
+        android:gravity="center" />
 
     <Button
-        android:contentDescription="Botão limpar textos do campo"
         android:id="@+id/btnLimPartPressao"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:layout_marginTop="80dp"
+        android:contentDescription="Botão limpar textos do campo"
         android:text="@string/txtBtnLimparPressao"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
-
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
-        android:contentDescription="Botão calcular conversão"
         android:id="@+id/btnCalcularPressao"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:layout_marginTop="0dp"
+        android:contentDescription="Botão calcular conversão"
         android:text="@string/txtBtnCalcularPressao"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
-        android:contentDescription="Botão voltar menu"
         android:id="@+id/btnVoltarMenu"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
+        android:contentDescription="Botão voltar menu"
         android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

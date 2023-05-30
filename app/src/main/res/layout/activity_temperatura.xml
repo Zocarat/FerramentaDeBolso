@@ -24,9 +24,7 @@
         android:layout_marginTop="25dp"
         android:contentDescription="Título mennu temperatura"
         android:text="@string/txtTemperatura"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/txtGrauCelsus"
@@ -47,11 +45,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
+        android:background="@drawable/edittext_rounded_background"
         android:contentDescription="Campo digitar graus celsus"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/txtPolegadasXml"
@@ -72,12 +71,13 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
+        android:background="@drawable/edittext_rounded_background"
         android:contentDescription="Campo de texto firenait"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="@color/black"
-        android:textColorHint="@color/black" />
+        android:textColorHint="@color/black"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/btnLimparTemperatura"
@@ -89,12 +89,9 @@
         android:layout_marginEnd="20sp"
         android:contentDescription="Botão limpar"
         android:text="@string/txtButtonLimpar"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
-
         android:id="@+id/btnCalcularTemperatura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,9 +100,7 @@
         android:layout_marginEnd="20sp"
         android:contentDescription="Botão calcular"
         android:text="@string/txtButtonCalcularComprimentos"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
         android:id="@+id/btnVoltarMenu"
@@ -116,9 +111,6 @@
         android:layout_marginEnd="20sp"
         android:contentDescription="Botão voltar"
         android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
-
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

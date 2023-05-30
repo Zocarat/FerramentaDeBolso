@@ -39,17 +39,7 @@ public class MenuPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Verificacao verificacao = new Verificacao();
-        int verifica = verificacao.compararData(bloqueio);
-        if (verifica == 1){
 
-            Intent telaEletrica = new Intent(MenuPrincipal.this, BloqueioActivity.class);
-            startActivity(telaEletrica);
-            finish();
-
-
-        }
-        //verificacao.verificarDataExpiracao();
 
         dataHoraSistema = new UltilidadesGeral();
         //horaSistema = new UltilidadesGeral();

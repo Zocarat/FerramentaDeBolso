@@ -229,8 +229,7 @@ public class UltilidadeEletrica extends AppCompatActivity {
 
     }
 
-    public double quedaDeTensao (EditText bitola, EditText corrente, EditText distancia){
-
+    public double calcularQuedaDeTensao(EditText bitola, EditText corrente, EditText distancia) {
         double bitolaD = Double.parseDouble(bitola.getText().toString());
         double correnteD = Double.parseDouble(corrente.getText().toString());
         double distanciaD = Double.parseDouble(distancia.getText().toString());

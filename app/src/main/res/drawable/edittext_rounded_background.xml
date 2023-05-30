@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="80dp" /> <!-- Altere o valor do raio para ajustar o arredondamento -->
+    <solid android:color="@color/corFundoEditText" /> <!-- Substitua pela cor desejada -->
+</shape>

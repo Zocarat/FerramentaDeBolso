@@ -7,140 +7,192 @@
     android:orientation="vertical"
     tools:context=".QuedaDeTensaoActivity">
 
-
     <ImageView
-        android:contentDescription="Icone menu queda de tensão"
         android:id="@+id/imgLogoEletricaQueda"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Ícone menu queda de tensão"
         app:srcCompat="@drawable/logo_eletrica" />
 
     <TextView
-        android:contentDescription="Titulo queda de tensão"
         android:id="@+id/txtQuedaDeTensao"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txtTutiloQuedaDeTensao"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
-    <TextView
-        android:contentDescription="Texto do campo de corrente"
-        android:id="@+id/txtCorrenteDimensionamento"
-        android:textSize="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/txtCorrente"
-        />
-
-    <EditText
-        android:contentDescription="Campo digitação de corrrente"
-        android:id="@+id/editCorrenteQueda"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        />
-
-    <TextView
-        android:contentDescription="Título do campo cabo"
-        android:id="@+id/txtBitolaDimensionamento"
-        android:textSize="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/txtBitolaCabo"
-        />
-
-    <EditText
-        android:contentDescription="Título de campo digitação"
-        android:id="@+id/editBitolaQueda"
-
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        />
-    <TextView
-        android:contentDescription="Texto distancia "
-        android:id="@+id/txtDistanciaQueda"
-        android:textSize="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/txtDistancia"
-        />
-
-    <EditText
-        android:contentDescription="Campo texto distancia"
-        android:id="@+id/editDistanciaQueda"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        />
-
-    <Button
-        android:contentDescription="Botão calcular"
-        android:id="@+id/btnCalcularQuedaDeTensao"
-        android:layout_marginTop="80dp"
         android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:contentDescription="Título queda de tensão"
+        android:text="@string/txtTutiloQuedaDeTensao"
+        android:textSize="35sp" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTensaoDimensionamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:contentDescription="Texto do campo de tensão"
+                    android:text="@string/txtTensao"
+                    android:textSize="25dp" />
+
+                <EditText
+                    android:id="@+id/editTensaoQueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_rounded_background"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCorrenteDimensionamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:contentDescription="Texto do campo de corrente"
+                    android:text="@string/txtCorrente"
+                    android:textSize="25dp" />
+
+                <EditText
+                    android:id="@+id/editCorrenteQueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_rounded_background"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtBitolaDimensionamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:contentDescription="Título do campo cabo"
+                    android:text="@string/txtBitolaCabo"
+                    android:textSize="25dp" />
+
+                <EditText
+                    android:id="@+id/editBitolaQueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_rounded_background"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtDistanciaQueda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:contentDescription="Texto distância"
+                    android:text="@string/txtDistancia"
+                    android:textSize="25dp" />
+
+                <EditText
+                    android:id="@+id/editDistanciaQueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_rounded_background"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtResultadoQueda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btnCalcularQuedaDeTensao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:text="@string/txtBtnCalcularEletrica"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
-        android:contentDescription="Botão voltar menu"
         android:id="@+id/btnVoltarQuedaDeTensao"
-        android:layout_marginTop="0dp"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:text="Voltar"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
-
-
-
-
-
-
+        android:text="@string/txtButtonVoltarMenu"
+        android:textSize="@dimen/tamanhoFonteBotao" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

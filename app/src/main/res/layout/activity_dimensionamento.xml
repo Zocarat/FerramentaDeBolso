@@ -25,9 +25,7 @@
         android:layout_marginTop="25dp"
         android:contentDescription="Texto dimensionamento"
         android:text="@string/txtTituloDimensionamento"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/txtCorrenteDimensionamento"
@@ -48,43 +46,16 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/corFundoEditText"
+        android:background="@drawable/edittext_rounded_background"
         android:contentDescription="Campo corrente"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
-        android:textColor="@color/black" />
-
-    <Button
-        android:id="@+id/btnCalcularDimensionamento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20sp"
-        android:contentDescription="Botão calcular corrente"
-        android:text="@string/txtBtnCalcularEletrica"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
-
-    <Button
-        android:id="@+id/btnVoltarDimensionamento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20sp"
-        android:contentDescription="Botão voltar menu"
-        android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:textColor="@color/black"
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -129,7 +100,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
-
                 android:layout_marginEnd="20dp"
                 android:contentDescription="Resultado do dimensionamento do cabo"
                 android:gravity="right"
@@ -142,7 +112,6 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
-
                 android:layout_marginEnd="20dp"
                 android:contentDescription="Texto dimensionamento do disjuntor"
                 android:gravity="right"
@@ -152,6 +121,32 @@
 
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCalcularDimensionamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20sp"
+        android:contentDescription="Botão calcular corrente"
+        android:text="@string/txtBtnCalcularEletrica"
+        android:textSize="@dimen/tamanhoFonteBotao" />
+
+    <Button
+        android:id="@+id/btnVoltarDimensionamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20sp"
+        android:contentDescription="Botão voltar menu"
+        android:text="@string/txtButtonVoltarMenu"
+        android:textSize="@dimen/tamanhoFonteBotao" />
+
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

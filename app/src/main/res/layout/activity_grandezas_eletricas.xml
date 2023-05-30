@@ -24,9 +24,7 @@
         android:layout_marginTop="25dp"
         android:contentDescription="Título eletrica"
         android:text="@string/txtTituloEletrica"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
+        android:textSize="35sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -66,8 +64,6 @@
                     android:gravity="right"
                     android:text="@string/txtCorrente"
                     android:textSize="25sp" />
-
-
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -83,11 +79,12 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/corFundoEditText"
-                    android:contentDescription="Campo de tensão"
+                    android:background="@drawable/edittext_rounded_background"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textColorHint="@color/black" />
 
                 <EditText
                     android:id="@+id/editTextCorrente"
@@ -96,12 +93,13 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/corFundoEditText"
                     android:contentDescription="Campo corrente"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:background="@drawable/edittext_rounded_background"
+                    android:textColorHint="@color/black"
+                    android:gravity="center" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -133,7 +131,6 @@
                     android:gravity="center_horizontal"
                     android:text="@string/txtResistencia"
                     android:textSize="25dp" />
-
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -149,12 +146,13 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/corFundoEditText"
+                    android:background="@drawable/edittext_rounded_background"
                     android:contentDescription="campo potencia"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:gravity="center" />
 
                 <EditText
                     android:id="@+id/editTextResistencia"
@@ -163,19 +161,16 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/corFundoEditText"
+                    android:background="@drawable/edittext_rounded_background"
                     android:contentDescription="Campo resistencia"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:gravity="center" />
             </androidx.appcompat.widget.LinearLayoutCompat>
-
-
         </LinearLayout>
-
     </ScrollView>
-
 
     <Button
         android:id="@+id/btnCalcularEletrica"
@@ -200,7 +195,6 @@
         android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
-
         android:id="@+id/btnVoltarMenuEletrica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -209,7 +203,6 @@
         android:layout_marginEnd="20dp"
         android:contentDescription="Botão voltar"
         android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="578dp" />
+        android:textSize="@dimen/tamanhoFonteBotao" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
