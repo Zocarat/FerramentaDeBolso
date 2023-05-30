@@ -1,10 +1,12 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="view.dddddddddddddddddddPressaoActivity">
+
 
     <ImageView
         android:id="@+id/imgLogoPressao"
@@ -14,6 +16,7 @@
         android:layout_marginTop="50dp"
         android:contentDescription="Ícone pressão menu"
         app:srcCompat="@drawable/logo_pressao" />
+
 
     <TextView
         android:id="@+id/txtPressao"
@@ -25,38 +28,60 @@
         android:text="@string/txtTituloPressao"
         android:textSize="35sp" />
 
-    <Spinner
-        android:id="@+id/spinnerPressao"
+
+    <TextView
+        android:id="@+id/txtBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:contentDescription="Lista de seleção de unidade de pressão"
-        android:gravity="center"
-        android:textSize="18sp" />
+        android:contentDescription="Título texto bar"
+        android:gravity="center_horizontal"
+        android:text="@string/txtBar"
+        android:textSize="25dp" />
 
     <EditText
-        android:id="@+id/editPressao"
+        android:id="@+id/edit_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/edittext_rounded_background"
-        android:contentDescription="Campo digitação unidade de pressão"
+        android:contentDescription="Campo digitação unidade bar"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:gravity="center" />
 
-    <ListView
-        android:id="@+id/listResultados"
+    <TextView
+        android:id="@+id/txtTituloPsi"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="Titulo PSI"
+        android:gravity="center_horizontal"
+        android:text="@string/txtPsi"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/edit_psi_xml"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_rounded_background"
+        android:contentDescription="Campo digitação psi"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/btnLimPartPressao"
@@ -65,7 +90,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="Botão limpar textos do campo"
         android:text="@string/txtBtnLimparPressao"
         android:textSize="@dimen/tamanhoFonteBotao" />
@@ -77,6 +102,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
+        android:layout_marginTop="0dp"
         android:contentDescription="Botão calcular conversão"
         android:text="@string/txtBtnCalcularPressao"
         android:textSize="@dimen/tamanhoFonteBotao" />
@@ -92,4 +118,5 @@
         android:text="@string/txtButtonVoltarMenu"
         android:textSize="@dimen/tamanhoFonteBotao" />
 
-</LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

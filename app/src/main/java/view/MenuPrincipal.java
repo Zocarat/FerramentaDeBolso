@@ -5,15 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import devandroid.zocarato.ferramentadebolso.BloqueioActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
+import devandroid.zocarato.ferramentadebolso.PressaoActivity;
 import devandroid.zocarato.ferramentadebolso.R;
-import devandroid.zocarato.ferramentadebolso.Verificacao;
 import util.UltilidadesGeral;
 
 public class MenuPrincipal extends AppCompatActivity {
@@ -23,7 +21,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
     UltilidadesGeral dataHoraSistema;
 
-
+    private Handler handler;
+    private Runnable runnable;
     Button btn_Eletrica_Menu;
     Button btn_Comprimento_Menu;
     Button btn_Pressao_Menu;
@@ -54,8 +53,17 @@ public class MenuPrincipal extends AppCompatActivity {
         btn_Pressao_Menu = findViewById(R.id.btnPressaoMenuXml);
         btn_Temperatura_Menu = findViewById(R.id.btnTemperaturaMenu);
 
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                txtHoraSistema.setText(dataHoraSistema.horarioDoSistema());
+                handler.postDelayed(this, 1000); // Atualiza a cada 1 segundo
+            }
+        };
+
         txtDataSistema.setText(dataHoraSistema.dataDoSistema());
-        txtHoraSistema.setText(dataHoraSistema.horarioDoSistema());
+       // txtHoraSistema.setText(dataHoraSistema.horarioDoSistema());
         // Pegar Click dos Botoes
 
 
@@ -134,5 +142,9 @@ public class MenuPrincipal extends AppCompatActivity {
 
 
 
+    }
+    protected void onResume() {
+        super.onResume();
+        handler.postDelayed(runnable, 0);
     }
 }

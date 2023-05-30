@@ -10,7 +10,6 @@ import android.widget.Button;
 
 import view.GrandezasEletricaActivity;
 import view.MenuPrincipal;
-import view.PressaoActivity;
 
 public class MenuEletricaActivity extends AppCompatActivity {
 

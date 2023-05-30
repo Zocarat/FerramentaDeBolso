@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="unidades_pressao">
+        <item>Pascal (Pa)</item>
+        <item>Bar (bar)</item>
+        <item>Kilograma-força por centímetro quadrado (kgf/cm²)</item>
+        <item>Atmosfera (atm)</item>
+        <item>Milímetro de mercúrio (mmHg)</item>
+        <item>Libra por polegada quadrada (psi)</item>
+        <item>Torr (Torr)</item>
+        <item>Quilopascal (kPa)</item>
+        <item>Newton por metro quadrado (N/m²)</item>
+    </string-array>
+</resources>

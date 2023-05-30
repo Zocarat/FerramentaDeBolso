@@ -13,7 +13,7 @@ import android.widget.EditText;
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UtilidadesPressao;
 
-public class PressaoActivity extends AppCompatActivity {
+public class dddddddddddddddddddPressaoActivity extends AppCompatActivity {
 
    EditText editBar;
    EditText editPsi;
@@ -26,7 +26,7 @@ public class PressaoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pressao);
+        setContentView(R.layout.ddddddddddddddddddesusoactivity_pressao);
 
       editBar = findViewById(R.id.edit_bar);
       editPsi = findViewById(R.id.edit_psi_xml);
@@ -57,18 +57,18 @@ public class PressaoActivity extends AppCompatActivity {
                     String resultado;
                     UtilidadesPressao converter;
                     converter = new UtilidadesPressao();
-                    resultado = converter.barParaPsi(Double.parseDouble(editBar.getText().toString()));
+                   // resultado = converter.barParaPsi(Double.parseDouble(editBar.getText().toString()));
                     //String resultMenor = String.format("%.2f", resultado);
-                    editPsi.setText(resultado);
+                    //editPsi.setText(resultado);
 
                 }
                 if (TextUtils.isEmpty(editBar.getText()) && (editPsi.getText().length() >0)){
                     String resultado;
                     UtilidadesPressao converter;
                     converter = new UtilidadesPressao();
-                    resultado = converter.PsiParaBar(Double.parseDouble(editPsi.getText().toString()));
+                    //resultado = converter.PsiParaBar(Double.parseDouble(editPsi.getText().toString()));
                     //String resultMenor = String.format("%.2f", resultado);
-                    editBar.setText(resultado);
+                    //editBar.setText(resultado);
 
                 }
 
@@ -83,7 +83,7 @@ public class PressaoActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        Intent telaPrincipal = new Intent(PressaoActivity.this, MenuPrincipal.class);
+                        Intent telaPrincipal = new Intent(dddddddddddddddddddPressaoActivity.this, MenuPrincipal.class);
                         startActivity(telaPrincipal);
                         finish();
                     }
