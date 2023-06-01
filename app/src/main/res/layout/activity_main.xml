@@ -7,118 +7,117 @@
     android:orientation="vertical"
     tools:context="view.MenuPrincipal">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-
-    <TextView
-
-        android:contentDescription="Data do sistema"
-
-        android:id="@+id/txtDataSistemaXml"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:gravity="left"
-        android:text="@string/txtData"
-        android:textStyle="bold"
-        ></TextView>
-
-    <TextView
-        android:contentDescription="Hora do sistema"
-        android:id="@+id/txtHoraSistemaXml"
-        android:layout_width="80dp"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="170dp"
-        android:gravity="right"
-        android:text="@string/txtHora"
-        android:textStyle="bold"
-
-        ></TextView>
-
-
-</LinearLayout>
-
-
-
-    <ImageView
-        android:contentDescription="Icone do menu principal"
-        android:id="@+id/imgLogo"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/logo_menu_principal" />
-
-    <Button
-        android:contentDescription="Botão de menu eletrica"
-        android:id="@+id/btnEletricaMenuXml"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/txtBtnEletrica"
-        android:textSize="@dimen/tamanhoFonteBotao"
+        android:orientation="horizontal">
 
-        />
+        <TextView
+            android:id="@+id/txtDataSistemaXml"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/txtData"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnComprimentoMenuXml"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        <TextView
+            android:id="@+id/txtHoraSistemaXml"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/txtHora"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/txtButtonComprimentos"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        android:contentDescription="Descrição do ícone"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <Button
-        android:id="@+id/btnPressaoMenuXml"
-        android:contentDescription="Botão menu pressão"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/txtButtonPressao"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnTemperaturaMenu"
-        android:contentDescription="Botão menu temperatura"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/txtButtonTemperatura"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        />
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:contentDescription="Icone do menu principal"
+                app:srcCompat="@drawable/logo_menu_principal" />
 
-    <TextView
-        android:contentDescription="Texto de Credito"
-        android:id="@+id/txtCredito"
-        android:textSize="18dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:text="@string/txtCredito"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnEletricaMenuXml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:contentDescription="Botão de menu eletrica"
+                android:text="@string/txtBtnEletrica"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
+            <Button
+                android:id="@+id/btnComprimentoMenuXml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:contentDescription="Descrição do ícone"
+                android:text="@string/txtButtonComprimentos"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
+            <Button
+                android:id="@+id/btnPressaoMenuXml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:contentDescription="Botão menu pressão"
+                android:text="@string/txtButtonPressao"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
+            <Button
+                android:id="@+id/btnTemperaturaMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:contentDescription="Botão menu temperatura"
+                android:text="@string/txtButtonTemperatura"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <TextView
+                android:id="@+id/txtCredito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="200dp"
+                android:contentDescription="Texto de Credito"
+                android:text="@string/txtCredito"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

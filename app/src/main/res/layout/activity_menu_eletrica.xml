@@ -1,88 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MenuEletricaActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:contentDescription="Icone menu eletrica"
-        android:id="@+id/imgLogoEletricaMenu"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/logo_eletrica" />
-
-    <TextView
-        android:contentDescription="Texto titulo menu eletrica"
-        android:id="@+id/txtMenuEletrico"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtTituloEletrica"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="206dp" />
-
-    <Button
-        android:contentDescription="Botão menu grandezas eletricas"
-        android:id="@+id/btnGrandezasEletricas"
-        android:layout_gravity="center"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="50dp"
-        android:text="@string/txtBtnGrandezasEletricas"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        android:orientation="vertical"
+        tools:context=".MenuEletricaActivity">
 
+        <ImageView
+            android:id="@+id/imgLogoEletricaMenu"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:contentDescription="Icone menu eletrica"
+            app:srcCompat="@drawable/logo_eletrica" />
 
-    <Button
-        android:contentDescription="Botão menu dimensionamento eletrico"
-        android:id="@+id/btnDimensionamento"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:text="@string/txtBtnDimensionamento"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        <TextView
+            android:id="@+id/txtMenuEletrico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:contentDescription="Texto titulo menu eletrica"
+            android:text="@string/txtTituloEletrica"
+            android:textSize="35sp" />
 
-    <Button
-        android:contentDescription="Botão queda de tensão"
-        android:id="@+id/btnQuedaDeTensao"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:text="@string/txtBtnQuedaDeTensao"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        <Button
+            android:id="@+id/btnGrandezasEletricas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="Botão menu grandezas eletricas"
+            android:text="@string/txtBtnGrandezasEletricas"
+            android:textSize="@dimen/tamanhoFonteBotao" />
 
-    <Button
-        android:contentDescription="Botão voltar menu principal"
-        android:id="@+id/btnVoltarMenuEletrica2"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="615dp" />
+        <Button
+            android:id="@+id/btnDimensionamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtBtnDimensionamento"
+            android:textSize="@dimen/tamanhoFonteBotao" />
 
+        <Button
+            android:id="@+id/btnQuedaDeTensao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtBtnQuedaDeTensao"
+            android:textSize="@dimen/tamanhoFonteBotao" />
 
+        <Button
+            android:id="@+id/btnVoltarMenuEletrica2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtButtonVoltarMenu"
+            android:textSize="@dimen/tamanhoFonteBotao" />
 
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

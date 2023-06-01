@@ -64,6 +64,8 @@ public class QuedaDeTensaoActivity extends AppCompatActivity {
     }
 
     private void calcularQuedaTensao() {
+        double resistividadeCobre = 0.0172;
+
         String strTensao = editTextTensao.getText().toString();
         String strCorrente = editTextCorrente.getText().toString();
         String strBitola = editTextBitola.getText().toString();
@@ -80,9 +82,20 @@ public class QuedaDeTensaoActivity extends AppCompatActivity {
         double distancia = Double.parseDouble(strDistancia);
 
         // Conversão da unidade da distância (exemplo: de metros para quilômetros)
-        double distanciaConvertida = distancia / 1000;
+        double distanciaConvertida = distancia ;
 
-        double quedaTensao = (2 * corrente * bitola * 0.0175 * distanciaConvertida);
+        // Cálculo da área da seção transversal do condutor em mm²
+        double areaCondutor = bitola;
+
+        // Cálculo da resistência do condutor em ohms
+        double resistencia =(( resistividadeCobre * distanciaConvertida )/ areaCondutor);
+
+
+
+        // Cálculo da queda de tensão em volts
+        double quedaTensao = (2 * resistencia * corrente * distanciaConvertida) / 1000;
+
+        // Cálculo da porcentagem de perda
         double porcentagemPerda = (quedaTensao / tensao) * 100;
 
         DecimalFormat decimalFormat = new DecimalFormat("0.##");
@@ -98,6 +111,7 @@ public class QuedaDeTensaoActivity extends AppCompatActivity {
             Toast.makeText(this, "Atenção: A queda de tensão está acima do limite permitido pela norma NBR 5410.", Toast.LENGTH_LONG).show();
         }
     }
+
 
 
 }

@@ -13,6 +13,7 @@ package devandroid.zocarato.ferramentadebolso;
         import android.widget.Spinner;
         import android.widget.Toast;
 
+
         import java.util.ArrayList;
         import java.util.List;
 
@@ -98,7 +99,7 @@ public class PressaoActivity extends AppCompatActivity {
             resultados.add("Milímetro de mercúrio (mmHg): " + converterParaMilimetroHg(Double.parseDouble(valorDigitado), unidadeSelecionada));
             resultados.add("Libra por polegada quadrada (psi): " + converterParaPsi(Double.parseDouble(valorDigitado), unidadeSelecionada));
             resultados.add("Torr (Torr): " + converterParaTorr(Double.parseDouble(valorDigitado), unidadeSelecionada));
-            resultados.add("Quilopascal (kPa): " + converterParaQuilopascal(Double.parseDouble(valorDigitado), unidadeSelecionada));
+            resultados.add("Kilopascal (kPa): " + converterParaQuilopascal(Double.parseDouble(valorDigitado), unidadeSelecionada));
             resultados.add("Newton por metro quadrado (N/m²): " + converterParaNewtonMetroQuadrado(Double.parseDouble(valorDigitado), unidadeSelecionada));
         }
 
@@ -124,7 +125,7 @@ public class PressaoActivity extends AppCompatActivity {
             resultado = valor * 6894.757; // 1 psi = 6894.757 Pa
         } else if (unidade.equals("Milímetro de mercúrio (mmHg)")) {
             resultado = valor * 133.322; // 1 mmHg = 133.322 Pa
-        } else if (unidade.equals("Kilopascal (kPa)")) {
+        } else if (unidade.equals("Quilopascal (kPa)")) {
             resultado = valor * 1000; // 1 kPa = 1000 Pa
         } else if (unidade.equals("Newton por metro quadrado (N/m²)")) {
             resultado = valor; // Já está em Pascal
@@ -148,8 +149,13 @@ public class PressaoActivity extends AppCompatActivity {
             resultado = valor * 0.0689476; // 1 psi = 0.0689476 bar
         } else if (unidade.equals("Milímetro de mercúrio (mmHg)")) {
             resultado = valor * 0.00133322; // 1 mmHg = 0.00133322 bar
-        } else if (unidade.equals("Kilopascal (kPa)")) {
+
+
+        } else if (unidade.equals("Quilopascal (kPa)")) {
             resultado = valor / 100; // 1 kPa = 0.01 bar
+            int i = 0;
+
+
         } else if (unidade.equals("Newton por metro quadrado (N/m²)")) {
             resultado = valor / 100000; // 1 N/m² = 0.00001 bar
         } else if (unidade.equals("Kilograma-força por centímetro quadrado (kgf/cm²)")) {
@@ -196,7 +202,7 @@ public class PressaoActivity extends AppCompatActivity {
             resultado = valor / 14.6959; // 1 psi = 0.068046 atm
         } else if (unidade.equals("Milímetro de mercúrio (mmHg)")) {
             resultado = valor / 760; // 1 mmHg = 0.00131579 atm
-        } else if (unidade.equals("Kilopascal (kPa)")) {
+        } else if (unidade.equals("Quilopascal (kPa)")) {
             resultado = valor / 101.325; // 1 kPa = 0.009869 atm
         } else if (unidade.equals("Newton por metro quadrado (N/m²)")) {
             resultado = valor / 101325; // 1 N/m² = 0.00000987 atm
@@ -220,8 +226,8 @@ public class PressaoActivity extends AppCompatActivity {
             resultado = valor; // Já está em mmHg
         } else if (unidade.equals("Libra por polegada quadrada (psi)")) {
             resultado = valor / 51.7149; // 1 psi = 51.7149 mmHg
-        } else if (unidade.equals("Kilopascal (kPa)")) {
-            resultado = valor / 133.322; // 1 kPa = 7.50062 mmHg
+        } else if (unidade.equals("Quilopascal (kPa)")) {
+            resultado = valor * 7.501; // 1 kPa = 7.50062 mmHg
         } else if (unidade.equals("Newton por metro quadrado (N/m²)")) {
             resultado = valor / 133.322; // 1 N/m² = 0.00750062 mmHg
         } else if (unidade.equals("Kilograma-força por centímetro quadrado (kgf/cm²)")) {
@@ -235,7 +241,10 @@ public class PressaoActivity extends AppCompatActivity {
         double resultado = 0.0;
 
         if (unidade.equals("Pascal (Pa)")) {
-            resultado = valor / 6894.757; // 1 Pa = 0.0001450377 psi
+            double resultadoTemp = valor / 6894.757; // 1 Pa = 0.0001450377 psi
+            resultado = Double.parseDouble(String.format("%.9f", resultadoTemp)); // Arredondamento para 9 casas decimais
+
+            int i = 0;
         } else if (unidade.equals("Bar (bar)")) {
             resultado = valor * 14.5038; // 1 bar = 14.5038 psi
         } else if (unidade.equals("Atmosfera (atm)")) {
@@ -244,7 +253,7 @@ public class PressaoActivity extends AppCompatActivity {
             resultado = valor / 51.7149; // 1 Torr = 0.0193368 psi
         } else if (unidade.equals("Milímetro de mercúrio (mmHg)")) {
             resultado = valor / 51.7149; // 1 mmHg = 0.0193368 psi
-        } else if (unidade.equals("Kilopascal (kPa)")) {
+        } else if (unidade.equals("Quilopascal (kPa)")) {
             resultado = valor / 6.89476; // 1 kPa = 0.145038 psi
         } else if (unidade.equals("Newton por metro quadrado (N/m²)")) {
             resultado = valor / 6894.757; // 1 N/m² = 0.0001450377 psi
@@ -268,7 +277,7 @@ public class PressaoActivity extends AppCompatActivity {
             resultado = valor * 51.7149; // 1 psi = 51.7149 Torr
         } else if (unidade.equals("Milímetro de mercúrio (mmHg)")) {
             resultado = valor * 1.33322; // 1 mmHg = 1.33322 Torr
-        } else if (unidade.equals("Kilopascal (kPa)")) {
+        } else if (unidade.equals("Quilopascal (kPa)")) {
             resultado = valor * 7.50062; // 1 kPa = 7.50062 Torr
         } else if (unidade.equals("Newton por metro quadrado (N/m²)")) {
             resultado = valor * 7.50062; // 1 N/m² = 7.50062 Torr

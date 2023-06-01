@@ -1,116 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="view.TemperaturaActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imgLogoTemperatura"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:contentDescription="Icone menu temperatura"
-        app:srcCompat="@drawable/logo_temperatura" />
-
-    <TextView
-        android:id="@+id/txtTemperatura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:contentDescription="Título mennu temperatura"
-        android:text="@string/txtTemperatura"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/txtGrauCelsus"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Texto campo Celsus"
-        android:gravity="center_horizontal"
-        android:text="@string/txtCelsus"
-        android:textSize="25dp" />
-
-    <EditText
-        android:id="@+id/edit_celsus_xml"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/edittext_rounded_background"
-        android:contentDescription="Campo digitar graus celsus"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/txtPolegadasXml"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Texto campo firenait"
-        android:gravity="center_horizontal"
-        android:text="@string/txtFiren"
-        android:textSize="25dp" />
-
-    <EditText
-        android:id="@+id/edit_Firen_xml"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/edittext_rounded_background"
-        android:contentDescription="Campo de texto firenait"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:gravity="center" />
-
-    <Button
-        android:id="@+id/btnLimparTemperatura"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20sp"
-        android:contentDescription="Botão limpar"
-        android:text="@string/txtButtonLimpar"
-        android:textSize="@dimen/tamanhoFonteBotao" />
+        android:orientation="vertical"
+        tools:context="view.TemperaturaActivity">
 
-    <Button
-        android:id="@+id/btnCalcularTemperatura"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:contentDescription="Botão calcular"
-        android:text="@string/txtButtonCalcularComprimentos"
-        android:textSize="@dimen/tamanhoFonteBotao" />
+        <ImageView
+            android:id="@+id/imgLogoTemperatura"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:contentDescription="Icone menu temperatura"
+            app:srcCompat="@drawable/logo_temperatura" />
 
-    <Button
-        android:id="@+id/btnVoltarMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:contentDescription="Botão voltar"
-        android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao" />
+        <TextView
+            android:id="@+id/txtTemperatura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:contentDescription="Título mennu temperatura"
+            android:text="@string/txtTemperatura"
+            android:textSize="35sp" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/txtGrauCelsus"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Texto campo Celsus"
+            android:gravity="center_horizontal"
+            android:text="@string/txtCelsus"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edit_celsus_xml"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_rounded_background"
+            android:contentDescription="Campo digitar graus celsus"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtPolegadasXml"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Texto campo firenait"
+            android:gravity="center_horizontal"
+            android:text="@string/txtFiren"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edit_Firen_xml"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_rounded_background"
+            android:contentDescription="Campo de texto firenait"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btnLimparTemperatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20sp"
+            android:contentDescription="Botão limpar"
+            android:text="@string/txtButtonLimpar"
+            android:textSize="@dimen/tamanhoFonteBotao" />
+
+        <Button
+            android:id="@+id/btnCalcularTemperatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:contentDescription="Botão calcular"
+            android:text="@string/txtButtonCalcularComprimentos"
+            android:textSize="@dimen/tamanhoFonteBotao" />
+
+        <Button
+            android:id="@+id/btnVoltarMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:contentDescription="Botão voltar"
+            android:text="@string/txtButtonVoltarMenu"
+            android:textSize="@dimen/tamanhoFonteBotao" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>
