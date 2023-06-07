@@ -1,4 +1,4 @@
-package devandroid.zocarato.ferramentadebolso;
+package view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import view.MenuPrincipal;
+import devandroid.zocarato.ferramentadebolso.R;
 
 public class PressaoActivity extends AppCompatActivity {
 

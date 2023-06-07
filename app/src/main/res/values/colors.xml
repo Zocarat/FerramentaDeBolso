@@ -3,4 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="corFundoEditText">#D3D18B</color>
+
+
+    <color name="corFundoPadrao">#FEF0E4</color>
+
+
+
 </resources>

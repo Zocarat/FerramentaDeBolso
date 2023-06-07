@@ -16,7 +16,7 @@
             android:name=".ComprimentoNewActivity"
             android:exported="false" />
         <activity
-            android:name=".PressaoActivity"
+            android:name="view.PressaoActivity"
             android:exported="false" />
         <activity
             android:name=".QuedaDeTensaoActivity"

@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
-import devandroid.zocarato.ferramentadebolso.PressaoActivity;
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UltilidadesGeral;
 
