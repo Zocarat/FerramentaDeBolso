@@ -18,7 +18,18 @@
     <string name="txtBtnDimensionamento">Dimensionamento</string>
     <string name="txtBtnQuedaDeTensao">Queda de Tensao</string>
     <string name="txtTituloDimensionamento">Dimensionamento</string>
+
+    <string name="txtTituloComprimento">Comprimento</string>
+    <string name="txtBtnCalcular">Calcular</string>
+
+
+
+
     <string name="txtTutiloQuedaDeTensao">Queda de Tensão</string>
+
+
+
+
     <string name="txtDistancia">Distância</string>
 
     <string name="txtBitolaCabo">Cabo: </string>

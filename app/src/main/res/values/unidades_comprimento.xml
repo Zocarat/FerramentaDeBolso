@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="unidades_comprimento">
+        <item>Milímetro (mm)</item>
+        <item>Centímetro (cm)</item>
+        <item>Metro (m)</item>
+        <item>Kilômetro (km)</item>
+        <item>Polegada (in)</item>
+        <item>Pé (ft)</item>
+        <item>Jarda (yd)</item>
+        <item>Milha (mi)</item>
+    </string-array>
+</resources>

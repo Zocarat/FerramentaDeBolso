@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="devandroid.zocarato.ferramentadebolso.ComprimentoNewActivityActivity">
+
+    <ImageView
+        android:id="@+id/imgLogoComprimento"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Ícone comprimento menu"
+        app:srcCompat="@drawable/logo_comprimento" />
+
+    <TextView
+        android:id="@+id/txtComprimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:contentDescription="Título menu comprimento"
+        android:text="@string/txtTituloComprimento"
+        android:textSize="35sp" />
+
+    <Spinner
+        android:id="@+id/spinnerUnidadeEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="Spinner unidade de entrada"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editComprimento"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_rounded_background"
+        android:contentDescription="Campo digitação comprimento"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:gravity="center" />
+
+    <Spinner
+        android:id="@+id/spinnerUnidadeSaida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="Spinner unidade de saída"
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <ListView
+        android:id="@+id/listResultados"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnLimparComprimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Botão limpar textos do campo"
+        android:text="@string/txtButtonLimpar"
+        android:textSize="@dimen/tamanhoFonteBotao" />
+
+    <Button
+        android:id="@+id/btnCalcularComprimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:contentDescription="Botão calcular conversão"
+        android:text="@string/txtBtnCalcular"
+        android:textSize="@dimen/tamanhoFonteBotao" />
+
+    <Button
+        android:id="@+id/btnVoltarMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:contentDescription="Botão voltar menu"
+        android:text="@string/txtButtonVoltarMenu"
+        android:textSize="@dimen/tamanhoFonteBotao" />
+
+</LinearLayout>

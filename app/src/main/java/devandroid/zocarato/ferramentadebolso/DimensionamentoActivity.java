@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import util.UltilidadeEletrica;
-import view.MenuPrincipal;
 
 public class DimensionamentoActivity extends AppCompatActivity {
 

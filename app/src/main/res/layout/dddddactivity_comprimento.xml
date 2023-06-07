@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="view.ComprimentoActivity">
+
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:contentDescription="Ícone tela comprimento"
+            app:srcCompat="@drawable/logo_comprimento" />
+
+        <TextView
+            android:id="@+id/txtComprimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:contentDescription="Titulo comprimento"
+            android:text="@string/txtComprimento"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/txtMilimetro"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/txtHintMilimetro"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edit_milimetroxml"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_rounded_background"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtPolegadasXml"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/txtHintPolegada"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edit_polegada_xml"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_rounded_background"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btnTabelaPolegadaMilimetro"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtBtnTabelaPolegadaMilimetro" />
+
+        <Button
+            android:id="@+id/btnLimparComprimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtButtonLimpar"
+            android:textSize="@dimen/tamanhoFonteBotao" />
+
+        <Button
+            android:id="@+id/btnCalcularComprimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtButtonCalcularComprimentos"
+            android:textSize="@dimen/tamanhoFonteBotao" />
+
+        <Button
+            android:id="@+id/btnVoltarMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:text="@string/txtButtonVoltarMenu"
+            android:textSize="@dimen/tamanhoFonteBotao" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

@@ -1,23 +1,22 @@
 package devandroid.zocarato.ferramentadebolso;
 
-        import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.os.Handler;
-        import android.view.View;
-        import android.widget.ArrayAdapter;
-        import android.widget.Button;
-        import android.widget.EditText;
-        import android.widget.ListView;
-        import android.widget.Spinner;
-        import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
 
-        import java.util.ArrayList;
-        import java.util.List;
-
-        import view.MenuPrincipal;
+import view.MenuPrincipal;
 
 public class PressaoActivity extends AppCompatActivity {
 

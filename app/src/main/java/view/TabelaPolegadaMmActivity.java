@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity;
 import devandroid.zocarato.ferramentadebolso.R;
 
 public class TabelaPolegadaMmActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class TabelaPolegadaMmActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent telaComprimento = new Intent(TabelaPolegadaMmActivity.this, ComprimentoActivity.class);
+                        Intent telaComprimento = new Intent(TabelaPolegadaMmActivity.this, ComprimentoNewActivity.class);
                         startActivity(telaComprimento);
                         finish();
                     }

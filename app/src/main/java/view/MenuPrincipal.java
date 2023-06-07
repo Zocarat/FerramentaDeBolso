@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.PressaoActivity;
 import devandroid.zocarato.ferramentadebolso.R;
@@ -92,7 +93,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        Intent telaPrincipal = new Intent(MenuPrincipal.this, ComprimentoActivity.class);
+                        Intent telaPrincipal = new Intent(MenuPrincipal.this, ComprimentoNewActivity.class);
                         startActivity(telaPrincipal);
                         finish();
                     }
