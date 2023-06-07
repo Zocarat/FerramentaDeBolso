@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/corFundoPadrao"
-    tools:context="devandroid.zocarato.ferramentadebolso.ComprimentoNewActivityActivity">
+    tools:context="devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity">
 
     <ImageView
         android:id="@+id/imgLogoComprimento"
@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
+        android:textStyle="bold"
         android:contentDescription="Título menu comprimento"
         android:textColor="@color/corTextoPadrao"
         android:text="@string/txtTituloComprimento"
@@ -29,15 +30,18 @@
 
     <Spinner
         android:id="@+id/spinnerUnidadeEntrada"
-        android:textColor="@color/corTextoPadrao"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:contentDescription="Spinner unidade de entrada"
         android:gravity="center"
         android:background="@color/corFundoPadrao"
+        android:textColor="@color/corTextoPadrao"
+        android:theme="@style/ThemeSpinnerList"
         android:textSize="18sp" />
 
     <EditText
@@ -52,29 +56,21 @@
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="@color/black"
+        android:theme="@style/ThemeSpinnerList"
         android:textColorHint="@color/black"
         android:gravity="center" />
 
-    <Spinner
-        android:id="@+id/spinnerUnidadeSaida"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Spinner unidade de saída"
-        android:gravity="center"
-        android:textColor="@color/corTextoPadrao"
-
-        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/listResultados"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="150dp"
         android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@color/corFundoPadrao"
         android:textColor="@color/corTextoPadrao"
+        android:theme="@style/ThemeSpinnerList"
+
 
         />
 
@@ -85,9 +81,11 @@
         android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
+        android:textStyle="bold"
         android:layout_marginTop="8dp"
         android:contentDescription="Botão limpar textos do campo"
         android:text="@string/txtButtonLimpar"
+        android:background="@drawable/botao_arredondado_background"
         android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
@@ -97,6 +95,9 @@
         android:layout_gravity="center"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:background="@drawable/botao_arredondado_background"
         android:contentDescription="Botão calcular conversão"
         android:text="@string/txtBtnCalcular"
         android:textSize="@dimen/tamanhoFonteBotao" />
@@ -107,9 +108,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="20sp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20sp"
+        android:background="@drawable/botao_arredondado_background"
         android:contentDescription="Botão voltar menu"
         android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao" />
+        android:textSize="@dimen/tamanhoFonteBotao"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        />
 
 </LinearLayout>

@@ -4,4 +4,15 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+
+        <!-- Tema para o modo noturno -->
+        <style name="ThemeSpinnerList2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+            <!-- Defina as cores de fundo e texto para o modo noturno -->
+            <item name="android:background">@color/corFundoPadrao</item>
+            <item name="android:textColor">@color/corTextoPadrao</item>
+        </style>
+
+
+
 </resources>

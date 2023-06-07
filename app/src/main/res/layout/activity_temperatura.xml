@@ -31,6 +31,7 @@
             android:contentDescription="Título mennu temperatura"
             android:textColor="@color/corTextoPadrao"
             android:text="@string/txtTemperatura"
+            android:textStyle="bold"
             android:textSize="35sp" />
 
         <TextView
@@ -43,6 +44,7 @@
             android:contentDescription="Texto campo Celsus"
             android:gravity="center_horizontal"
             android:textColor="@color/corTextoPadrao"
+            android:textStyle="bold"
             android:text="@string/txtCelsus"
             android:textSize="25dp" />
 
@@ -69,6 +71,7 @@
             android:layout_marginEnd="20dp"
             android:contentDescription="Texto campo firenait"
             android:gravity="center_horizontal"
+            android:textStyle="bold"
             android:textColor="@color/corTextoPadrao"
             android:text="@string/txtFiren"
             android:textSize="25dp" />
@@ -95,6 +98,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="20sp"
             android:layout_marginTop="80dp"
+            android:textStyle="bold"
             android:layout_marginEnd="20sp"
             android:contentDescription="Botão limpar"
             android:text="@string/txtButtonLimpar"
@@ -106,6 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20sp"
+            android:textStyle="bold"
             android:layout_marginEnd="20sp"
             android:contentDescription="Botão calcular"
             android:text="@string/txtButtonCalcularComprimentos"
@@ -118,6 +123,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
+            android:textStyle="bold"
             android:contentDescription="Botão voltar"
             android:text="@string/txtButtonVoltarMenu"
             android:textSize="@dimen/tamanhoFonteBotao" />

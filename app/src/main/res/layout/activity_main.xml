@@ -70,6 +70,7 @@
                 android:layout_marginTop="50dp"
                 android:contentDescription="Botão de menu eletrica"
                 android:text="@string/txtBtnEletrica"
+                android:textStyle="bold"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <Button
@@ -82,6 +83,7 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="Descrição do ícone"
                 android:text="@string/txtButtonComprimentos"
+                android:textStyle="bold"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <Button
@@ -94,6 +96,7 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="Botão menu pressão"
                 android:text="@string/txtButtonPressao"
+                android:textStyle="bold"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <Button
@@ -106,6 +109,7 @@
                 android:layout_marginTop="5dp"
                 android:contentDescription="Botão menu temperatura"
                 android:text="@string/txtButtonTemperatura"
+                android:textStyle="bold"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <TextView
@@ -113,9 +117,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="180dp"
                 android:contentDescription="Texto de Credito"
                 android:text="@string/txtCredito"
+                android:textColor="@color/corTextoPadrao"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
                 android:textStyle="bold" />
 

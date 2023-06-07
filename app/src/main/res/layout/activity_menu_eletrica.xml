@@ -31,6 +31,7 @@
             android:contentDescription="Texto titulo menu eletrica"
             android:textColor="@color/corTextoPadrao"
             android:text="@string/txtTituloEletrica"
+            android:textStyle="bold"
             android:textSize="35sp" />
 
         <Button
@@ -41,6 +42,7 @@
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
             android:layout_marginTop="50dp"
+            android:textStyle="bold"
             android:contentDescription="Botão menu grandezas eletricas"
             android:text="@string/txtBtnGrandezasEletricas"
             android:textSize="@dimen/tamanhoFonteBotao" />
@@ -51,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20sp"
+            android:textStyle="bold"
             android:layout_marginEnd="20sp"
             android:text="@string/txtBtnDimensionamento"
             android:textSize="@dimen/tamanhoFonteBotao" />
@@ -61,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20sp"
+            android:textStyle="bold"
             android:layout_marginEnd="20sp"
             android:text="@string/txtBtnQuedaDeTensao"
             android:textSize="@dimen/tamanhoFonteBotao" />
@@ -72,6 +76,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
+            android:textStyle="bold"
             android:text="@string/txtButtonVoltarMenu"
             android:textSize="@dimen/tamanhoFonteBotao" />
 

@@ -30,6 +30,7 @@
             android:layout_marginTop="25dp"
             android:contentDescription="Título queda de tensão"
             android:text="@string/txtTutiloQuedaDeTensao"
+            android:textStyle="bold"
             android:textColor="@color/corTextoPadrao"
             android:textSize="35sp" />
 
@@ -60,6 +61,7 @@
                         android:contentDescription="Texto do campo de tensão"
                         android:text="@string/txtTensao"
                         android:textColor="@color/corTextoPadrao"
+                        android:textStyle="bold"
                         android:textSize="25dp" />
 
                     <EditText
@@ -70,6 +72,7 @@
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:textColor="@color/black"
+
                         android:gravity="center" />
 
                 </LinearLayout>
@@ -89,6 +92,7 @@
                         android:contentDescription="Texto do campo de corrente"
                         android:text="@string/txtCorrente"
                         android:textColor="@color/corTextoPadrao"
+                        android:textStyle="bold"
                         android:textSize="25dp" />
 
                     <EditText
@@ -124,6 +128,7 @@
                         android:gravity="center_horizontal"
                         android:contentDescription="Título do campo cabo"
                         android:text="@string/txtBitolaCabo"
+                        android:textStyle="bold"
                         android:textColor="@color/corTextoPadrao"
                         android:textSize="25dp" />
 
@@ -154,6 +159,7 @@
                         android:gravity="center_horizontal"
                         android:contentDescription="Texto distância"
                         android:text="@string/txtDistancia"
+                        android:textStyle="bold"
                         android:textColor="@color/corTextoPadrao"
                         android:textSize="25dp" />
 
@@ -194,6 +200,7 @@
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
             android:text="@string/txtBtnCalcularEletrica"
+            android:textStyle="bold"
             android:textSize="@dimen/tamanhoFonteBotao" />
 
         <Button
@@ -205,6 +212,7 @@
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
             android:text="@string/txtButtonVoltarMenu"
+            android:textStyle="bold"
             android:textSize="@dimen/tamanhoFonteBotao" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
