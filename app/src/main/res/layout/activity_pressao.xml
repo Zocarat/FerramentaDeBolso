@@ -24,6 +24,7 @@
         android:layout_marginTop="25dp"
         android:contentDescription="Título menu pressão"
         android:text="@string/txtTituloPressao"
+        android:textColor="@color/corTextoPadrao"
         android:textSize="35sp" />
 
     <Spinner

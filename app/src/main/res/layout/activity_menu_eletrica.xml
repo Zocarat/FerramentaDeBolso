@@ -29,6 +29,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:contentDescription="Texto titulo menu eletrica"
+            android:textColor="@color/corTextoPadrao"
             android:text="@string/txtTituloEletrica"
             android:textSize="35sp" />
 

@@ -29,6 +29,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:contentDescription="Título mennu temperatura"
+            android:textColor="@color/corTextoPadrao"
             android:text="@string/txtTemperatura"
             android:textSize="35sp" />
 
@@ -41,6 +42,7 @@
             android:layout_marginEnd="20dp"
             android:contentDescription="Texto campo Celsus"
             android:gravity="center_horizontal"
+            android:textColor="@color/corTextoPadrao"
             android:text="@string/txtCelsus"
             android:textSize="25dp" />
 
@@ -67,6 +69,7 @@
             android:layout_marginEnd="20dp"
             android:contentDescription="Texto campo firenait"
             android:gravity="center_horizontal"
+            android:textColor="@color/corTextoPadrao"
             android:text="@string/txtFiren"
             android:textSize="25dp" />
 

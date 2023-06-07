@@ -30,6 +30,7 @@
             android:layout_marginTop="25dp"
             android:contentDescription="Texto dimensionamento"
             android:text="@string/txtTituloDimensionamento"
+            android:textColor="@color/corTextoPadrao"
             android:textSize="35sp" />
 
         <TextView
@@ -41,6 +42,7 @@
             android:layout_marginEnd="20dp"
             android:contentDescription="título corrente"
             android:gravity="center_horizontal"
+            android:textColor="@color/corTextoPadrao"
             android:text="@string/txtCorrente"
             android:textSize="25dp" />
 
@@ -61,7 +63,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+
+            >
 
             <LinearLayout
                 android:layout_width="200dp"
@@ -77,6 +81,7 @@
                     android:layout_marginEnd="0dp"
                     android:contentDescription="Texto bitola de cabo"
                     android:gravity="right"
+                    android:textColor="@color/corTextoPadrao"
                     android:text="@string/txtBitolaCabo"
                     android:textSize="25dp" />
 
@@ -90,6 +95,7 @@
                     android:contentDescription="Texto disjuntor"
                     android:gravity="right"
                     android:text="@string/txtDsjuntor"
+                    android:textColor="@color/corTextoPadrao"
                     android:textSize="25dp" />
 
             </LinearLayout>
@@ -108,7 +114,8 @@
                     android:layout_marginEnd="20dp"
                     android:contentDescription="Resultado do dimensionamento do cabo"
                     android:gravity="right"
-                    android:text="resultado"
+                    android:text=""
+                    android:textColor="@color/corTextoPadrao"
                     android:textSize="25dp" />
 
                 <TextView
@@ -120,7 +127,8 @@
                     android:layout_marginEnd="20dp"
                     android:contentDescription="Texto dimensionamento do disjuntor"
                     android:gravity="right"
-                    android:text="resultado"
+                    android:textColor="@color/corTextoPadrao"
+                    android:text=""
                     android:textSize="25dp" />
 
             </LinearLayout>

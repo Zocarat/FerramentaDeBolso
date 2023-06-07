@@ -30,6 +30,7 @@
             android:layout_marginTop="25dp"
             android:contentDescription="Título queda de tensão"
             android:text="@string/txtTutiloQuedaDeTensao"
+            android:textColor="@color/corTextoPadrao"
             android:textSize="35sp" />
 
         <LinearLayout
@@ -58,6 +59,7 @@
                         android:gravity="center_horizontal"
                         android:contentDescription="Texto do campo de tensão"
                         android:text="@string/txtTensao"
+                        android:textColor="@color/corTextoPadrao"
                         android:textSize="25dp" />
 
                     <EditText
@@ -86,6 +88,7 @@
                         android:gravity="center_horizontal"
                         android:contentDescription="Texto do campo de corrente"
                         android:text="@string/txtCorrente"
+                        android:textColor="@color/corTextoPadrao"
                         android:textSize="25dp" />
 
                     <EditText
@@ -121,6 +124,7 @@
                         android:gravity="center_horizontal"
                         android:contentDescription="Título do campo cabo"
                         android:text="@string/txtBitolaCabo"
+                        android:textColor="@color/corTextoPadrao"
                         android:textSize="25dp" />
 
                     <EditText
@@ -131,6 +135,7 @@
                         android:importantForAutofill="no"
                         android:inputType="numberDecimal"
                         android:textColor="@color/black"
+
                         android:gravity="center" />
 
                 </LinearLayout>
@@ -149,6 +154,7 @@
                         android:gravity="center_horizontal"
                         android:contentDescription="Texto distância"
                         android:text="@string/txtDistancia"
+                        android:textColor="@color/corTextoPadrao"
                         android:textSize="25dp" />
 
                     <EditText

@@ -23,11 +23,13 @@
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:contentDescription="Título menu comprimento"
+        android:textColor="@color/corTextoPadrao"
         android:text="@string/txtTituloComprimento"
         android:textSize="35sp" />
 
     <Spinner
         android:id="@+id/spinnerUnidadeEntrada"
+        android:textColor="@color/corTextoPadrao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -62,6 +64,8 @@
         android:layout_marginEnd="20dp"
         android:contentDescription="Spinner unidade de saída"
         android:gravity="center"
+        android:textColor="@color/corTextoPadrao"
+
         android:textSize="18sp" />
 
     <ListView
@@ -69,7 +73,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:textColor="@color/corTextoPadrao"
+
+        />
 
     <Button
         android:id="@+id/btnLimparComprimento"
