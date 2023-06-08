@@ -77,8 +77,9 @@
         android:layout_marginEnd="20dp"
         android:contentDescription="Botão limpar textos do campo"
         android:text="@string/txtBtnLimparPressao"
-        android:background="@drawable/botao_arredondado_background"
+        android:background="@drawable/botao_config"
         android:textSize="@dimen/tamanhoFonteBotao"
+        android:textColor="@color/white"
 
         android:textStyle="bold" />
 
@@ -92,8 +93,9 @@
         android:contentDescription="Botão calcular conversão"
         android:text="@string/txtBtnCalcularPressao"
         android:layout_marginTop="8dp"
-        android:background="@drawable/botao_arredondado_background"
+        android:background="@drawable/botao_config"
         android:textSize="@dimen/tamanhoFonteBotao"
+        android:textColor="@color/white"
 
         android:textStyle="bold" />
 
@@ -105,10 +107,11 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20sp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/botao_arredondado_background"
+        android:background="@drawable/botao_config"
         android:contentDescription="Botão voltar menu"
         android:text="@string/txtButtonVoltarMenu"
         android:textSize="@dimen/tamanhoFonteBotao"
+        android:textColor="@color/white"
         android:layout_marginBottom="16dp"
         android:textStyle="bold" />
 

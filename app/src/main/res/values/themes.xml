@@ -19,6 +19,6 @@
         <!-- ... outros atributos de estilo específicos para o modo noturno ... -->
     </style>
     <style name="BotaoArredondado" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/botao_arredondado_background</item>
+        <item name="android:background">@drawable/botao_config</item>
     </style>
 </resources>

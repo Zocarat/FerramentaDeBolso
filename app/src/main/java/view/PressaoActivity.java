@@ -239,11 +239,12 @@ public class PressaoActivity extends AppCompatActivity {
     private double converterParaPsi(double valor, String unidade) {
         double resultado = 0.0;
 
-        if (unidade.equals("Pascal (Pa)")) {
-            double resultadoTemp = valor / 6894.757; // 1 Pa = 0.0001450377 psi
-            resultado = Double.parseDouble(String.format("%.9f", resultadoTemp)); // Arredondamento para 9 casas decimais
 
-            int i = 0;
+        if (unidade.equals("Pascal (Pa)")) {
+
+               resultado = valor /  6894.757; // 1 Pa = 0.0001450377 psi
+
+
         } else if (unidade.equals("Bar (bar)")) {
             resultado = valor * 14.5038; // 1 bar = 14.5038 psi
         } else if (unidade.equals("Atmosfera (atm)")) {

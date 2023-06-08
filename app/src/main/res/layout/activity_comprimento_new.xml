@@ -85,7 +85,7 @@
         android:layout_marginTop="8dp"
         android:contentDescription="Botão limpar textos do campo"
         android:text="@string/txtButtonLimpar"
-        android:background="@drawable/botao_arredondado_background"
+        android:background="@drawable/botao_config"
         android:textSize="@dimen/tamanhoFonteBotao" />
 
     <Button
@@ -97,7 +97,7 @@
         android:layout_marginEnd="20sp"
         android:layout_marginTop="8dp"
         android:textStyle="bold"
-        android:background="@drawable/botao_arredondado_background"
+        android:background="@drawable/botao_config"
         android:contentDescription="Botão calcular conversão"
         android:text="@string/txtBtnCalcular"
         android:textSize="@dimen/tamanhoFonteBotao" />
@@ -110,7 +110,7 @@
         android:layout_marginStart="20sp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20sp"
-        android:background="@drawable/botao_arredondado_background"
+        android:background="@drawable/botao_config"
         android:contentDescription="Botão voltar menu"
         android:text="@string/txtButtonVoltarMenu"
         android:textSize="@dimen/tamanhoFonteBotao"
