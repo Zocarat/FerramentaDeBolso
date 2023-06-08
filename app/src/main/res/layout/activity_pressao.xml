@@ -61,58 +61,64 @@
     <ListView
         android:id="@+id/listResultados"
         android:layout_width="match_parent"
-        android:layout_height="226dp"
+        android:layout_height="320dp"
         android:layout_marginTop="16dp"
         android:background="@color/corFundoPadrao"
         android:textColor="@color/corTextoPadrao"
         android:theme="@style/ThemeSpinnerList" />
 
-    <Button
-        android:id="@+id/btnLimPartPressao"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Botão limpar textos do campo"
-        android:text="@string/txtBtnLimparPressao"
-        android:background="@drawable/botao_config"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        android:textColor="@color/white"
+        android:layout_height="match_parent">
 
-        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnCalcularPressao"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:contentDescription="Botão calcular conversão"
-        android:text="@string/txtBtnCalcularPressao"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/botao_config"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        android:textColor="@color/white"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/btnLimPartPressao"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_limpar" />
 
-    <Button
-        android:id="@+id/btnVoltarMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/botao_config"
-        android:contentDescription="Botão voltar menu"
-        android:text="@string/txtButtonVoltarMenu"
-        android:textSize="@dimen/tamanhoFonteBotao"
-        android:textColor="@color/white"
-        android:layout_marginBottom="16dp"
-        android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnCalcularPressao"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/img_btn_calcular" />
+
+
+        <ImageButton
+            android:id="@+id/btnVoltarPressao"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_voltar" />
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>
+

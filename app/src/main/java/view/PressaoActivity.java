@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,17 +24,22 @@ public class PressaoActivity extends AppCompatActivity {
     Spinner spinnerPressao;
     EditText editPressao;
     ListView listResultados;
-    Button btnVoltar;
+    ImageButton btnVoltar;
+    ImageButton btnLimpar;
+    ImageButton btnCalcularPressao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pressao);
 
-        btnVoltar = findViewById(R.id.btnVoltarMenu);
+        btnVoltar = findViewById(R.id.btnVoltarPressao);
         spinnerPressao = findViewById(R.id.spinnerPressao);
         editPressao = findViewById(R.id.editPressao);
         listResultados = findViewById(R.id.listResultados);
+        btnLimpar = findViewById(R.id.btnLimPartPressao);
+        btnCalcularPressao = findViewById(R.id.btnCalcularPressao);
 
         // Criar um adapter com as opções da lista
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -44,7 +50,7 @@ public class PressaoActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPressao.setAdapter(adapter);
 
-        Button btnCalcularPressao = findViewById(R.id.btnCalcularPressao);
+
         btnCalcularPressao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +66,7 @@ public class PressaoActivity extends AppCompatActivity {
             }
         });
 
-        Button btnLimpar = findViewById(R.id.btnLimPartPressao);
+
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

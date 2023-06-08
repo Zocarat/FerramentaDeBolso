@@ -12,6 +12,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -27,7 +28,9 @@ public class ComprimentoNewActivity extends AppCompatActivity {
     Spinner spinnerComprimento;
     EditText editComprimento;
     ListView listResultados;
-    Button btnVoltar;
+    ImageButton btnVoltar;
+    ImageButton btnLimpar;
+    ImageButton btnCalcularComprimento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class ComprimentoNewActivity extends AppCompatActivity {
         spinnerComprimento = findViewById(R.id.spinnerUnidadeEntrada);
         editComprimento = findViewById(R.id.editComprimento);
         listResultados = findViewById(R.id.listResultados);
+        btnLimpar = findViewById(R.id.btnLimparComprimento);
+        btnCalcularComprimento = findViewById(R.id.btnCalcularComprimento);
 
         // Criar um adapter com as opções da lista
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -48,7 +53,7 @@ public class ComprimentoNewActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerComprimento.setAdapter(adapter);
 
-        Button btnCalcularComprimento = findViewById(R.id.btnCalcularComprimento);
+
         btnCalcularComprimento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +69,7 @@ public class ComprimentoNewActivity extends AppCompatActivity {
             }
         });
 
-        Button btnLimpar = findViewById(R.id.btnLimparComprimento);
+
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

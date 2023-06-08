@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity;
@@ -23,10 +24,10 @@ public class MenuPrincipal extends AppCompatActivity {
 
     private Handler handler;
     private Runnable runnable;
-    Button btn_Eletrica_Menu;
-    Button btn_Comprimento_Menu;
-    Button btn_Pressao_Menu;
-    Button btn_Temperatura_Menu;
+    ImageButton btn_Eletrica_Menu;
+    ImageButton btn_Comprimento_Menu;
+    ImageButton btn_Pressao_Menu;
+    ImageButton btn_Temperatura_Menu;
 
     TextView txtDataSistema;
     TextView txtHoraSistema;
