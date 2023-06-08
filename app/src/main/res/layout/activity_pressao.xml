@@ -1,18 +1,16 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/corFundoPadrao"
-    android:orientation="vertical"
-
     tools:context="view.PressaoActivity">
 
     <ImageView
         android:id="@+id/imgLogoPressao"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:contentDescription="Ícone pressão menu"
         app:srcCompat="@drawable/logo_pressao" />
@@ -21,7 +19,8 @@
         android:id="@+id/txtPressao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_below="@id/imgLogoPressao"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:contentDescription="Título menu pressão"
         android:text="@string/txtTituloPressao"
@@ -33,6 +32,7 @@
         android:id="@+id/spinnerPressao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtPressao"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
@@ -47,6 +47,7 @@
         android:id="@+id/editPressao"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/spinnerPressao"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
@@ -61,24 +62,19 @@
     <ListView
         android:id="@+id/listResultados"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/editPressao"
+        android:layout_above="@+id/linearLayoutBotoes"
         android:layout_marginTop="16dp"
         android:background="@color/corFundoPadrao"
         android:textColor="@color/corTextoPadrao"
         android:theme="@style/ThemeSpinnerList" />
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
     <LinearLayout
+        android:id="@id/linearLayoutBotoes"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -92,7 +88,6 @@
             android:scaleType="fitCenter"
             android:src="@drawable/img_btn_limpar" />
 
-
         <ImageButton
             android:id="@+id/btnCalcularPressao"
             android:layout_width="75dp"
@@ -101,9 +96,7 @@
             android:layout_marginHorizontal="40dp"
             android:background="@color/corFundoPadrao"
             android:scaleType="fitCenter"
-
             android:src="@drawable/img_btn_calcular" />
-
 
         <ImageButton
             android:id="@+id/btnVoltarPressao"
@@ -115,10 +108,6 @@
             android:scaleType="fitCenter"
             android:src="@drawable/img_btn_voltar" />
 
-
     </LinearLayout>
 
-    </RelativeLayout>
-
-</LinearLayout>
-
+</RelativeLayout>

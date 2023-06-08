@@ -1,17 +1,15 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/corFundoPadrao"
-    android:orientation="vertical"
-    tools:context="devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity">
+    android:background="@color/corFundoPadrao">
 
     <ImageView
         android:id="@+id/imgLogoComprimento"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:contentDescription="Ícone comprimento menu"
         app:srcCompat="@drawable/logo_comprimento" />
@@ -20,18 +18,20 @@
         android:id="@+id/txtComprimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_below="@id/imgLogoComprimento"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:textStyle="bold"
         android:contentDescription="Título menu comprimento"
-        android:textColor="@color/corTextoPadrao"
         android:text="@string/txtTituloComprimento"
-        android:textSize="35sp" />
+        android:textColor="@color/corTextoPadrao"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/spinnerUnidadeEntrada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtComprimento"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
@@ -46,6 +46,7 @@
         android:id="@+id/editComprimento"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/spinnerUnidadeEntrada"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
@@ -54,34 +55,29 @@
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="@color/black"
-        android:theme="@style/ThemeSpinnerList"
         android:textColorHint="@color/black"
         android:gravity="center" />
 
     <ListView
         android:id="@+id/listResultados"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/editComprimento"
+        android:layout_above="@id/linearLayoutBotoes"
         android:layout_marginTop="16dp"
         android:background="@color/corFundoPadrao"
         android:textColor="@color/corTextoPadrao"
         android:theme="@style/ThemeSpinnerList" />
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <LinearLayout
+        android:id="@+id/linearLayoutBotoes"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         android:gravity="center"
         android:orientation="horizontal">
 
-
-    <ImageButton
+        <ImageButton
             android:id="@+id/btnLimparComprimento"
             android:layout_width="75dp"
             android:layout_height="50dp"
@@ -109,6 +105,5 @@
             android:src="@drawable/img_btn_voltar" />
 
     </LinearLayout>
-    </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

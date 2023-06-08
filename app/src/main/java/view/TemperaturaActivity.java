@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UltilidadeTemperatura;
@@ -19,9 +20,9 @@ public class TemperaturaActivity extends AppCompatActivity {
     EditText editCelsus;
     EditText editFahrenheit;
 
-    Button btnLimparTemperatura;
-    Button btnCacularTemperatura;
-    Button btnMenuPrincipal;
+    ImageButton btnLimparTemperatura;
+    ImageButton btnCacularTemperatura;
+    ImageButton btnMenuPrincipal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
