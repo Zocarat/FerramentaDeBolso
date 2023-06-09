@@ -1,21 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/corFundoPadrao"
-    android:orientation="vertical">
+    android:background="@color/corFundoPadrao">
 
     <ImageView
+        android:id="@+id/imageViewPorcentagem"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@drawable/img_button_porcentagem"
-        android:layout_marginTop="80dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/img_button_porcentagem" />
 
     <LinearLayout
+        android:id="@+id/linearPorcentagem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewPorcentagem"
         android:orientation="horizontal"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="30dp">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -42,7 +44,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text=" % De" />
+            android:text="% De" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
@@ -55,8 +57,8 @@
                 android:id="@+id/editTextValorTotal1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginHorizontal="10dp"
+                android:gravity="center"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -64,8 +66,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearPrimeiroResultado"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_below="@id/linearPorcentagem"
         android:gravity="center">
 
         <TextView
@@ -79,8 +83,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearParte2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/linearPrimeiroResultado"
         android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -91,8 +97,7 @@
             android:hint="Parte">
 
             <com.google.android.material.textfield.TextInputEditText
-
-               android:id="@+id/editTextParte2"
+                android:id="@+id/editTextParte2"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -104,7 +109,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="   De "
+            android:text="De"
             android:textSize="20dp"
             android:gravity="center"
             android:textStyle="bold" />
@@ -117,12 +122,11 @@
             android:hint="Valor Total">
 
             <com.google.android.material.textfield.TextInputEditText
-
-               android:id="@+id/editTextTotal02"
+                android:id="@+id/editTextTotal02"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginHorizontal="10dp"
+                android:gravity="center"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -131,14 +135,11 @@
 
 
     <LinearLayout
+        android:id="@+id/linearSegundoResultado"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:gravity="center"
-
-
-
-
-        >
+        android:layout_below="@id/linearParte2"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/segundoResultado"
@@ -152,8 +153,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearValor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/linearSegundoResultado"
         android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -176,10 +179,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Para"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:gravity="center"
-            android:text=" Para " />
+            android:gravity="center" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
@@ -200,11 +203,11 @@
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/linearTerceiroResultado"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:gravity="center"
-
-        >
+        android:layout_below="@id/linearValor"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/terceiroResultado"
@@ -225,8 +228,6 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-
-
         <ImageButton
             android:id="@+id/btnLimparPorcentagem"
             android:layout_width="75dp"
@@ -243,7 +244,7 @@
             android:layout_marginHorizontal="40dp"
             android:background="@color/corFundoPadrao"
             android:scaleType="fitCenter"
-            android:src="@drawable/img_btn_calcular" />
+            />
 
         <ImageButton
             android:id="@+id/btnVoltarMenuPorcentagem"
@@ -256,4 +257,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

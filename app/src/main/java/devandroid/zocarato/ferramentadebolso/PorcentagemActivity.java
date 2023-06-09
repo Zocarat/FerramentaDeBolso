@@ -2,13 +2,25 @@ package devandroid.zocarato.ferramentadebolso;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import view.MenuPrincipal;
+import view.TemperaturaActivity;
+
 public class PorcentagemActivity extends AppCompatActivity {
+
+    ImageButton btnVoltar;
+    ImageButton btnLimpar;
+
+
+    ////////////////////////////////////////////
 
     EditText editTextPorcentagemDeTotal01;
     EditText editTextTotal01;
@@ -32,29 +44,79 @@ public class PorcentagemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_porcentagem);
 
+        btnLimpar = findViewById(R.id.btnLimparPorcentagem);
+        btnVoltar = findViewById(R.id.btnVoltarMenuPorcentagem);
+
+
        //================ PARTE 1 ============================
         editTextPorcentagemDeTotal01 = findViewById(R.id.editTextPorcentagemDeTotal);
         editTextTotal01 = findViewById(R.id.editTextValorTotal1);
+        textViewResultado01 = findViewById(R.id.primeiroResultado);
 
-        // Adicionar listeners aos campos de entrada
         editTextPorcentagemDeTotal01.addTextChangedListener(textWatcher);
         editTextTotal01.addTextChangedListener(textWatcher);
-        textViewResultado01 = findViewById(R.id.primeiroResultado);
+
 
         //================ PARTE 2 ============================
         editTextParte02 = findViewById(R.id.editTextParte2);
         editTextTotal02 = findViewById(R.id.editTextTotal02);
-        editTextParte02.addTextChangedListener(textWatcher);
-        editTextTotal02.addTextChangedListener(textWatcher);
         textViewResultado02 = findViewById(R.id.segundoResultado);
 
+        editTextParte02.addTextChangedListener(textWatcher);
+        editTextTotal02.addTextChangedListener(textWatcher);
 
         // ============== PARTE 03 =========================
         editTextParte03 = findViewById(R.id.editValorPrimario03);
         editTextTotal03 = findViewById(R.id.editValorSecundario03);
+        textViewResultado03 = findViewById(R.id.terceiroResultado);
+
         editTextParte03.addTextChangedListener(textWatcher);
         editTextTotal03.addTextChangedListener(textWatcher);
-        textViewResultado03 = findViewById(R.id.terceiroResultado);
+
+
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editTextPorcentagemDeTotal01.setText("");
+                editTextTotal01.setText("");
+                textViewResultado01.setText("");
+
+                editTextParte02.setText("");
+                editTextTotal02.setText("");
+                textViewResultado02.setText("");
+
+                editTextParte03.setText("");
+                editTextTotal03.setText("");
+                textViewResultado03.setText("");
+
+
+
+            }
+        });
+
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent telaPrincipal = new Intent(PorcentagemActivity.this, MenuPrincipal.class);
+                startActivity(telaPrincipal);
+                finish();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
@@ -109,7 +171,7 @@ public class PorcentagemActivity extends AppCompatActivity {
                 double secundario03 = Double.parseDouble(valorSecundarioStr03);
                // Porcentagem Faltante = ((Valor Desejado - Valor Atual) / Valor Desejado) * 100
                 //resultado3 = ((valorSecundarioStr03 - valorPrimarioStr03) / valorSecundarioStr03) * 100
-                double resultado3 = ((secundario03 - primario03) / secundario03) * 100;
+                double resultado3 = ((secundario03 - primario03)/  primario03) * 100;
 
                 textViewResultado03.setText(String.valueOf(" Diferença "+resultado3 + "%"));
             } catch (NumberFormatException e) {
