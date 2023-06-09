@@ -146,10 +146,10 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="15dp"
                         android:background="@color/corFundoPadrao"
                         android:contentDescription="Botão menu pressão"
                         android:scaleType="fitCenter"
-                        android:layout_marginHorizontal="15dp"
                         android:src="@drawable/img_btn_area" />
 
 

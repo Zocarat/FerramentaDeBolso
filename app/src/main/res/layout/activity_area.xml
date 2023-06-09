@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/corFundoPadrao">
+
+
+    <ImageView
+        android:id="@+id/imageViewPorcentagem"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/img_btn_area" />
+
+    <LinearLayout
+        android:id="@+id/linearArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewPorcentagem"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:hint="Base">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextBase"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:textColor="@color/corTextoPadrao"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:hint="Altura">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAltura"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:textColor="@color/corTextoPadrao"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearResultadoArea"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/linearArea"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/resultadoArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/corTextoPadrao"
+            android:gravity="center"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnLimparArea"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_limpar" />
+
+        <ImageButton
+            android:id="@+id/btnCalcularArea"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            />
+
+        <ImageButton
+            android:id="@+id/btnVoltarMenuArea"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_voltar" />
+
+    </LinearLayout>
+
+</RelativeLayout>

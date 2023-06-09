@@ -5,10 +5,10 @@
 
     <ImageView
         android:id="@+id/imageViewPorcentagem"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/img_button_porcentagem" />
 
     <LinearLayout
@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                android:textColor="@color/corTextoPadrao"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -44,6 +45,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:gravity="center"
+            android:textColor="@color/corTextoPadrao"
             android:text="% De" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -59,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                android:textColor="@color/corTextoPadrao"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -77,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="@color/corTextoPadrao"
             android:textStyle="bold"
             android:gravity="center"
             android:text="" />
@@ -101,6 +105,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
+                android:textColor="@color/corTextoPadrao"
                 android:gravity="center"
                 android:inputType="numberDecimal" />
 
@@ -111,6 +116,7 @@
             android:layout_height="wrap_content"
             android:text="De"
             android:textSize="20dp"
+            android:textColor="@color/corTextoPadrao"
             android:gravity="center"
             android:textStyle="bold" />
 
@@ -127,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                android:textColor="@color/corTextoPadrao"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -145,10 +152,11 @@
             android:id="@+id/segundoResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:gravity="center"
-            android:text="" />
+            android:text=""
+            android:textColor="@color/corTextoPadrao"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -170,6 +178,7 @@
                 android:id="@+id/editValorPrimario03"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/corTextoPadrao"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
                 android:inputType="numberDecimal" />
@@ -181,6 +190,7 @@
             android:layout_height="wrap_content"
             android:text="Para"
             android:textStyle="bold"
+            android:textColor="@color/corTextoPadrao"
             android:textSize="20dp"
             android:gravity="center" />
 
@@ -197,7 +207,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                android:textColor="@color/corTextoPadrao"
                 android:inputType="numberDecimal" />
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -214,6 +226,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:textColor="@color/corTextoPadrao"
             android:textSize="20dp"
             android:gravity="center"
             android:textStyle="bold" />

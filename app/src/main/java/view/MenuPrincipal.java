@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import devandroid.zocarato.ferramentadebolso.AreaActivity;
 import devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.PorcentagemActivity;
@@ -30,6 +31,8 @@ public class MenuPrincipal extends AppCompatActivity {
     ImageButton btn_Pressao_Menu;
     ImageButton btn_Temperatura_Menu;
     ImageButton btn_Porcentagem_Menu;
+
+    ImageButton btn_Area_Menu;
 
     TextView txtDataSistema;
     TextView txtHoraSistema;
@@ -56,6 +59,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btn_Pressao_Menu = findViewById(R.id.btnPressaoMenuXml);
         btn_Temperatura_Menu = findViewById(R.id.btnTemperaturaMenu);
         btn_Porcentagem_Menu = findViewById(R.id.btnPorcentagemMenu);
+        btn_Area_Menu = findViewById(R.id.btnAreaMenu);
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -152,6 +156,23 @@ public class MenuPrincipal extends AppCompatActivity {
                     public void run() {
 
                         Intent telaPrincipal = new Intent(MenuPrincipal.this, PorcentagemActivity.class);
+                        startActivity(telaPrincipal);
+                        finish();
+                    }
+                },0);
+
+            }
+        });
+
+        btn_Area_Menu.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent telaPrincipal = new Intent(MenuPrincipal.this, AreaActivity.class);
                         startActivity(telaPrincipal);
                         finish();
                     }
