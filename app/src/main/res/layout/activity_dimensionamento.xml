@@ -38,94 +38,95 @@
         android:contentDescription="título corrente"
         android:gravity="center_horizontal"
         android:textColor="@color/corTextoPadrao"
-        android:text="@string/txtCorrente"
+        android:text=""
         android:textSize="25dp" />
 
-    <EditText
-        android:id="@+id/editCorrenteDimensionamento"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/correnteTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/txtCorrenteDimensionamento"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/edittext_rounded_background"
-        android:contentDescription="Campo corrente"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:gravity="center" />
+        android:layout_marginTop="8dp"
+        app:boxStrokeColor="@android:color/black"
+        android:layout_marginEnd="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editCorrenteDimensionamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Digite a corrente"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:layout_below="@id/editCorrenteDimensionamento">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/correnteTextInputLayout"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtCabo"
-                android:layout_width="135dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:textStyle="bold"
-                android:layout_marginEnd="0dp"
-                android:contentDescription="Texto bitola de cabo"
-                android:gravity="right"
+                android:gravity="center_horizontal"
                 android:textColor="@color/corTextoPadrao"
                 android:text="@string/txtBitolaCabo"
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/txtDsjuntor"
-                android:layout_width="135dp"
-                android:textStyle="bold"
-                android:layout_height="35dp"
-                android:layout_marginStart="50dp"
+                android:id="@+id/txtCaboresultado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="0dp"
-                android:contentDescription="Texto disjuntor"
-                android:gravity="right"
-                android:text="@string/txtDsjuntor"
+                android:gravity="center_horizontal"
                 android:textColor="@color/corTextoPadrao"
                 android:textSize="25dp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtCaboresultado"
-                android:layout_width="120dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="10dp"
+                android:id="@+id/txtDsjuntor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="20dp"
-                android:contentDescription="Resultado do dimensionamento do cabo"
-                android:gravity="right"
-                android:text=""
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:text="@string/txtDsjuntor"
                 android:textColor="@color/corTextoPadrao"
                 android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/txtDsjuntorResultado"
-                android:layout_width="120dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="20dp"
-                android:contentDescription="Texto dimensionamento do disjuntor"
-                android:gravity="right"
+                android:gravity="center_horizontal"
                 android:textColor="@color/corTextoPadrao"
-                android:text=""
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -142,30 +143,33 @@
 
         <ImageButton
             android:id="@+id/btnLimparDimensionamento"
-            android:layout_width="75dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="40dp"
             android:background="@color/corFundoPadrao"
             android:scaleType="fitCenter"
-            android:src="@drawable/img_btn_limpar" />
+            android:src="@drawable/img_btn_limpar"
+            android:layout_weight="1" />
 
         <ImageButton
             android:id="@+id/btnCalcularDimensionamento"
-            android:layout_width="75dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="40dp"
             android:background="@color/corFundoPadrao"
             android:scaleType="fitCenter"
-            android:src="@drawable/img_btn_calcular" />
+            android:src="@drawable/img_btn_calcular"
+            android:layout_weight="1" />
 
         <ImageButton
             android:id="@+id/btnVoltarDimensionamento"
-            android:layout_width="75dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="40dp"
             android:background="@color/corFundoPadrao"
             android:scaleType="fitCenter"
-            android:src="@drawable/img_btn_voltar" />
+            android:src="@drawable/img_btn_voltar"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
