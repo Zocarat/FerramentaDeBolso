@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import util.UltilidadeEletrica;
@@ -18,8 +19,10 @@ public class DimensionamentoActivity extends AppCompatActivity {
     UltilidadeEletrica dimensionamentoCabo;
     UltilidadeEletrica dimensionamentoDsjuntor;
 
-    Button btnCalcular;
-    Button btnVoltar;
+    ImageButton btnCalcular;
+    ImageButton btnVoltar;
+
+    ImageButton btnLimpar;
 
     TextView txtResultadoCabo;
     TextView txtResultadoDisjuntor;
@@ -36,6 +39,7 @@ public class DimensionamentoActivity extends AppCompatActivity {
 
         btnCalcular = findViewById(R.id.btnCalcularDimensionamento);
         btnVoltar = findViewById(R.id.btnVoltarDimensionamento);
+        btnLimpar = findViewById(R.id.btnLimparDimensionamento);
 
         corrente = findViewById(R.id.editCorrenteDimensionamento);
 
@@ -84,6 +88,26 @@ public class DimensionamentoActivity extends AppCompatActivity {
                 },0);
             }
         });
+
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        corrente.setText("");
+                        txtResultadoCabo.setText("");
+                        txtResultadoDisjuntor.setText("");
+
+                    }
+                },0);
+            }
+        });
+
+
+
 
     }
 }

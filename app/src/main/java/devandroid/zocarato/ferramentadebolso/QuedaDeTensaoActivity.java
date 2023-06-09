@@ -8,14 +8,17 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
 public class QuedaDeTensaoActivity extends AppCompatActivity {
-    Button btnVoltar;
-    Button btnCalcular;
+    ImageButton btnVoltar;
+    ImageButton btnCalcular;
+
+    ImageButton btnLimpar;
 
     EditText editTextCorrente;
     EditText editTextBitola;
@@ -33,6 +36,7 @@ public class QuedaDeTensaoActivity extends AppCompatActivity {
 
         btnVoltar = findViewById(R.id.btnVoltarQuedaDeTensao);
         btnCalcular = findViewById(R.id.btnCalcularQuedaDeTensao);
+        btnLimpar = findViewById(R.id.btnLimparQuedaDeTensao);
 
         editTextCorrente = findViewById(R.id.editCorrenteQueda);
         editTextBitola = findViewById(R.id.editBitolaQueda);
@@ -40,6 +44,25 @@ public class QuedaDeTensaoActivity extends AppCompatActivity {
         editTextTensao = findViewById(R.id.editTensaoQueda);
 
         txtResultadoQueda = findViewById(R.id.txtResultadoQueda);
+
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                editTextCorrente.setText("");
+                editTextBitola.setText("");
+                editTextDistancia.setText("");
+                editTextTensao.setText("");
+
+                txtResultadoQueda.setText("");
+
+
+
+
+            }
+        });
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,223 +1,217 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/corFundoPadrao"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/corFundoPadrao">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <ImageView
+        android:id="@+id/imgLogoEletrica"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Icone eletrica"
+        app:srcCompat="@drawable/logo_eletrica" />
+
+    <TextView
+        android:id="@+id/txtTituloEletrica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgLogoEletrica"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:contentDescription="Título eletrica"
+        android:text="@string/txtTituloEletrica"
+        android:textStyle="bold"
+        android:textColor="@color/corTextoPadrao"
+        android:textSize="35sp" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".GrandezasEletricaActivity">
-
-        <ImageView
-            android:id="@+id/imgLogoEletrica"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:contentDescription="Icone eletrica"
-            app:srcCompat="@drawable/logo_eletrica" />
-
-        <TextView
-            android:id="@+id/txtTituloEletrica"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:contentDescription="Título eletrica"
-            android:text="@string/txtTituloEletrica"
-            android:textStyle="bold"
-            android:textColor="@color/corTextoPadrao"
-            android:textSize="35sp" />
+        android:layout_below="@id/txtTituloEletrica"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtTensao"
+                android:layout_width="150dp"
+                android:textStyle="bold"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Tensão"
+                android:textColor="@color/corTextoPadrao"
+                android:gravity="left"
+                android:text="@string/txtTensao"
+                android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/txtTensao"
-                    android:layout_width="150dp"
-                    android:textStyle="bold"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="10dp"
-                    android:contentDescription="Tensão"
-                    android:textColor="@color/corTextoPadrao"
-                    android:gravity="left"
-                    android:text="@string/txtTensao"
-                    android:textSize="25sp" />
-
-                <TextView
-                    android:id="@+id/txtCorrente"
-                    android:layout_width="150dp"
-                    android:textStyle="bold"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
-                    android:contentDescription="Corrente"
-                    android:textColor="@color/corTextoPadrao"
-                    android:gravity="right"
-                    android:text="@string/txtCorrente"
-                    android:textSize="25sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/editTextTensao"
-                    android:layout_width="155dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/edittext_rounded_background"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textColorHint="@color/black" />
-
-                <EditText
-                    android:id="@+id/editTextCorrente"
-                    android:layout_width="155dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="20dp"
-                    android:contentDescription="Campo corrente"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/black"
-                    android:background="@drawable/edittext_rounded_background"
-                    android:textColorHint="@color/black"
-                    android:gravity="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtPotencia"
-                    android:layout_width="150dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
-                    android:contentDescription="Texto potencia"
-                    android:gravity="center_horizontal"
-                    android:text="@string/txtPotencia"
-                    android:textStyle="bold"
-                    android:textColor="@color/corTextoPadrao"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/txtResistencia"
-                    android:layout_width="150dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
-                    android:contentDescription="Texto resitencia"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/corTextoPadrao"
-                    android:text="@string/txtResistencia"
-                    android:textSize="25dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/editTextPotencia"
-                    android:layout_width="155dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/edittext_rounded_background"
-                    android:contentDescription="campo potencia"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:gravity="center" />
-
-                <EditText
-                    android:id="@+id/editTextResistencia"
-                    android:layout_width="155dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/edittext_rounded_background"
-                    android:contentDescription="Campo resistencia"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:gravity="center" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/txtCorrente"
+                android:layout_width="150dp"
+                android:textStyle="bold"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="Corrente"
+                android:textColor="@color/corTextoPadrao"
+                android:gravity="right"
+                android:text="@string/txtCorrente"
+                android:textSize="25sp" />
         </LinearLayout>
 
-        <Button
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextTensao"
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/edittext_rounded_background"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/editTextCorrente"
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="Campo corrente"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_rounded_background"
+                android:textColorHint="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPotencia"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="Texto potencia"
+                android:gravity="center_horizontal"
+                android:text="@string/txtPotencia"
+                android:textStyle="bold"
+                android:textColor="@color/corTextoPadrao"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/txtResistencia"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="Texto resitencia"
+                android:gravity="center_horizontal"
+                android:textColor="@color/corTextoPadrao"
+                android:text="@string/txtResistencia"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextPotencia"
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/edittext_rounded_background"
+                android:contentDescription="campo potencia"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/editTextResistencia"
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/edittext_rounded_background"
+                android:contentDescription="Campo resistencia"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
             android:id="@+id/btnCalcularEletrica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:textStyle="bold"
-            android:contentDescription="Botão calcular"
-            android:text="@string/txtBtnCalcularEletrica"
-            android:textSize="@dimen/tamanhoFonteBotao" />
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_calcular" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnLimparMenuEletrica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:textStyle="bold"
-            android:contentDescription="Botão limpar"
-            android:text="@string/txtBtnLimparEletrica"
-            android:textSize="@dimen/tamanhoFonteBotao" />
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_limpar" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnVoltarMenuEletrica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:layout_marginEnd="20dp"
-            android:contentDescription="Botão voltar"
-            android:text="@string/txtButtonVoltarMenu"
-            android:textSize="@dimen/tamanhoFonteBotao" />
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_voltar" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

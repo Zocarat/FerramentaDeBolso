@@ -13,14 +13,16 @@
         android:theme="@style/Theme.FerramentaDeBolso"
         tools:targetApi="31">
         <activity
-            android:name=".ComprimentoNewActivity"
-            android:theme="@style/ThemeSpinnerList"
-
+            android:name=".CampoDeTextActivity"
             android:exported="false" />
         <activity
+            android:name=".ComprimentoNewActivity"
+            android:exported="false"
+            android:theme="@style/ThemeSpinnerList" />
+        <activity
             android:name="view.PressaoActivity"
-            android:theme="@style/ThemeSpinnerList"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/ThemeSpinnerList" />
         <activity
             android:name=".QuedaDeTensaoActivity"
             android:exported="false" />
@@ -50,7 +52,6 @@
             android:exported="false" />
         <activity
             android:name="view.ComprimentoNewActivity"
-
             android:exported="false" />
         <activity
             android:name="view.MenuPrincipal"

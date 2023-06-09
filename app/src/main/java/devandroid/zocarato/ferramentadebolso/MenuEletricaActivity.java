@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import view.GrandezasEletricaActivity;
 import view.MenuPrincipal;
 
 public class MenuEletricaActivity extends AppCompatActivity {
 
-    Button btnGrandezasEletricas;
-    Button btnDimensionamento;
-    Button btnQuedaDeTensao;
-    Button btnVoltar;
+    ImageButton btnGrandezasEletricas;
+    ImageButton btnDimensionamento;
+    ImageButton btnQuedaDeTensao;
+    ImageButton btnVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

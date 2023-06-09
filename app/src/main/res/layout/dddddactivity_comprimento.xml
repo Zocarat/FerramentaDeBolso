@@ -55,6 +55,7 @@
             android:inputType="numberDecimal"
             android:textColor="@color/black"
             android:gravity="center" />
+        
 
         <TextView
             android:id="@+id/txtPolegadasXml"

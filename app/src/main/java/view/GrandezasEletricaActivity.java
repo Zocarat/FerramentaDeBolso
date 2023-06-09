@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
@@ -17,9 +18,9 @@ import util.UltilidadeEletrica;
 public class GrandezasEletricaActivity extends AppCompatActivity {
 
     UltilidadeEletrica funcao;
-    Button btnVoltarMenu;
-    Button btnLimparEletrica;
-    Button btnCalcularEletrica;
+    ImageButton btnVoltarMenu;
+    ImageButton btnLimparEletrica;
+    ImageButton btnCalcularEletrica;
 
     EditText editTextTensao;
     EditText editTextCorrente;
