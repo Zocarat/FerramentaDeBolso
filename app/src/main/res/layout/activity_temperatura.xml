@@ -7,23 +7,23 @@
 
     <ImageView
         android:id="@+id/imgLogoTemperatura"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:contentDescription="Ícone menu temperatura"
-        app:srcCompat="@drawable/logo_temperatura" />
+        app:srcCompat="@drawable/button_img_temperatura" />
 
     <TextView
         android:id="@+id/txtTemperatura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_below="@id/imgLogoTemperatura"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:contentDescription="Título menu temperatura"
         android:textColor="@color/corTextoPadrao"
-        android:text="@string/txtTemperatura"
+        android:text=""
         android:textStyle="bold"
         android:textSize="35sp" />
 

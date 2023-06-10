@@ -7,22 +7,22 @@
 
     <ImageView
         android:id="@+id/imgLogoEletricaDimensionamento"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:contentDescription="Ícone dimensionamento"
-        app:srcCompat="@drawable/logo_eletrica" />
+        app:srcCompat="@drawable/img_button_dimensionamento" />
 
     <TextView
         android:id="@+id/txtDimensionamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_below="@id/imgLogoEletricaDimensionamento"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:contentDescription="Texto dimensionamento"
-        android:text="@string/txtTituloDimensionamento"
+        android:text=""
         android:textColor="@color/corTextoPadrao"
         android:textSize="35sp" />
 

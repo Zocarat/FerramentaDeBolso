@@ -18,23 +18,23 @@
 
             <ImageView
                 android:id="@+id/imgLogoEletricaMenu"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="80dp"
                 android:background="@color/corFundoPadrao"
                 android:contentDescription="Icone menu eletrica"
-                app:srcCompat="@drawable/logo_eletrica" />
+                app:srcCompat="@drawable/button_img_eletrica" />
 
             <TextView
                 android:id="@+id/txtMenuEletrico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="0dp"
                 android:contentDescription="Texto titulo menu eletrica"
                 android:textColor="@color/corTextoPadrao"
-                android:text="@string/txtTituloEletrica"
+                android:text=""
                 android:textStyle="bold"
                 android:textSize="35sp" />
 

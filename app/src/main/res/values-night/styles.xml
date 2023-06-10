@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
-    <!-- Tema para o modo noturno -->
-    <style name="ThemeSpinnerList" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Defina as cores de fundo e texto para o modo noturno -->
-        <item name="android:background">@color/corFundoPadrao</item>
-        <item name="android:textColor">@color/corTextoPadrao</item>
-    </style>
-    <style name="BotaoArredondado" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/botao_config</item>
-    </style>
-
     <style name="TextInputLayoutTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/black</item>
-        <item name="android:textColorHint">@color/black</item>
+
     </style>
 
+    <style name="ButtonCustom.Dark" parent="Widget.AppCompat.Button">
+
+        <!-- Outras propriedades do estilo aqui -->
+    </style>
+
+    <style name="EstiloImputLayoutPadrao" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    </style>
+
+    <style name="EstiloEditTextPadrao" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+    </style>
+
+    <style name="MyHintTextAppearance" parent="TextAppearance.MaterialComponents.Subtitle1">
+
+    </style>
 </resources>

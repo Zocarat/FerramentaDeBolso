@@ -1,18 +1,26 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="Base.Theme.FerramentaDeBolso" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Customize your light and dark themes here -->
     </style>
 
+    <style name="Theme.FerramentaDeBolso" parent="Base.Theme.FerramentaDeBolso" />
 
-        <!-- Tema para o modo noturno -->
-        <style name="ThemeSpinnerList2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-            <!-- Defina as cores de fundo e texto para o modo noturno -->
-            <item name="android:background">@color/corFundoPadrao</item>
-            <item name="android:textColor">@color/corTextoPadrao</item>
+    <!-- Tema para o modo noturno -->
+    <style name="ThemeSpinnerList" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Defina as cores de fundo e texto para o modo noturno -->
+        <item name="android:background">@color/corFundoPadrao</item>
+        <item name="android:textColor">@color/corTextoPadrao</item>
+    </style>
+
+    <style name="ThemeSpinnerList.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Estilo para o modo noturno -->
+        <item name="android:background">@color/corFundoPadrao</item>
+        <item name="android:textColor">@color/corTextoPadrao</item>
+    </style>
+
+        <style name="AppTheme" parent="Base.Theme.FerramentaDeBolso">
+            <!-- Outras configurações do tema noturno -->
         </style>
-
-
 
 </resources>

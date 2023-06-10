@@ -10,8 +10,8 @@ android {
         applicationId "devandroid.zocarato.ferramentadebolso"
         minSdk 26
         targetSdk 33
-        versionCode 6
-        versionName "2.5"
+        versionCode 7
+        versionName "2.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

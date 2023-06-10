@@ -7,22 +7,22 @@
 
     <ImageView
         android:id="@+id/imgLogoEletrica"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:contentDescription="Icone eletrica"
-        app:srcCompat="@drawable/logo_eletrica" />
+        app:srcCompat="@drawable/img_button_grandezas" />
 
     <TextView
         android:id="@+id/txtTituloEletrica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_below="@id/imgLogoEletrica"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:contentDescription="Título eletrica"
-        android:text="@string/txtTituloEletrica"
+        android:text=""
         android:textStyle="bold"
         android:textColor="@color/corTextoPadrao"
         android:textSize="35sp" />
