@@ -14,85 +14,113 @@
         android:contentDescription="Ícone menu temperatura"
         app:srcCompat="@drawable/button_img_temperatura" />
 
-    <TextView
-        android:id="@+id/txtTemperatura"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/imgLogoTemperatura"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:contentDescription="Título menu temperatura"
-        android:textColor="@color/corTextoPadrao"
-        android:text=""
-        android:textStyle="bold"
-        android:textSize="35sp" />
+        android:layout_marginTop="15dp"
+        >
 
-    <TextView
-        android:id="@+id/txtGrauCelsius"
+
+        <LinearLayout
+        style="@style/StyleLayoutCorpoPrincipal"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_below="@id/txtTemperatura"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Texto campo Celsius"
-        android:gravity="center_horizontal"
-        android:textColor="@color/corTextoPadrao"
-        android:textStyle="bold"
-        android:text="@string/txtCelsus"
-        android:textSize="25sp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogoTemperatura"
+        android:gravity="center_vertical"
 
-    <EditText
-        android:id="@+id/edit_celsus_xml"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/txtGrauCelsius"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/edittext_rounded_background"
-        android:contentDescription="Campo digitação Celsius"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:gravity="center" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtFahrenheit"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_below="@id/edit_celsus_xml"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="Texto campo Fahrenheit"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textColor="@color/corTextoPadrao"
-        android:text="@string/txtFiren"
-        android:textSize="25sp" />
 
-    <EditText
-        android:id="@+id/edit_Firen_xml"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/txtFahrenheit"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/edittext_rounded_background"
-        android:contentDescription="Campo digitação Fahrenheit"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:gravity="center" />
+        <LinearLayout
+            style="@style/StyleLayoutBottonHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="0dp"
+            android:layout_gravity="center"  >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_above="@id/linearLayoutBotoes" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/imput_celsus_xml"
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Celsus">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_celsus_xml"
+                    style="@style/EstiloEditTextPadrao"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="center">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/StyleLayoutConjuntoVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/imputFirenait"
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fahrenheit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                  android:id="@+id/editTextFirenait"
+                    style="@style/EstiloEditTextPadrao">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutFirenait"
+            style="@style/StyleLayoutConjuntoVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kevin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EstiloEditTextPadrao"
+                    android:id="@+id/EditTextKevin"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+
+                    >
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
     <LinearLayout
         android:id="@+id/linearLayoutBotoes"
         android:layout_width="match_parent"
@@ -129,5 +157,6 @@
             android:src="@drawable/img_btn_voltar" />
 
     </LinearLayout>
+
 
 </RelativeLayout>

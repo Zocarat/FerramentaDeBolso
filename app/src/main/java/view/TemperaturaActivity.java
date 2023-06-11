@@ -2,102 +2,102 @@ package view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UltilidadeTemperatura;
-import util.UtilidadesPressao;
 
 public class TemperaturaActivity extends AppCompatActivity {
-
     EditText editCelsus;
     EditText editFahrenheit;
-
-    ImageButton btnLimparTemperatura;
-    ImageButton btnCacularTemperatura;
-    ImageButton btnMenuPrincipal;
+    EditText editKevin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperatura);
 
-
         editCelsus = findViewById(R.id.edit_celsus_xml);
-        editFahrenheit = findViewById(R.id.edit_Firen_xml);
+        editFahrenheit = findViewById(R.id.editTextFirenait);
+        editKevin = findViewById(R.id.EditTextKevin);
 
-        btnLimparTemperatura = findViewById(R.id.btnLimparTemperatura);
-        btnCacularTemperatura = findViewById(R.id.btnCalcularTemperatura);
-        btnMenuPrincipal = findViewById(R.id.btnVoltarMenu);
+        ImageButton btnCalcularTemperatura = findViewById(R.id.btnCalcularTemperatura);
+        btnCalcularTemperatura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcularTemperatura();
+            }
+        });
 
+        ImageButton btnLimparTemperatura = findViewById(R.id.btnLimparTemperatura);
         btnLimparTemperatura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //TODO colocar na classe de operacao
-
-                //UltilidadeTemperatura limpar;
-                //limpar =  new UltilidadeTemperatura();
-               // limpar.lmparTemperatura();
-                editCelsus.setText("");
-                editFahrenheit.setText("");
-
+                limparTemperatura();
             }
         });
 
-        btnCacularTemperatura.setOnClickListener(new View.OnClickListener() {
+        ImageButton btnVoltarMenu = findViewById(R.id.btnVoltarMenu);
+        btnVoltarMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(editFahrenheit.getText()) && (TextUtils.isEmpty(editCelsus.getText()))){
-                    editFahrenheit.setError("* Valor Inválido");
-                    editCelsus.setError("* Valor Inválido");
-
-                }
-                if (TextUtils.isEmpty(editCelsus.getText()) && (editFahrenheit.getText().length() >0)){
-                    String resultado;
-                    UltilidadeTemperatura converter;
-                    converter = new UltilidadeTemperatura();
-                    resultado = converter.fahrenheitParaCelsus(Double.parseDouble(editFahrenheit.getText().toString()));
-                    //String resultMenor = String.format("%.2f", resultado);
-                    editCelsus.setText(resultado);
-
-                }
-                if (TextUtils.isEmpty(editFahrenheit.getText()) && (editCelsus.getText().length() >0)){
-                    String resultado;
-                    UltilidadeTemperatura converter;
-                    converter = new UltilidadeTemperatura();
-                    resultado = converter.celsusParafahrenheit(Double.parseDouble(editCelsus.getText().toString()));
-                    //String resultMenor = String.format("%.2f", resultado);
-                    editFahrenheit.setText(resultado);
-
-                }
+                voltarMenuPrincipal();
             }
         });
+    }
 
-        btnMenuPrincipal.setOnClickListener(new View.OnClickListener() {
+    private void calcularTemperatura() {
+        String celsiusString = editCelsus.getText().toString().trim();
+        String fahrenheitString = editFahrenheit.getText().toString().trim();
+        String kelvinString = editKevin.getText().toString().trim();
 
+        if (!TextUtils.isEmpty(celsiusString)) {
+            double celsius = Double.parseDouble(celsiusString);
+            double fahrenheit = UltilidadeTemperatura.celsusParaFahrenheit(celsius);
+            double kelvin = UltilidadeTemperatura.celsusParaKelvin(celsius);
+            editFahrenheit.setText(String.valueOf(fahrenheit));
+            editKevin.setText(String.valueOf(kelvin));
+        } else if (!TextUtils.isEmpty(fahrenheitString)) {
+            double fahrenheit = Double.parseDouble(fahrenheitString);
+            double celsius = UltilidadeTemperatura.fahrenheitParaCelsus(fahrenheit);
+            double kelvin = UltilidadeTemperatura.celsusParaKelvin(celsius);
+            editCelsus.setText(String.valueOf(celsius));
+            editKevin.setText(String.valueOf(kelvin));
+        } else if (!TextUtils.isEmpty(kelvinString)) {
+            double kelvin = Double.parseDouble(kelvinString);
+            double celsius = UltilidadeTemperatura.kelvinParaCelsius(kelvin);
+            double fahrenheit = UltilidadeTemperatura.celsusParaFahrenheit(celsius);
+            editCelsus.setText(String.valueOf(celsius));
+            editFahrenheit.setText(String.valueOf(fahrenheit));
+        }
+    }
+
+    private void limparTemperatura() {
+        editCelsus.setText("");
+        editFahrenheit.setText("");
+        editKevin.setText("");
+    }
+
+    private void voltarMenuPrincipal() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        Intent telaPrincipal = new Intent(TemperaturaActivity.this, MenuPrincipal.class);
-                        startActivity(telaPrincipal);
-                        finish();
-                    }
-                }, 0);
-
+            public void run() {
+                Intent telaPrincipal = new Intent(TemperaturaActivity.this, MenuPrincipal.class);
+                startActivity(telaPrincipal);
+                finish();
             }
-
-
-        });
-
+        }, 0);
     }
 }

@@ -70,6 +70,7 @@ public class AreaActivity extends AppCompatActivity {
         editTextX3D.addTextChangedListener(new CustomTextWatcher(editTextX3D));
         editTextY3D.addTextChangedListener(new CustomTextWatcher(editTextY3D));
         editTextZ3D.addTextChangedListener(new CustomTextWatcher(editTextZ3D));
+        editTextDiametro.addTextChangedListener(new CustomTextWatcher(editTextDiametro));
 
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {

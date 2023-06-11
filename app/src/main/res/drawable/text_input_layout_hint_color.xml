@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cor do hint quando em foco (clicado ou selecionado) -->
+    <item android:state_focused="true" android:color="@color/hint_color_focused" />
+
+    <!--Define a cor do hint quando o TextInputLayout está habilitado ou desabilitado. -->
+    <item android:state_enabled="true" android:color="@color/hint_color_enabled" />
+
+    <!--android:state_pressed: Define a cor do hint quando o TextInputLayout está sendo pressionado. -->
+    <item android:state_pressed="true" android:color="@color/hint_color_pressed" />
+
+    <!--android:state_pressed: Define a cor do hint quando o TextInputLayout está sendo pressionado. -->
+    <item android:state_selected="true" android:color="@color/hint_color_selected" />
+
+    <!-- Cor do hint padrão -->
+    <item android:color="@color/hint_color_defaul" />
+</selector>

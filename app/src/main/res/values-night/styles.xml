@@ -1,22 +1,75 @@
 <resources>
-    <style name="TextInputLayoutTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </style>
 
-    <style name="ButtonCustom.Dark" parent="Widget.AppCompat.Button">
 
-        <!-- Outras propriedades do estilo aqui -->
-    </style>
 
+
+    <!-- ================================================================================================================================== -->
     <style name="EstiloImputLayoutPadrao" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:background">@color/corFundoPadrao</item>
+        <item name="hintTextAppearance">@style/MyHintTextAppearance</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20dp</item>
+
+
+        <item name="android:layout_weight">1</item>
+        <item name="boxStrokeColor">#422E12</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item><!--     R    -->
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxStrokeWidthFocused">4dp</item>
+
+        <item name="android:textColorHint">@drawable/text_input_layout_hint_color</item>
+
 
     </style>
 
+    <!-- Estilo para o TextInputEditText -->
     <style name="EstiloEditTextPadrao" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColor">@color/corTextoPadrao</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginHorizontal">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:inputType">number|numberSigned|numberDecimal</item>
+        <item name="android:editTextColor">#FF9800</item>
+
+        <item name="android:layout_weight">1</item>
+
+
 
     </style>
-
+    <!-- Estilo para o texto de dica (hint) -->
     <style name="MyHintTextAppearance" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/corTextoPadrao</item>
+        <item name="android:textSize">12sp</item>
+
+
+
+
+
 
     </style>
+    <!-- ================================================================================================================================== -->
+
+    <style name="StyleTextResultados" parent="Widget.AppCompat.TextView">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/corTextoPadrao</item>
+        <item name="android:padding">0dp</item>       <!-- =============   espacamento  =============   -->
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_gravity">center</item>
+
+    </style>
+
 </resources>

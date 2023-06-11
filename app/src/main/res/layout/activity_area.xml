@@ -34,6 +34,7 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/imageViewPorcentagem"
                 android:layout_marginTop="30dp"
+
                 android:orientation="vertical">
 
                 <!-- Campos de texto para cálculo 2D -->
@@ -43,48 +44,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
-
+                    android:layout_weight="1"
                     android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputLayoutLargura2D"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:hint="X 2D"
+                        style="@style/EstiloImputLayoutPadrao"
                         android:layout_marginHorizontal="10dp"
-                        android:orientation="horizontal">
+                       >
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextLargura2D"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="0dp"
-                            android:gravity="center"
                             android:inputType="numberDecimal"
-
-                            android:textColor="@color/corTextoPadrao" />
+                           style="@style/EstiloEditTextPadrao"
+                            />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputLayoutAltura2D"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:hint="Y 2D"
-                        android:orientation="horizontal">
+                        style="@style/EstiloImputLayoutPadrao"
+                        >
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextAltura2D"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="10dp"
-                            android:gravity="center"
                             android:inputType="numberDecimal"
-                            android:textColor="@color/corTextoPadrao" />
+                            style="@style/EstiloEditTextPadrao"
+                            />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,15 +83,8 @@
 
                 <TextView
                     android:id="@+id/textViewResultado2D"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/corTextoPadrao"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    style="@style/StyleTextResultados"
+                    />
 
             </LinearLayout>
 
@@ -111,7 +94,7 @@
                 android:id="@+id/layoutCalculo3D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:orientation="vertical">
@@ -126,73 +109,45 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutLargura3D"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="1"
+                    style="@style/EstiloImputLayoutPadrao"
                     android:hint="X 3D">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextX3D"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
                         android:inputType="numberDecimal"
+                        style="@style/EstiloEditTextPadrao"
                         android:textColor="@color/black" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutAltura3D"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="1"
+                    style="@style/EstiloImputLayoutPadrao"
                     android:hint="Y 3D">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextY3D"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="numberDecimal"
-                        android:gravity="center"
-                        android:textColor="@color/black" />
+                        style="@style/EstiloEditTextPadrao"
+                        android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutProfundidade3D"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="1"
-                    android:hint="Z 3D">
+                    android:hint="Z 3D"
+                    style="@style/EstiloImputLayoutPadrao" >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextZ3D"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        style="@style/EstiloEditTextPadrao"
                         android:inputType="numberDecimal"
-                        android:gravity="center"
-                        android:textColor="@color/black" />
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
                 <TextView
                     android:id="@+id/textViewResultado3D"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="054"
-
-
-
+                    style="@style/StyleTextResultados"
                     />
 
             </LinearLayout>
@@ -209,34 +164,32 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutDiametro"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:hint="Diâmetro">
+                    android:hint="Diâmetro"
+                    style="@style/EstiloImputLayoutPadrao"
+                    android:inputType="numberDecimal"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextDiametro"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        style="@style/EstiloEditTextPadrao"
                         android:inputType="numberDecimal"
-                        android:gravity="center"
-                        android:textColor="@color/black" />
+                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:id="@+id/textViewResultadoDiametro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="oi"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp"
+                    style="@style/StyleTextResultados"
 
                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="300dp">
+
+
             </LinearLayout>
 
         </LinearLayout>

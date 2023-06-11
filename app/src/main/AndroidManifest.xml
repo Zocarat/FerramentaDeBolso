@@ -14,56 +14,66 @@
         tools:targetApi="31">
         <activity
             android:name=".AreaActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".PorcentagemActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".CampoDeTextActivity"
             android:exported="false" />
         <activity
-            android:name=".ComprimentoNewActivity"
+            android:name="view.ComprimentoNewActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:theme="@style/ThemeSpinnerList" />
         <activity
             android:name="view.PressaoActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:theme="@style/ThemeSpinnerList" />
         <activity
             android:name=".QuedaDeTensaoActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".BloqueioActivity"
             android:exported="false" />
         <activity
             android:name=".DimensionamentoActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MenuEletricaActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="view.GrandezasEletricaActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="view.TabelaPolegadaMmActivity"
             android:exported="false" />
         <activity
             android:name=".PolegadasMilimetrosActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="view.TemperaturaActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="view.dddddddddddddddddddPressaoActivity"
             android:exported="false" />
-        <activity
-            android:name="view.ComprimentoNewActivity"
-            android:exported="false" />
+
         <activity
             android:name="view.MenuPrincipal"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name="view.SplashActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

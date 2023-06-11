@@ -10,6 +10,13 @@
     <color name="corBotaoPadrao">#6750A3</color>
 
 
+    <color name="hint_color_focused">#164870</color>
+    <color name="hint_color_defaul">#040936</color>
+    <color name="hint_color_enabled">#45260C</color>
+    <color name="hint_color_pressed">#501212</color>
+    <color name="hint_color_selected">#17574C</color>
+
+
 
 
 

@@ -1,4 +1,4 @@
-package devandroid.zocarato.ferramentadebolso;
+package view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,7 @@ import android.os.Bundle;
 // Importe as classes necessárias
 import android.os.Handler;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -21,7 +18,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import view.MenuPrincipal;
+import devandroid.zocarato.ferramentadebolso.R;
 
 
 public class ComprimentoNewActivity extends AppCompatActivity {

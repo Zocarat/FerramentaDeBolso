@@ -19,8 +19,4 @@
         <item name="android:textColor">@color/corTextoPadrao</item>
     </style>
 
-        <style name="AppTheme" parent="Base.Theme.FerramentaDeBolso">
-            <!-- Outras configurações do tema noturno -->
-        </style>
-
 </resources>

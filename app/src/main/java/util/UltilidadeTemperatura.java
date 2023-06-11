@@ -10,32 +10,24 @@ import devandroid.zocarato.ferramentadebolso.R;
 
 public class UltilidadeTemperatura extends AppCompatActivity {
 
-    EditText editCelsus;
-    EditText editFahrenheint;
-
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        editCelsus = findViewById(R.id.edit_celsus_xml);
-        editFahrenheint = findViewById(R.id.edit_Firen_xml);
-    }
-
-    public void lmparTemperatura (){
+    public static void lmparTemperatura(EditText editCelsus, EditText editFahrenheit) {
         editCelsus.setText("");
-        editFahrenheint.setText("");
-
+        editFahrenheit.setText("");
     }
 
-    public String fahrenheitParaCelsus (double fahrenheit ){
-        double resultado = (fahrenheit - 32) * 5 / 9;
-        return resultado + "";
-    }
-    public String celsusParafahrenheit (double celsus){
-        double resultado = (celsus * 9 / 5) + 32;
-
-        return resultado +"";
+    public static double fahrenheitParaCelsus(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
     }
 
+    public static double celsusParaFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    public static double celsusParaKelvin(double celsius) {
+        return celsius + 273.15;
+    }
+
+    public static double kelvinParaCelsius(double kelvin) {
+        return kelvin - 273.15;
+    }
 }

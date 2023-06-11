@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
-import devandroid.zocarato.ferramentadebolso.ComprimentoNewActivity;
 import devandroid.zocarato.ferramentadebolso.R;
 
 public class TabelaPolegadaMmActivity extends AppCompatActivity {
