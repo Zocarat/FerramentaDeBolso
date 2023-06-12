@@ -11,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FAD570"
         android:orientation="horizontal">
 
         <TextView
@@ -54,7 +55,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:contentDescription="Icone do menu principal"
-            app:srcCompat="@drawable/logo_main" />
+            app:srcCompat="@drawable/logo_menu_principal_fb" />
 
 
         <ScrollView
@@ -189,10 +190,43 @@
         </ScrollView>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:background="#FBD670"
+
+            >
 
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:onClick="abrirInsta"
+                app:srcCompat="@drawable/logo_instagram" />
+
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logo_zocarato" />
+
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="abrirFacebook"
+                app:srcCompat="@drawable/logo_facebook" />
         </LinearLayout>
 
     </LinearLayout>

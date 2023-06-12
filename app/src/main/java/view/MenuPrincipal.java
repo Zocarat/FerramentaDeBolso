@@ -3,6 +3,7 @@ package view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -203,6 +204,30 @@ public class MenuPrincipal extends AppCompatActivity {
 
 
     }
+
+    public void abrirFacebook(View view) {
+        String facebookUrl = "https://www.facebook.com/profile.php?id=100093407326893&mibextid=ZbWKwL"; // Substitua pelo URL do perfil do Facebook desejado
+
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + facebookUrl)));
+        } catch (Exception e) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl)));
+        }
+    }
+
+
+    public void abrirInsta(View view) {
+        String instagramUrl = "https://instagram.com/zocarato_dev?igshid=MzRlODBiNWFlZA=="; // Substitua pelo URL do perfil do Facebook desejado
+
+        try {
+            // Abre o aplicativo do Instagram, se instalado
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl)));
+        } catch (Exception e) {
+            // Se o aplicativo do Instagram não estiver instalado, abre o navegador com o link do perfil
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl)));
+        }
+    }
+
     protected void onResume() {
         super.onResume();
         handler.postDelayed(runnable, 0);

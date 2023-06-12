@@ -36,8 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="250dp"
-        android:text="Versão 2.9"
+        android:layout_marginTop="100dp"
+        android:text="Versão 2.9.1"
         android:textColor="@color/corTextoPadrao"
         android:textStyle="bold" />
 

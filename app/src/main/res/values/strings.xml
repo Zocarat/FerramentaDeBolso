@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">FerramentaDeBolso</string>
+    <string name="app_name">Ferramenta De Bolso</string>
     <string name="txtCredito">By Zocarato</string>
     <string name="txtData">Data</string>
     <string name="txtHora">Hora</string>
 
     <string name="TamanhoFonteBotoes">20dp</string>
-
 
     <string name="txtBtnEletrica">Eletrica</string>
     <string name="txtBtnLimparEletrica">Limpar</string>
@@ -22,25 +21,20 @@
     <string name="txtTituloComprimento">Comprimento</string>
     <string name="txtBtnCalcular">Calcular</string>
 
-
     <string name="txtTutiloQuedaDeTensao">Queda de Tensão</string>
-
 
     <string name="txtDistancia">Distância</string>
 
     <string name="txtBitolaCabo">Cabo: </string>
     <string name="txtDsjuntor">Disjuntor: </string>
 
-
     <string name="txtCorrente">Corrente (A)</string>
-
 
     <string name="txtComprimento">Comprimento</string>
     <string name="txtHintMilimetro">Milímetro</string>
     <string name="txtHintPolegada">Polegadas</string>
     <string name="TxtTituloTabelas">Tabela</string>
     <string name="txtTabelaVoltarPlegadasMilimetros">Voltar</string>
-
 
     <string name="txtTituloPressao">Pressão</string>
     <string name="txtBar">Bar</string>
@@ -61,6 +55,5 @@
     <string name="txtButtonTemperatura">Temperatura</string>
     <string name="txtButtonVoltarMenu">Voltar</string>
     <string name="txtButtonLimpar">Limpar</string>
-
 
 </resources>
