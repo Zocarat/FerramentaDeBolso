@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import devandroid.zocarato.ferramentadebolso.AreaActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
+import devandroid.zocarato.ferramentadebolso.PesoActivity;
 import devandroid.zocarato.ferramentadebolso.PorcentagemActivity;
 import devandroid.zocarato.ferramentadebolso.R;
 import util.UltilidadesGeral;
@@ -31,6 +32,7 @@ public class MenuPrincipal extends AppCompatActivity {
     ImageButton btn_Porcentagem_Menu;
 
     ImageButton btn_Area_Menu;
+    ImageButton btn_Peso_Menu;
 
     TextView txtDataSistema;
     TextView txtHoraSistema;
@@ -58,6 +60,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btn_Temperatura_Menu = findViewById(R.id.btnTemperaturaMenu);
         btn_Porcentagem_Menu = findViewById(R.id.btnPorcentagemMenu);
         btn_Area_Menu = findViewById(R.id.btnAreaMenu);
+        btn_Peso_Menu = findViewById(R.id.btnPesuMenu);
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -89,9 +92,10 @@ public class MenuPrincipal extends AppCompatActivity {
                 },0);
             }
         });
+        // ============================================================================
         btn_Comprimento_Menu.setOnClickListener(new View.OnClickListener() {
 
-//========================================
+
             @Override
             public void onClick(View v) {
                 new Handler().postDelayed(new Runnable() {
@@ -105,9 +109,10 @@ public class MenuPrincipal extends AppCompatActivity {
                 },0);
 
              }
-// ========================================
+
 
         });
+        // ============================================================================
         btn_Pressao_Menu.setOnClickListener(new View.OnClickListener() {
 
             //========================================
@@ -124,10 +129,10 @@ public class MenuPrincipal extends AppCompatActivity {
                 },0);
 
             }
-// ========================================
+
 
         });
-
+        // ============================================================================
         btn_Temperatura_Menu.setOnClickListener(new View.OnClickListener() {
 
                @Override
@@ -144,7 +149,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
             }
         });
-
+        // ============================================================================
         btn_Porcentagem_Menu.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -161,7 +166,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
             }
         });
-
+        // ============================================================================
         btn_Area_Menu.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -178,8 +183,22 @@ public class MenuPrincipal extends AppCompatActivity {
 
             }
         });
+        // ============================================================================
 
+        btn_Peso_Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
+                        Intent telaEletrica = new Intent(MenuPrincipal.this, PesoActivity.class);
+                        startActivity(telaEletrica);
+                        finish();
+                    }
+                },0);
+            }
+        });
 
 
 

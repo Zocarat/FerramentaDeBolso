@@ -20,13 +20,23 @@
         app:srcCompat="@drawable/logo_principal" />
 
 
+    <ImageView
+        android:id="@+id/imgLogozoca"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/logo_zocarato" />
+
+
 
     <TextView
         android:id="@+id/txtVersao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="250dp"
         android:text="Versão 2.9"
         android:textColor="@color/corTextoPadrao"
         android:textStyle="bold" />

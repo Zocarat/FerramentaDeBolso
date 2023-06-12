@@ -25,8 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:hint="Porcentagem">
+            style="@style/EstiloImputLayoutPadrao"
+            android:hint="Valor">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPorcentagemDeTotal"
@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                style="@style/EstiloEditTextPadrao"
                 android:textColor="@color/corTextoPadrao"
                 android:inputType="numberDecimal" />
 
@@ -52,13 +53,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            style="@style/EstiloImputLayoutPadrao"
             android:hint="Valor Total">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextValorTotal1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                style="@style/EstiloEditTextPadrao"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
                 android:textColor="@color/corTextoPadrao"
@@ -97,7 +99,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+
+            style="@style/EstiloImputLayoutPadrao"
             android:hint="Parte">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -107,6 +110,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:textColor="@color/corTextoPadrao"
                 android:gravity="center"
+                style="@style/EstiloEditTextPadrao"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -124,7 +128,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            style="@style/EstiloImputLayoutPadrao"
             android:hint="Valor Total">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -133,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                style="@style/EstiloEditTextPadrao"
                 android:textColor="@color/corTextoPadrao"
                 android:inputType="numberDecimal" />
 
@@ -171,7 +176,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            style="@style/EstiloImputLayoutPadrao"
             android:hint="Valor">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -181,6 +186,7 @@
                 android:textColor="@color/corTextoPadrao"
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
+                style="@style/EstiloEditTextPadrao"
                 android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -198,7 +204,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            style="@style/EstiloImputLayoutPadrao"
             android:hint="Valor">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -208,6 +214,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:gravity="center"
                 android:textColor="@color/corTextoPadrao"
+                style="@style/EstiloEditTextPadrao"
                 android:inputType="numberDecimal" />
 
 

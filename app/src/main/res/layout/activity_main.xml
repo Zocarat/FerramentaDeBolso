@@ -173,11 +173,6 @@
                         android:background="@color/corFundoPadrao"
                         android:layout_marginHorizontal="15dp"
                         android:layout_gravity="center"
-
-
-
-
-
                       />
 
 

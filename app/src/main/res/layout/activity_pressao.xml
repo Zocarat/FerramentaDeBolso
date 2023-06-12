@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/corFundoPadrao"
+
     tools:context="view.PressaoActivity">
 
     <ImageView
@@ -31,17 +32,19 @@
     <Spinner
         android:id="@+id/spinnerPressao"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_below="@id/txtPressao"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:background="@color/corFundoPadrao"
         android:contentDescription="Lista de seleção de unidade de pressão"
+        android:textAlignment="center"
+
         android:gravity="center"
         android:textColor="@color/corTextoPadrao"
-        android:textSize="18sp"
-        android:theme="@style/ThemeSpinnerList" />
+
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editPressao"
@@ -68,6 +71,9 @@
         android:layout_marginTop="16dp"
         android:background="@color/corFundoPadrao"
         android:textColor="@color/corTextoPadrao"
+        android:gravity="center"
+
+
         android:theme="@style/ThemeSpinnerList" />
 
     <LinearLayout

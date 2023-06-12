@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/corFundoPadrao">
+
+    <ImageView
+        android:id="@+id/imgLogoPeso"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Ícone menu temperatura"
+        app:srcCompat="@drawable/img_button_peso" />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutPai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/imgLogoPeso"
+
+        style="@style/StyleLayoutCorpoPrincipal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/StyleLayoutConjuntoVertical"
+
+
+            >
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_marginVertical="15dp"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFielKilograma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Kilograma (Kg)"
+                    style="@style/EstiloEditTextPadrao"
+
+
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_marginVertical="15dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFielLibra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Libra (Lb)"
+                    style="@style/EstiloEditTextPadrao"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_marginVertical="15dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldOnca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Onça (Oz)"
+                    style="@style/EstiloEditTextPadrao"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnLimpar"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_limpar" />
+
+        <ImageButton
+            android:id="@+id/btnCalcular"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_calcular" />
+
+        <ImageButton
+            android:id="@+id/btnVoltarMenu"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_voltar" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
