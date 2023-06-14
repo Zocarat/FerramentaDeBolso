@@ -31,11 +31,13 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         app:srcCompat="@drawable/btn_juros_composto" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         android:layout_below="@+id/img_juros_composto"
+        android:layout_marginTop="15dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -83,6 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:digits="0123456789,."
                         android:hint="Mensal" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,6 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:digits="0123456789,."
                         android:hint="Taxa %"
                         android:orientation="vertical" />
 
@@ -126,6 +130,7 @@
                         style="@style/EstiloEditTextPadrao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="0123456789,."
                         android:hint="Período" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,32 +149,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textViewValorAcumulado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Valor Acumulado: "
-                    android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textViewRendimentoTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rendimento Total: "
-                    android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textViewRentabilidadeMensal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rentabilidade Mensal: "
-                    android:textSize="16sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
             </LinearLayout>
 
 
@@ -187,6 +192,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linearLayoutBotoes"
         android:layout_width="match_parent"

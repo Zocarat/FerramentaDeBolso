@@ -185,10 +185,20 @@
                         android:layout_marginHorizontal="15dp"
                         android:layout_gravity="center"
                         android:background="@color/corFundoPadrao"
-
-
                         />
 
+
+
+                    <ImageButton
+                        android:id="@+id/btn_contador"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitEnd"
+                        app:srcCompat="@drawable/btn_contador"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_gravity="center"
+                        android:background="@color/corFundoPadrao"
+                        />
 
                 </LinearLayout>
 

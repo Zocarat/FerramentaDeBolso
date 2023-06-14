@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/corFundoPadrao">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+
+            android:layout_margin="5dp"
+
+            >
+
+
+            <RelativeLayout
+                android:layout_width="380dp"
+                android:layout_height="600dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+
+
+
+
+                >
+            <ImageView
+                android:id="@+id/imgContador"
+                android:layout_width="480dp"
+                android:layout_height="410dp"
+                app:srcCompat="@drawable/contador"
+                android:layout_marginTop="20dp"
+
+                android:layout_gravity="center"
+
+                />
+
+                <TextView
+                    android:id="@+id/textViewContador"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="125dp"
+                    android:layout_marginTop="215dp"
+                    android:letterSpacing="0.3"
+                    android:text="0000"
+                    android:textColor="#F8F8F8"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_below="@id/imgContador"
+                    android:layout_gravity="center"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_weight="1"
+                    >
+
+
+                    <ImageButton
+                        android:id="@+id/btnMenosContador"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+
+                        android:background="@color/corFundoPadrao"
+                        android:src="@drawable/btn_menos_contador"
+
+                        />
+
+
+                    <ImageButton
+                        android:id="@+id/btnMaisContador"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:background="@color/corFundoPadrao"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/btn_mais_contador" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/btnLimpar"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@color/corFundoPadrao"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_btn_limpar" />
+
+    <ImageButton
+        android:id="@+id/btnCalcularArea"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@color/corFundoPadrao"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/btnVoltarMenuContador"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@color/corFundoPadrao"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_btn_voltar" />
+
+</LinearLayout>
+</RelativeLayout>

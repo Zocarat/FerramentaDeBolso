@@ -76,17 +76,18 @@ public class JurosCompostoActivity extends AppCompatActivity {
                 public void run() {
                     // Atualizar os valores exibidos acima do gráfico
                     double valorInicial = parseEditTextValue(editTextInicial);
-                    double valorMensal = parseEditTextValue(editTextMensal);
+                   double valorMensal = parseEditTextValue(editTextMensal);
                     double taxa = parseEditTextValue(editTextTaxa);
                     int periodo = parseEditTextIntValue(editTextPeriodo);
 
+
+
                    double valorTotal = calcularJurosComposto(valorInicial, valorMensal, taxa, periodo);
                    double rendimentoTotal = valorTotal - (valorInicial + (valorMensal * periodo));
-                    double rentabilidadeMensal = rendimentoTotal / periodo;
+                   double rentabilidadeMensal = rendimentoTotal / periodo;
 
-                    try {
-                        DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
-                        textViewValorAcumulado.setText("Valor Acumulado: R$ " + decimalFormat.format(valorTotal));
+                    try {DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+                       textViewValorAcumulado.setText("Valor Acumulado: R$ " + decimalFormat.format(valorTotal));
                         textViewRendimentoTotal.setText("Rendimento Total: R$ " + decimalFormat.format(rendimentoTotal));
                         textViewRentabilidadeMensal.setText("Rentabilidade Mensal: R$ " + decimalFormat.format(rentabilidadeMensal));
                     } catch (Exception e) {
@@ -95,7 +96,7 @@ public class JurosCompostoActivity extends AppCompatActivity {
                     }
 
                     // Atualizar o gráfico de juros compostos
-                    updateJurosCompostosChart();
+                      updateJurosCompostosChart();
                 }
             });
         }
@@ -182,7 +183,7 @@ public class JurosCompostoActivity extends AppCompatActivity {
                 DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
                 textViewValorAcumulado.setText("Valor Acumulado: R$ " + decimalFormat.format(valorTotal));
                 textViewRendimentoTotal.setText("Rendimento Total: R$ " + decimalFormat.format(rendimentoTotal));
-                textViewRentabilidadeMensal.setText("Rentabilidade Mensal: R$ " + decimalFormat.format(rentabilidadeMensal));
+                textViewRentabilidadeMensal.setText("Rentabilidade Mensal Media: R$ " + decimalFormat.format(rentabilidadeMensal));
 
 
                 // Gere os dados do gráfico
@@ -231,11 +232,18 @@ public class JurosCompostoActivity extends AppCompatActivity {
 
 
         double valor = valorInicial;
+
+
         for (int i = 1; i <= periodo; i++) {
-            valor += valorMensal;
             valor *= (1 + (taxa/100));
+            valor += valorMensal;
+            int iz = 1;
+
         }
+
+
         return valor;
+
     }
     private void updateJurosCompostosChart() {
         double valorInicial = parseEditTextValue(editTextInicial);
