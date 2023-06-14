@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -21,8 +22,12 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -43,7 +48,11 @@ public class JurosCompostoActivity extends AppCompatActivity {
     private EditText editTextPeriodo;
 
     private DecimalFormat decimalFormat;
+
+    // Grafico de linha do Jurus composto com valor total
     private LineChart lineChart;
+    // grafico redondo total investido com rendimento total
+    private PieChart pieChart;
 
 
     private TextView textViewValorAcumulado;
@@ -85,6 +94,11 @@ public class JurosCompostoActivity extends AppCompatActivity {
                    double valorTotal = calcularJurosComposto(valorInicial, valorMensal, taxa, periodo);
                    double rendimentoTotal = valorTotal - (valorInicial + (valorMensal * periodo));
                    double rentabilidadeMensal = rendimentoTotal / periodo;
+                   double rentabilidadeFinal = valorTotal * taxa;
+
+
+                    graficosDisco (valorTotal, rendimentoTotal, rentabilidadeMensal, rentabilidadeFinal, taxa);
+
 
                     try {DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
                        textViewValorAcumulado.setText("Valor Acumulado: R$ " + decimalFormat.format(valorTotal));
@@ -135,6 +149,8 @@ public class JurosCompostoActivity extends AppCompatActivity {
         Description description = new Description();
         description.setText(""); // Desativa a descrição
         lineChart.setDescription(description);
+
+        pieChart = findViewById(R.id.pieChart);
 
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
@@ -275,6 +291,41 @@ public class JurosCompostoActivity extends AppCompatActivity {
         // Configure os dados no gráfico
         lineChart.setData(lineData);
         lineChart.invalidate();
+    }
+
+    private void graficosDisco ( double valorTotal, double rendimentoTotal , double rentabilidadeMensal ,  double rentabilidadeFinal , double taxa   ){
+
+        float valorAplicadoFloat = (float) (valorTotal - rendimentoTotal);
+        float valorRendimentoTotalFloat = (float) rendimentoTotal;
+
+
+
+        List<PieEntry> entries = new ArrayList<>();
+        entries.add(new PieEntry(valorAplicadoFloat, "TOTAL APLICADO"));
+        entries.add(new PieEntry(valorRendimentoTotalFloat, "RENDIMENTO TOTAL"));
+        //entries.add(new PieEntry(50, "Categoria 3"));
+
+        PieDataSet dataSet = new PieDataSet(entries, "");
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+
+        PieData data = new PieData(dataSet);
+
+        pieChart.setData(data);
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(android.R.color.white);
+        pieChart.setTransparentCircleRadius(0f);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.animateY(1000);
+        pieChart.setHoleRadius(0f);
+        pieChart.invalidate();
+
+       // double valorTotal = calcularJurosComposto(valorInicial, valorMensal, taxa, periodo);
+       // double rendimentoTotal = valorTotal - (valorInicial + (valorMensal * periodo));
+       // double rentabilidadeMensal = rendimentoTotal / periodo;
+      //  double rentabilidadeFinal = valorTotal * taxa;
+
+
+
     }
 
     // ... outros métodos ...
