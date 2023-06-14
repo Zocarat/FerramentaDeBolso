@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import devandroid.zocarato.ferramentadebolso.AreaActivity;
+import devandroid.zocarato.ferramentadebolso.JurosCompostoActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.PesoActivity;
 import devandroid.zocarato.ferramentadebolso.PorcentagemActivity;
@@ -34,6 +35,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
     ImageButton btn_Area_Menu;
     ImageButton btn_Peso_Menu;
+    ImageButton btn_Juros_Composto;
+
 
     TextView txtDataSistema;
     TextView txtHoraSistema;
@@ -62,6 +65,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btn_Porcentagem_Menu = findViewById(R.id.btnPorcentagemMenu);
         btn_Area_Menu = findViewById(R.id.btnAreaMenu);
         btn_Peso_Menu = findViewById(R.id.btnPesuMenu);
+        btn_Juros_Composto = findViewById(R.id.btn_juros_composto);
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -200,6 +204,32 @@ public class MenuPrincipal extends AppCompatActivity {
                 },0);
             }
         });
+        // ============================================================================
+
+        btn_Juros_Composto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent telaEletrica = new Intent(MenuPrincipal.this, JurosCompostoActivity.class);
+                        startActivity(telaEletrica);
+                        finish();
+                    }
+                },0);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
 
 
 

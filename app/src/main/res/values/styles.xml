@@ -85,8 +85,8 @@
     <style name="StyleLayoutCorpoPrincipal">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:padding">16dp</item>
-        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">4dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
     </style>
@@ -95,7 +95,7 @@
       <style name="StyleLayoutConjuntoVertical">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_margin">4dp</item>
         <item name="android:layout_weight">1</item>
           <item name="android:layout_gravity">center</item>
         <item name="android:orientation">vertical</item>
@@ -108,11 +108,11 @@
         <style name="StyleLayoutBottonHorizontal">
             <item name="android:layout_width">match_parent</item>
             <item name="android:layout_height">match_parent</item>
-            <item name="android:layout_margin">8dp</item>
+            <item name="android:layout_margin">4dp</item>
             <item name="android:layout_weight">1</item>
             <item name="android:layout_gravity">center</item>
             <item name="android:orientation">horizontal</item>
-            <item name="android:layout_marginTop">30dp</item>
+            <item name="android:layout_marginTop">15dp</item>
 
         </style>
 

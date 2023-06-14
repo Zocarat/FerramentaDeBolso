@@ -176,6 +176,19 @@
                         android:layout_gravity="center"
                       />
 
+                    <ImageButton
+                        android:id="@+id/btn_juros_composto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitEnd"
+                        app:srcCompat="@drawable/btn_juros_composto"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_gravity="center"
+                        android:background="@color/corFundoPadrao"
+
+
+                        />
+
 
                 </LinearLayout>
 
