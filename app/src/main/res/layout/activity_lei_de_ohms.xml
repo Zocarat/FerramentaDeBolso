@@ -1,0 +1,391 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutGeral"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/corFundoPadrao">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/btn_close"
+        android:scaleType="fitCenter"
+        android:background="@color/corFundoPadrao"
+        >
+
+
+
+    </ImageButton>
+
+    <ImageView
+        android:id="@+id/imgLeiDeOhms"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/btn_close"
+        app:srcCompat="@drawable/btn_lei_de_ohms" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@+id/imgLeiDeOhms"
+
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:id="@+id/layoutRaioTeslaEdson"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/img_background_raio"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/btnTesla"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:src="@drawable/img_btn_tesla"
+
+                android:scaleType="fitCenter"
+
+                />
+            <ImageButton
+                android:id="@+id/btnEdson"
+                android:layout_width="180dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:src="@drawable/img_btn_edson"
+                android:scaleType="fitCenter"
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutBotoesOhmsContinua"
+            style="@style/StyleLayoutCorpoPrincipal"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                style="@style/StyleLayoutBottonHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/btnTensaoSelect"
+                    android:layout_width="180dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:background="@color/corFundoPadrao"
+                    android:src="@drawable/btn_tensao_off"
+                    android:scaleType="fitCenter"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnCorrenteSelect"
+                    android:layout_width="180dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:background="@color/corFundoPadrao"
+                    android:src="@drawable/btn_corrente_off"
+                    android:scaleType="fitCenter"
+
+                    />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                style="@style/StyleLayoutBottonHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/btnResistenciaSelect"
+
+                    android:layout_width="180dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:background="@color/corFundoPadrao"
+                    android:src="@drawable/btn_resistencia_off"
+                    android:scaleType="fitCenter"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnpotenciaSelect"
+                    android:layout_width="180dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:background="@color/corFundoPadrao"
+                    android:src="@drawable/btn_potencia_off"
+                    android:scaleType="fitCenter"
+
+                    />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutEditTextContinua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textImput2R"
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTaxa"
+                    style="@style/EstiloEditTextPadrao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:digits="0123456789,."
+                    android:hint="Taxa %"
+                    android:orientation="vertical" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/EstiloImputLayoutPadrao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPeriodo"
+                    style="@style/EstiloEditTextPadrao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789,."
+                    android:hint="Período" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/layoutGrafico"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/layoutInfoJurosString"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="left"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/textViewValorAcumuladoString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="valor "
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewRendimentoTotalString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="valor"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutNumberJuros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="right"
+
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewValorAplicado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="valor "
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewValorAcumulado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="valor"
+                                android:visibility="gone"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+
+
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginBottom="100dp"
+
+                        >
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/corFundoPadrao"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnLimpar"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_limpar" />
+
+        <ImageButton
+            android:id="@+id/btnCalcular"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_calcular" />
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/corFundoPadrao"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_voltar" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

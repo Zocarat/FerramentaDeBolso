@@ -20,24 +20,39 @@
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/btn_close"
+        android:scaleType="fitCenter"
+        android:background="@color/corFundoPadrao"
+        >
+
+
+
+    </ImageButton>
 
     <ImageView
-        android:id="@+id/img_juros_composto"
+        android:id="@+id/imgLeiDeOhms"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="30dp"
+
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:layout_below="@+id/btn_close"
         app:srcCompat="@drawable/btn_juros_composto" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:layout_below="@+id/img_juros_composto"
-        android:layout_marginTop="15dp"
+        android:layout_below="@+id/imgLeiDeOhms"
+
         android:orientation="vertical">
 
         <LinearLayout
@@ -141,7 +156,7 @@
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="340dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ScrollView
@@ -149,53 +164,154 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/layoutGrafico"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+
                     android:orientation="vertical">
 
+
+
                     <LinearLayout
-                        android:id="@+id/layoutInfoJuros"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
                         android:gravity="center"
-                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textViewValorAcumulado"
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/layoutInfoJurosString"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Valor Acumulado: "
+                            android:layout_margin="5dp"
+                            android:gravity="left"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/textViewValorAplicadoString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Aplicado: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewValorAcumuladoString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Valor Acumulado: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewRendimentoTotalString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rendimento Total: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewRentabilidadeMensalString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rentabilidade Mensal Media: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/textViewRentabilidadeMensalFinalString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rentabilidade Mensal Final: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutNumberJuros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="right"
+
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewValorAplicado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Aplicado: "
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewValorAcumulado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Valor Acumulado: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewRendimentoTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rendimento Total: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewRentabilidadeMensal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rentabilidade Mensal: "
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                            android:id="@+id/textViewRentabilidadeMensalFinal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rentabilidade Final: "
+                                android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textViewRendimentoTotal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rendimento Total: "
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textViewRentabilidadeMensal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rentabilidade Mensal: "
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
+                        </LinearLayout>
+
+
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/lineChart"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:layout_margin="16dp"
-                        android:layout_marginHorizontal="16dp"
-                        android:layout_weight="1"
-                        android:background="@color/corFundoEditText"
-                        android:touchscreenBlocksFocus="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -212,34 +328,75 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="300dp">
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
 
+                        <com.github.mikephil.charting.charts.BarChart
+                            android:id="@+id/bar_chart"
+                            android:layout_width="0dp"
+                            android:layout_height="180dp"
+                            android:layout_weight="1" />
 
                         <com.github.mikephil.charting.charts.PieChart
                             android:id="@+id/pieChart"
-                            android:layout_width="match_parent"
-                            android:layout_height="250dp"
-                            android:layout_margin="16dp" />
+                            android:layout_width="0dp"
+                            android:layout_height="180dp"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            android:layout_weight="1"
+                            />
 
                     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="100dp"
+
+                        >
+
+
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_margin="16dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_weight="1"
+                            android:background="@color/corFundoPadrao"
+                            android:touchscreenBlocksFocus="true" />
+
+
+
+
+                   </LinearLayout>
 
 
                 </LinearLayout>

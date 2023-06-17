@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:text="Versão 2.9.3"
+        android:text="Versão 2.9.4"
         android:textColor="@color/corTextoPadrao"
         android:textStyle="bold" />
 

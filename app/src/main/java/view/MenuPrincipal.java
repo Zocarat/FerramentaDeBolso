@@ -13,6 +13,7 @@ import android.widget.TextView;
 import devandroid.zocarato.ferramentadebolso.AreaActivity;
 import devandroid.zocarato.ferramentadebolso.ContadorActivity;
 import devandroid.zocarato.ferramentadebolso.JurosCompostoActivity;
+import devandroid.zocarato.ferramentadebolso.LeiDeOhmsActivity;
 import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.PesoActivity;
 import devandroid.zocarato.ferramentadebolso.PorcentagemActivity;
@@ -38,6 +39,8 @@ public class MenuPrincipal extends AppCompatActivity {
     ImageButton btn_Peso_Menu;
     ImageButton btn_Juros_Composto;
     ImageButton btn_Contador;
+    ImageButton btn_LeiDeOhms;
+
 
 
     TextView txtDataSistema;
@@ -69,6 +72,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btn_Peso_Menu = findViewById(R.id.btnPesuMenu);
         btn_Juros_Composto = findViewById(R.id.btn_juros_composto);
         btn_Contador = findViewById(R.id.btn_contador);
+        btn_LeiDeOhms = findViewById(R.id.btnLeiDeOhms);
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -233,6 +237,20 @@ public class MenuPrincipal extends AppCompatActivity {
                     public void run() {
 
                         Intent telaEletrica = new Intent(MenuPrincipal.this, ContadorActivity.class);
+                        startActivity(telaEletrica);
+                        finish();
+                    }
+                },0);
+            }
+        });
+        btn_LeiDeOhms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent telaEletrica = new Intent(MenuPrincipal.this, LeiDeOhmsActivity.class);
                         startActivity(telaEletrica);
                         finish();
                     }

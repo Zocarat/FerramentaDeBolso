@@ -203,6 +203,31 @@
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    style="@style/StyleLayoutBottonHorizontal"
+
+
+                    >
+
+                    <ImageButton
+                        android:id="@+id/btnLeiDeOhms"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/btn_lei_de_ohms"
+                        android:scaleType="fitEnd"
+                        android:background="@color/corFundoPadrao"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_gravity="center"
+                        />
+
+
+
+
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
