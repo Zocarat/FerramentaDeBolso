@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/img_ohms_fundo"
         >
 
     </LinearLayout>
@@ -22,9 +23,6 @@
         android:scaleType="fitCenter"
         android:background="@color/corFundoPadrao"
         >
-
-
-
     </ImageButton>
 
     <ImageView
@@ -42,6 +40,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
 
         android:layout_below="@+id/imgLeiDeOhms"
 
@@ -86,130 +85,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/layoutBotoesOhmsContinua"
-            style="@style/StyleLayoutCorpoPrincipal"
-            android:layout_height="160dp"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                style="@style/StyleLayoutBottonHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <ImageButton
-                    android:id="@+id/btnTensaoSelect"
-                    android:layout_width="180dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:background="@color/corFundoPadrao"
-                    android:src="@drawable/btn_tensao_off"
-                    android:scaleType="fitCenter"
-
-                    />
-
-                <ImageButton
-                    android:id="@+id/btnCorrenteSelect"
-                    android:layout_width="180dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:background="@color/corFundoPadrao"
-                    android:src="@drawable/btn_corrente_off"
-                    android:scaleType="fitCenter"
-
-                    />
-            </LinearLayout>
 
 
 
-            <LinearLayout
-                style="@style/StyleLayoutBottonHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-
-                <ImageButton
-                    android:id="@+id/btnResistenciaSelect"
-
-                    android:layout_width="180dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:background="@color/corFundoPadrao"
-                    android:src="@drawable/btn_resistencia_off"
-                    android:scaleType="fitCenter"
-
-                    />
-
-                <ImageButton
-                    android:id="@+id/btnpotenciaSelect"
-                    android:layout_width="180dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:background="@color/corFundoPadrao"
-                    android:src="@drawable/btn_potencia_off"
-                    android:scaleType="fitCenter"
-
-                    />
-            </LinearLayout>
-
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutEditTextContinua"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textImput2R"
-                style="@style/EstiloImputLayoutPadrao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextTaxa"
-                    style="@style/EstiloEditTextPadrao"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:digits="0123456789,."
-                    android:hint="Taxa %"
-                    android:orientation="vertical" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/EstiloImputLayoutPadrao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextPeriodo"
-                    style="@style/EstiloEditTextPadrao"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="0123456789,."
-                    android:hint="Período" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
 
         <LinearLayout
 

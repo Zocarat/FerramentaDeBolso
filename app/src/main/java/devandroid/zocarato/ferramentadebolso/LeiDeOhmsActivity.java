@@ -76,10 +76,7 @@ public class LeiDeOhmsActivity extends AppCompatActivity {
         btnCalcular = findViewById(R.id.btnCalcular);
         btnVoltar = findViewById(R.id.btnVoltar);
 
-        btnTensaoSelect = findViewById(R.id.btnTensaoSelect);
-        btnCorrenteSelect = findViewById(R.id.btnCorrenteSelect);
-        btnResistenciaSelect = findViewById(R.id.btnResistenciaSelect);
-        btnPotenciaSelect = findViewById(R.id.btnpotenciaSelect);
+
 
         btnTesla = findViewById(R.id.btnTesla);
         btnEdson = findViewById(R.id.btnEdson);
@@ -92,69 +89,16 @@ public class LeiDeOhmsActivity extends AppCompatActivity {
         layoutRaioTeslaEdson.setBackgroundResource(0);
 
 
-        layoutEditTextContinua = findViewById(R.id.layoutEditTextContinua);
-        layoutEditTextContinua.setVisibility(View.GONE);
 
-        layoutBotoesOhmsContinua = findViewById(R.id.layoutBotoesOhmsContinua);
-        layoutBotoesOhmsContinua.setVisibility(View.GONE);
-        animarImageButtonDaDireita( btnTesla);
-        animarImageButtonDaEsquerda( btnEdson);
+
+
         piscaRaio();
 
 
 
-        btnTensaoSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (btnTensaoClick) {
-                    btnTensaoSelect.setImageResource(R.drawable.btn_tensao_off);
-                    btnTensaoClick = false;
-                } else {
-                    btnTensaoSelect.setImageResource(R.drawable.btn_tensao_on);
-                    btnTensaoClick = true;
-                }
 
-            }
-        });
-        btnCorrenteSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (btnCorrenteClick) {
-                    btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_off);
-                    btnCorrenteClick = false;
-                } else {
-                    btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_on);
-                    btnCorrenteClick = true;
-                }
 
-            }
-        });
-        btnResistenciaSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (btnResistenciaClick) {
-                    btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_off);
-                    btnResistenciaClick = false;
-                } else {
-                    btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_on);
-                    btnResistenciaClick = true;
-                }
 
-            }
-        });
-        btnPotenciaSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (btnPotenciaClick) {
-                    btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_off);
-                    btnPotenciaClick = false;
-                } else {
-                    btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_on);
-                    btnPotenciaClick = true;
-                }
-
-            }
-        });
 
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {

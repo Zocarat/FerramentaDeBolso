@@ -1,11 +1,9 @@
 package devandroid.zocarato.ferramentadebolso;
 
 import android.content.Intent;
-import android.icu.lang.UScript;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -15,13 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import view.MenuPrincipal;
-
-public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
+public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
 
 
@@ -296,7 +289,7 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent telaEletrica = new Intent(LeiDeOhmsContinuaActivity.this, LeiDeOhmsActivity.class);
+                Intent telaEletrica = new Intent(LeiDeOhmsAlternadaActivity.this, LeiDeOhmsActivity.class);
                 startActivity(telaEletrica);
                 finish();
             }
