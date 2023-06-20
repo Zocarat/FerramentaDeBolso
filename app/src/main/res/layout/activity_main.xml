@@ -160,6 +160,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
                     style="@style/StyleLayoutBottonHorizontal"
 
 
@@ -206,6 +208,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
+                    android:gravity="center"
                     style="@style/StyleLayoutBottonHorizontal"
 
 

@@ -6,12 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -85,7 +79,7 @@ public class LeiDeOhmsActivity extends AppCompatActivity {
 
         layoutGeral  = findViewById(R.id.layoutGeral);
 
-        layoutRaioTeslaEdson = findViewById(R.id.layoutRaioTeslaEdson);
+        layoutRaioTeslaEdson = findViewById(R.id.layoutTetoEdson);
         layoutRaioTeslaEdson.setBackgroundResource(0);
 
 
@@ -114,6 +108,16 @@ public class LeiDeOhmsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent telaEletrica = new Intent(LeiDeOhmsActivity.this, LeiDeOhmsContinuaActivity.class);
+                startActivity(telaEletrica);
+                finish();
+            }
+
+        });
+
+        btnTesla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent telaEletrica = new Intent(LeiDeOhmsActivity.this, LeiDeOhmsAlternadaActivity.class);
                 startActivity(telaEletrica);
                 finish();
             }

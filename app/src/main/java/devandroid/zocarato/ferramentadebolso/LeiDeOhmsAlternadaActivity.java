@@ -1,8 +1,13 @@
 package devandroid.zocarato.ferramentadebolso;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -13,6 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DecimalFormat;
 
 public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
@@ -33,7 +40,8 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
     LinearLayout layoutRaioTeslaEdson;
     LinearLayout layoutBotoesOhmsContinua;
 
-    LinearLayout   layoutEditTextContinua;
+    LinearLayout  layoutResultaTesla;
+
 
     FrameLayout layoutCampoTensao;
 
@@ -41,39 +49,44 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
     ImageButton btnEdson;
 
 
+    ImageView imgCampoTensao;
+    EditText editTextTensao;
+    boolean TensaoOk = false;
+
+    ImageView imgCampoPotencia;
+    EditText editTextPotencia;
+    boolean PotenciaOk = false;
 
 
-    ImageButton btnTensaoSelect;
-    boolean btnTensaoClick = false;
-    ImageButton btnCorrenteSelect;
-    boolean btnCorrenteClick = false;
+    ImageView imageViewFatorPotencia;
+    EditText editTextFatorPotencia;
+    boolean fatorPotenciaOK = false;
 
-    ImageButton btnResistenciaSelect;
-    boolean btnResistenciaClick = false;
-
-    ImageButton btnPotenciaSelect;
-    boolean btnPotenciaClick = false;
-
-    ImageView CampoVazioOhms;
-    ImageView imgCampoVazioTensao;
-    ImageView imgCampoVazioCorrente;
-    ImageView imgCampoVazioResistencia;
-    ImageView imgCampoVazioPotencia;
+    ImageView imageViewRendimento;
+    EditText editTextRendimento;
+    boolean rendimentoOK = false;
 
 
+
+
+    ImageButton btnTrifasico;
+    boolean trifasicoOK = false;
+
+    ImageButton btnWattsHp;
+    boolean wattsOK = true;
 
     ImageButton btnVoltar;
     ImageButton btnLimpar;
     ImageButton btnCalcular;
 
-    EditText editTextTensao;
+
     EditText editTextCorrente;
     EditText editTextResitencia;
     EditText editTextPOtencia;
 
     ImageButton btnAvisoEdson;
 
-
+    TextView resultadoOhmsAlternada;
 
 
 
@@ -86,41 +99,59 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lei_de_ohms_continua);
+        setContentView(R.layout.activity_lei_de_ohms_alternada);
 
 
+        layoutResultaTesla = findViewById(R.id.layoutResultaTesla);
+        layoutResultaTesla.setVisibility(View.GONE);
 
         btnLimpar = findViewById(R.id.btnLimpar);
         btnCalcular = findViewById(R.id.btnCalcular);
-
         btnVoltar = findViewById(R.id.btnVoltar);
 
-        btnTensaoSelect = findViewById(R.id.btnTensaoSelect);
-        imgCampoVazioTensao = findViewById(R.id.imgCampoVazioTensao);
-        imgCampoVazioTensao.setVisibility(View.GONE);
+
+        imgCampoTensao = findViewById(R.id.imgCampoVazioTensao);
         editTextTensao = findViewById(R.id.editTextTensao);
-        editTextTensao.setVisibility(View.GONE);
+        editTextTensao.addTextChangedListener(textWatcher);
+
+        imgCampoPotencia = findViewById(R.id.imgCampoPotencia);
+        editTextPotencia = findViewById(R.id.editTextPotencia);
+        editTextPotencia.addTextChangedListener(textWatcher);
+
+        btnTrifasico =  findViewById(R.id.btnTrifasico);
+        btnWattsHp =  findViewById(R.id.btnWattsHp);
+
+        imageViewFatorPotencia = findViewById(R.id.imgFatorPotencia);
+        editTextFatorPotencia = findViewById(R.id.editTextFatorPotencia);
+        editTextFatorPotencia.addTextChangedListener(textWatcher);
+
+        imageViewRendimento = findViewById(R.id.imgRendimento);
+        editTextRendimento = findViewById(R.id.editTextRendimento);
+        editTextRendimento.addTextChangedListener(textWatcher);
 
 
-        btnCorrenteSelect = findViewById(R.id.btnCorrenteSelect);
-        imgCampoVazioCorrente = findViewById(R.id.imgCampoVazioCorrente);
-        imgCampoVazioCorrente.setVisibility(View.GONE);
-        editTextCorrente= findViewById(R.id.editTextCorrente);
-        editTextCorrente.setVisibility(View.GONE);
+        resultadoOhmsAlternada = findViewById(R.id.TextViewResultado);
 
 
-        btnResistenciaSelect = findViewById(R.id.btnResistenciaSelect);
-        imgCampoVazioResistencia = findViewById(R.id.imgCampoVazioResistencia);
-        imgCampoVazioResistencia.setVisibility(View.GONE);
-        editTextResitencia= findViewById(R.id.editTextResistencia);
-        editTextResitencia.setVisibility(View.GONE);
+        // btnCorrenteSelect = findViewById(R.id.btnCorrenteSelect);
+       // imgCampoVazioCorrente = findViewById(R.id.imgCampoVazioCorrente);
+      //  imgCampoVazioCorrente.setVisibility(View.GONE);
+      //  editTextCorrente= findViewById(R.id.editTextCorrente);
+       // editTextCorrente.setVisibility(View.GONE);
 
 
-        btnPotenciaSelect = findViewById(R.id.btnPotenciaSelect);
-        imgCampoVazioPotencia = findViewById(R.id.imgCampoVazioPotencia);
-        imgCampoVazioPotencia.setVisibility(View.GONE);
-        editTextPOtencia= findViewById(R.id.editTextPOtencia);
-        editTextPOtencia.setVisibility(View.GONE);
+       // btnResistenciaSelect = findViewById(R.id.btnResistenciaSelect);
+      //  imgCampoVazioResistencia = findViewById(R.id.imgCampoVazioResistencia);
+       // imgCampoVazioResistencia.setVisibility(View.GONE);
+      //  editTextResitencia= findViewById(R.id.editTextResistencia);
+      //  editTextResitencia.setVisibility(View.GONE);
+
+
+       // btnPotenciaSelect = findViewById(R.id.btnPotenciaSelect);
+       // imgCampoVazioPotencia = findViewById(R.id.imgCampoVazioPotencia);
+       // imgCampoVazioPotencia.setVisibility(View.GONE);
+       // editTextPOtencia= findViewById(R.id.editTextPOtencia);
+       // editTextPOtencia.setVisibility(View.GONE);
 
         //btnTesla = findViewById(R.id.btnTesla);
         btnEdson = findViewById(R.id.btnEdson);
@@ -128,7 +159,7 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         btnAvisoEdson = findViewById(R.id.ButtonAvisoEdson);
         btnAvisoEdson.setVisibility(View.GONE);
 
-         layotInferiorAviso = findViewById(R.id.layotInferiorAviso);
+        layotInferiorAviso = findViewById(R.id.layotInferiorAviso);
 
         layoutGeral  = findViewById(R.id.layoutGeral);
 
@@ -137,7 +168,7 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
 
 
-        layoutRaioTeslaEdson = findViewById(R.id.layoutRaioTeslaEdson);
+        layoutRaioTeslaEdson = findViewById(R.id.layoutTetoEdson);
       // layoutRaioTeslaEdson.setBackgroundResource(0);
 
 
@@ -152,140 +183,51 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
 
 
+        btnTrifasico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                if(trifasicoOK){
+                    btnTrifasico.setImageResource(R.drawable.img_trifasico_alternada_off);
+                    trifasicoOK = false;
+                }else{
+                    btnTrifasico.setImageResource(R.drawable.img_trifasico_alternada_on);
+                    trifasicoOK = true;
+                }
+
+            }
+        });
+        btnWattsHp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(wattsOK){
+                    btnWattsHp.setImageResource(R.drawable.img_hp_trifasico);
+                    wattsOK = false;
+                }else{
+                    btnWattsHp.setImageResource(R.drawable.img_watts_trifasico);
+                    wattsOK = true;
+                }
+
+            }
+        });
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 limpar();
-                Controle = 0;
-                //layoutCampoTensao.setBackgroundResource(R.color.black);
+
             }
         });
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculo();
-                //layoutCampoTensao.setBackgroundResource(R.color.black);
+                layoutResultaTesla.setVisibility(View.VISIBLE);
+                layoutRaioTeslaEdson.setVisibility(View.GONE);
+                calcular();
             }
         });
-        btnTensaoSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-
-                if (btnTensaoClick) {
-
-                    btnTensaoSelect.setImageResource(R.drawable.btn_tensao_off);
-                    imgCampoVazioTensao.setVisibility(View.GONE);
-                    editTextTensao.setVisibility(View.GONE);
-                    if (Controle > 0)  {Controle --;}
-                    btnTensaoClick = false;
-                } else {
-
-                    if(Controle >= 2) {
-                        erroSelecao();
-                        return; // Interromper a execução da função
-                    }
-                    Controle ++;
-                    btnTensaoSelect.setImageResource(R.drawable.btn_tensao_on);
-                    imgCampoVazioTensao.setVisibility(View.VISIBLE);
-                    editTextTensao.setVisibility(View.VISIBLE);
-                    editTextTensao.requestFocus();
-
-                    btnTensaoClick = true;
-                }
-
-            }
-        });
-        btnCorrenteSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (btnCorrenteClick) {
-
-                    btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_off);
-                    imgCampoVazioCorrente.setVisibility(View.GONE);
-                    editTextCorrente.setVisibility(View.GONE);
-                    if (Controle > 0)  {Controle --;}
-                    btnCorrenteClick = false;
-                } else {
-                    if(Controle >= 2) {
-                        erroSelecao();
-                        return; // Interromper a execução da função
-                    }
-                    Controle ++;
-                    btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_on);
-                    imgCampoVazioCorrente.setVisibility(View.VISIBLE);
-                    editTextCorrente.setVisibility(View.VISIBLE);
-                    editTextCorrente.requestFocus();
-
-                    btnCorrenteClick = true;
-                }
-
-            }
-        });
-        btnResistenciaSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (btnResistenciaClick) {
-                    btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_off);
-                    imgCampoVazioResistencia.setVisibility(View.GONE);
-                    editTextResitencia.setVisibility(View.GONE);
-                    if (Controle > 0)  {Controle --;}
-                    btnResistenciaClick = false;
-                } else {
-
-                    if(Controle >= 2) {
-                        erroSelecao();
-                        return; // Interromper a execução da função
-                    }
-                    Controle ++;
-                    btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_on);
-                    imgCampoVazioResistencia.setVisibility(View.VISIBLE);
-                    editTextResitencia.setVisibility(View.VISIBLE);
-                    editTextResitencia.requestFocus();
-
-                    btnResistenciaClick = true;
-                }
-
-            }
-        });
-        btnPotenciaSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                if (btnPotenciaClick) {
-
-
-
-
-                    btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_off);
-                    imgCampoVazioPotencia.setVisibility(View.GONE);
-                    editTextPOtencia.setVisibility(View.GONE);
-                    if (Controle > 0)  {Controle --;}
-                    btnPotenciaClick = false;
-                } else {
-
-                    if(Controle >= 2) {
-                        erroSelecao();
-                        return; // Interromper a execução da função
-                    }
-
-                    Controle ++;
-                    btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_on);
-                    imgCampoVazioPotencia.setVisibility(View.VISIBLE);
-                    editTextPOtencia.setVisibility(View.VISIBLE);
-                    editTextPOtencia.requestFocus();
-
-                    btnPotenciaClick = true;
-                }
-
-            }
-        });
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -345,205 +287,16 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
 
 
-        if ((btnResistenciaClick) && (btnPotenciaClick)){
-            try {
-                potencia = Double.parseDouble(editTextPotenciaS);
-                resistencia = Double.parseDouble(editTextResistenciaS);
-            } catch (NumberFormatException e) {
-
-            }
-
-            tensao = Math.sqrt( potencia * resistencia) ;
-            corrente = Math.sqrt( potencia / resistencia) ;
-
-            // Exiba os resultados em outros dois EditTexts ou faça o que desejar com eles
-            double correnteArredondada = Math.round(corrente * 100) / 100.0;
-            double tensaoArredondada = Math.round(tensao * 100) / 100.0;
-
-            // Supondo que você tenha dois EditTexts para exibir os resultados chamados editTextCorrente e editTextPotencia:
-
-            editTextCorrente.setFocusable(false);
-            editTextCorrente.setFocusableInTouchMode(false);
-            editTextCorrente.setText(String.valueOf(correnteArredondada));
-            editTextCorrente.setVisibility(View.VISIBLE);
-            imgCampoVazioCorrente.setVisibility(View.VISIBLE);
-            btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_on);
-
-            editTextTensao.setFocusable(false);
-            editTextTensao.setFocusableInTouchMode(false);
-            editTextTensao.setText(String.valueOf(tensaoArredondada));
-            editTextTensao.setVisibility(View.VISIBLE);
-            imgCampoVazioTensao.setVisibility(View.VISIBLE);
-            btnTensaoSelect.setImageResource(R.drawable.btn_tensao_on);
-
-        }
-
-        if ((btnCorrenteClick) && (btnResistenciaClick)){
-            try {
-                corrente = Double.parseDouble(editTextCorrenteS);
-                resistencia = Double.parseDouble(editTextResistenciaS);
-            } catch (NumberFormatException e) {
-
-            }
-
-            tensao = resistencia  * corrente ;
-            potencia = resistencia * ( corrente  *  corrente ) ;
-
-            // Exiba os resultados em outros dois EditTexts ou faça o que desejar com eles
-            double potenciaArredondada = Math.round(potencia * 100) / 100.0;
-            double tensaoArredondada = Math.round(tensao * 100) / 100.0;
-
-            // Supondo que você tenha dois EditTexts para exibir os resultados chamados editTextCorrente e editTextPotencia:
-
-            editTextPOtencia.setFocusable(false);
-            editTextPOtencia.setFocusableInTouchMode(false);
-            editTextPOtencia.setText(String.valueOf(potenciaArredondada));
-            editTextPOtencia.setVisibility(View.VISIBLE);
-            imgCampoVazioPotencia.setVisibility(View.VISIBLE);
-            btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_on);
-
-            editTextTensao.setFocusable(false);
-            editTextTensao.setFocusableInTouchMode(false);
-            editTextTensao.setText(String.valueOf(tensaoArredondada));
-            editTextTensao.setVisibility(View.VISIBLE);
-            imgCampoVazioTensao.setVisibility(View.VISIBLE);
-            btnTensaoSelect.setImageResource(R.drawable.btn_tensao_on);
-
-        }
-        if ((btnCorrenteClick) && (btnPotenciaClick)){
-            try {
-                corrente = Double.parseDouble(editTextCorrenteS);
-                potencia = Double.parseDouble(editTextPotenciaS);
-            } catch (NumberFormatException e) {
-
-            }
-
-            tensao = potencia / corrente ;
-            resistencia = potencia / ( corrente  *  corrente ) ;
-
-            // Exiba os resultados em outros dois EditTexts ou faça o que desejar com eles
-            double resistenciaArredondada = Math.round(resistencia * 100) / 100.0;
-            double tensaoArredondada = Math.round(tensao * 100) / 100.0;
-
-            // Supondo que você tenha dois EditTexts para exibir os resultados chamados editTextCorrente e editTextPotencia:
-            editTextResitencia.setFocusable(false);
-            editTextResitencia.setFocusableInTouchMode(false);
-            editTextResitencia.setText(String.valueOf(resistenciaArredondada));
-            editTextResitencia.setVisibility(View.VISIBLE);
-            imgCampoVazioResistencia.setVisibility(View.VISIBLE);
-            btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_on);
-
-            editTextTensao.setFocusable(false);
-            editTextTensao.setFocusableInTouchMode(false);
-            editTextTensao.setText(String.valueOf(tensaoArredondada));
-            editTextTensao.setVisibility(View.VISIBLE);
-            imgCampoVazioTensao.setVisibility(View.VISIBLE);
-            btnTensaoSelect.setImageResource(R.drawable.btn_tensao_on);
-
-        }
-
-        if ((btnTensaoClick) && (btnPotenciaClick)){
-            try {
-                tensao = Double.parseDouble(editTextTensaoS);
-                potencia = Double.parseDouble(editTextPotenciaS);
-            } catch (NumberFormatException e) {
-
-            }
-
-            resistencia = ( tensao * tensao ) / potencia;
-            corrente = potencia / tensao  ;
-
-            // Exiba os resultados em outros dois EditTexts ou faça o que desejar com eles
-            double resistenciaArredondada = Math.round(resistencia * 100) / 100.0;
-            double correnteArredondada = Math.round(corrente * 100) / 100.0;
-
-            // Supondo que você tenha dois EditTexts para exibir os resultados chamados editTextCorrente e editTextPotencia:
-            editTextResitencia.setFocusable(false);
-            editTextResitencia.setFocusableInTouchMode(false);
-            editTextResitencia.setText(String.valueOf(resistenciaArredondada));
-            editTextResitencia.setVisibility(View.VISIBLE);
-            imgCampoVazioResistencia.setVisibility(View.VISIBLE);
-            btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_on);
-
-            editTextCorrente.setFocusable(false);
-            editTextCorrente.setFocusableInTouchMode(false);
-            editTextCorrente.setText(String.valueOf(correnteArredondada));
-            editTextCorrente.setVisibility(View.VISIBLE);
-            imgCampoVazioCorrente.setVisibility(View.VISIBLE);
-            btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_on);
-
-        }
-
-        if ((btnTensaoClick) && (btnCorrenteClick)){
-            try {
-                 tensao = Double.parseDouble(editTextTensaoS);
-                 corrente = Double.parseDouble(editTextCorrenteS);
-            } catch (NumberFormatException e) {
-
-            }
-
-             resistencia = tensao / corrente;
-             potencia = tensao * corrente;
-
-            // Exiba os resultados em outros dois EditTexts ou faça o que desejar com eles
-            double resistenciaArredondada = Math.round(resistencia * 100) / 100.0;
-            double potenciaArredondada = Math.round(potencia * 100) / 100.0;
-
-            // Supondo que você tenha dois EditTexts para exibir os resultados chamados editTextCorrente e editTextPotencia:
-
-            editTextResitencia.setFocusable(false);
-            editTextResitencia.setFocusableInTouchMode(false);
-            editTextResitencia.setText(String.valueOf(resistenciaArredondada));
-            editTextResitencia.setVisibility(View.VISIBLE);
-            imgCampoVazioResistencia.setVisibility(View.VISIBLE);
-            btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_on);
 
 
-            editTextPOtencia.setFocusable(false);
-            editTextPOtencia.setFocusableInTouchMode(false);
-            editTextPOtencia.setText(String.valueOf(potenciaArredondada));
-            editTextPOtencia.setVisibility(View.VISIBLE);
-            imgCampoVazioPotencia.setVisibility(View.VISIBLE);
-            btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_on);
-
-        }
 
 
-        if ((btnTensaoClick) && (btnResistenciaClick)){
-            try {
-                tensao = Double.parseDouble(editTextTensaoS);
-                resistencia = Double.parseDouble(editTextResistenciaS);
-            } catch (NumberFormatException e) {
-
-            }
-
-            corrente = tensao / resistencia;
-            potencia = (tensao * tensao) / resistencia;
-
-            // Exiba os resultados em outros dois EditTexts ou faça o que desejar com eles
-            double correnteArredondada = Math.round(corrente * 100) / 100.0;
-            double potenciaArredondada = Math.round(potencia * 100) / 100.0;
-
-            // Supondo que você tenha dois EditTexts para exibir os resultados chamados editTextCorrente e editTextPotencia:
-            editTextCorrente.setFocusable(false);
-            editTextCorrente.setFocusableInTouchMode(false);
-
-            editTextCorrente.setText(String.valueOf(correnteArredondada));
-            editTextCorrente.setVisibility(View.VISIBLE);
-            imgCampoVazioCorrente.setVisibility(View.VISIBLE);
-            btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_on);
 
 
-            editTextPOtencia.setFocusable(false);
-            editTextPOtencia.setFocusableInTouchMode(false);
 
-            editTextPOtencia.setKeyListener(null);
-            editTextPOtencia.setText(String.valueOf(potenciaArredondada));
-            editTextPOtencia.setVisibility(View.VISIBLE);
-            imgCampoVazioPotencia.setVisibility(View.VISIBLE);
-            btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_on);
 
-        }
+
+
 
 
     }
@@ -593,44 +346,216 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
     public void limpar (){
 
-        resetLayout();
-        Controle = 0;
-
-        editTextTensao.setText(String.valueOf(""));
-        editTextTensao.setVisibility(View.GONE);
-        imgCampoVazioTensao.setVisibility(View.GONE);
-        btnTensaoSelect.setImageResource(R.drawable.btn_tensao_off);
-        btnTensaoClick = !btnTensaoClick;
-
-        editTextCorrente.setText(String.valueOf(""));
-        editTextCorrente.setVisibility(View.GONE);
-        imgCampoVazioCorrente.setVisibility(View.GONE);
-        btnCorrenteSelect.setImageResource(R.drawable.btn_corrente_off);
-        btnCorrenteClick = !btnCorrenteClick;
-
-        editTextResitencia.setText(String.valueOf(""));
-        editTextResitencia.setVisibility(View.GONE);
-        imgCampoVazioResistencia.setVisibility(View.GONE);
-        btnResistenciaSelect.setImageResource(R.drawable.btn_resistencia_off);
-        btnResistenciaClick = !btnResistenciaClick;
-
-
-        editTextPOtencia.setText(String.valueOf(""));
-        editTextPOtencia.setVisibility(View.GONE);
-        imgCampoVazioPotencia.setVisibility(View.GONE);
-        btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_off);
-        btnPotenciaClick = !btnPotenciaClick;
-
-
-
-    }
-
-    private void resetLayout() {
-
         recreate();
-       // Intent intent = getIntent();
-       // finish();
-        //startActivity(intent);
+        editTextTensao.setText("");
+        editTextPotencia.setText("");
+        editTextFatorPotencia.setText("1");
+        editTextRendimento.setText("1");
     }
+
+
+    public void calcular (){
+
+        String tensaoS = editTextTensao.getText().toString();
+        String potenciaS = editTextPotencia.getText().toString();
+        String fatorPotenciaS = editTextFatorPotencia.getText().toString();
+        String rendimentoS = editTextRendimento.getText().toString();
+
+        double tensao = 0;
+        double potencia = 0;
+        double fase = 0;
+        double fatorPotencia = 0;
+        double rendimento = 0;
+
+
+        try {
+             tensao = Double.parseDouble(tensaoS);
+
+        } catch (NumberFormatException e) {      }
+        try {
+            potencia = Double.parseDouble(potenciaS);
+
+        } catch (NumberFormatException e) {        }
+        try {
+            fatorPotencia = Double.parseDouble(fatorPotenciaS);
+
+        } catch (NumberFormatException e) {        }
+        try {
+            rendimento = Double.parseDouble(rendimentoS);
+
+        } catch (NumberFormatException e) {        }
+
+
+        if (!wattsOK){
+             potencia = potencia * 745.7; // Conversão para watts
+        }else {
+            potencia = potencia * 1000;
+        }
+
+
+
+
+
+        double resultadoCalculo;
+        resultadoOhmsAlternada.setTextColor(Color.BLACK);
+
+        if (trifasicoOK){
+            double R3 = 1.73205081;
+            resultadoCalculo = potencia/ (tensao * R3 * rendimento * fatorPotencia);
+
+            DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Define o formato desejado, nesse caso, com duas casas decimais
+            String valorFormatado = decimalFormat.format(resultadoCalculo); // Formata o valor
+            resultadoOhmsAlternada.setText( valorFormatado +" (A)");
+
+        }else {
+            resultadoCalculo = potencia/ (tensao * rendimento * fatorPotencia);
+            DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Define o formato desejado, nesse caso, com duas casas decimais
+            String valorFormatado = decimalFormat.format(resultadoCalculo); // Formata o valor
+
+            resultadoOhmsAlternada.setText(valorFormatado + " (A)") ;
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+    public void verificaCampo (){
+       // EditText meuEditText = findViewById(R.id.meuEditText);
+        String texto = editTextTensao.getText().toString();
+        String textoPotencia = editTextPotencia.getText().toString();
+        String textoFatorPotencia = editTextFatorPotencia.getText().toString();
+        String textoRendimento = editTextRendimento.getText().toString();
+
+
+        if (!TextUtils.isEmpty(texto)) {
+            // O EditText não está vazio
+            TensaoOk = true;
+        } else {
+            // O EditText está vazio
+            TensaoOk = false;
+        }
+        if (!TextUtils.isEmpty(textoPotencia)) {
+            // O EditText não está vazio
+            PotenciaOk = true;
+        } else {
+            // O EditText está vazio
+            PotenciaOk = false;
+        }
+        if (textoFatorPotencia.equals("1")){
+            fatorPotenciaOK = false;
+        }else {
+            fatorPotenciaOK = true;
+        }
+        if (textoRendimento.equals("1")){
+            rendimentoOK = false;
+        }else {
+            rendimentoOK = true;
+        }
+
+
+
+
+
+    }
+    public void alteraCampo (){
+
+        if (TensaoOk) {
+            imgCampoTensao.setImageResource(R.drawable.img_tensao_alternada_on);
+
+        }if (!TensaoOk){
+            imgCampoTensao.setImageResource(R.drawable.img_tensao_alternada_off);
+
+        }
+        if (PotenciaOk) {
+            imgCampoPotencia.setImageResource(R.drawable.img_potencia_alternada_on);
+
+        }if (!PotenciaOk){
+            imgCampoPotencia.setImageResource(R.drawable.img_potencia_alternada_off);
+
+        }
+        if (fatorPotenciaOK) {
+            imageViewFatorPotencia.setImageResource(R.drawable.img_fator_potencia_trifasico_on);
+            editTextFatorPotencia.setTextColor(Color.parseColor("#2A3BBD"));
+
+        }if (!fatorPotenciaOK){
+            imageViewFatorPotencia.setImageResource(R.drawable.img_fator_potencia_trifasico_off);
+            editTextFatorPotencia.setTextColor(Color.BLACK);
+
+        }
+        if (rendimentoOK) {
+            imageViewRendimento.setImageResource(R.drawable.img_rendimento_on);
+            editTextRendimento.setTextColor(Color.parseColor("#2A3BBD"));
+
+        }if (!rendimentoOK){
+            imageViewRendimento.setImageResource(R.drawable.img_rendimento_off);
+            editTextRendimento.setTextColor(Color.BLACK);
+
+        }
+
+
+
+
+
+
+    }
+
+    public void garantidorConformidade (){
+
+        String rentimento = editTextRendimento.getText().toString();
+        Double rendimentoDouble = 1.0;
+
+        String fatorDePotencia = editTextFatorPotencia.getText().toString();
+        Double fatorPotenciaDouble = 1.0;
+
+        try {
+            fatorPotenciaDouble = Double.parseDouble(fatorDePotencia);
+
+        } catch (NumberFormatException e) {      }
+        if (fatorPotenciaDouble > 1) {
+            editTextFatorPotencia.setText("");
+        }
+
+        try {
+            rendimentoDouble = Double.parseDouble(rentimento);
+
+        } catch (NumberFormatException e) {      }
+        if (rendimentoDouble > 1) {
+            editTextRendimento.setText("");
+        }
+
+    }
+
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Método chamado antes de o texto ser alterado
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                verificaCampo();
+                alteraCampo();
+                garantidorConformidade();
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Método chamado após o texto ser alterado
+            }
+        };
+
+
+
+
 
 }

@@ -1,11 +1,10 @@
 package devandroid.zocarato.ferramentadebolso;
 
 import android.content.Intent;
-import android.icu.lang.UScript;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -15,11 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import view.MenuPrincipal;
 
 public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
@@ -37,10 +31,10 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
     TextView ControleT;
 
-    LinearLayout layoutRaioTeslaEdson;
+    LinearLayout layoutTetoEdson;
     LinearLayout layoutBotoesOhmsContinua;
 
-    LinearLayout   layoutEditTextContinua;
+    LinearLayout   layoutResultaEdson;
 
     FrameLayout layoutCampoTensao;
 
@@ -80,7 +74,7 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
     ImageButton btnAvisoEdson;
 
-
+    TextView textViewAviso;
 
 
 
@@ -95,7 +89,9 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lei_de_ohms_continua);
 
-
+        textViewAviso = findViewById(R.id.TextViewResultado);
+        layoutResultaEdson = findViewById(R.id.layoutResultaEdson);
+        layoutResultaEdson.setVisibility(View.GONE);
 
         btnLimpar = findViewById(R.id.btnLimpar);
         btnCalcular = findViewById(R.id.btnCalcular);
@@ -144,7 +140,7 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
 
 
-        layoutRaioTeslaEdson = findViewById(R.id.layoutRaioTeslaEdson);
+        layoutTetoEdson = findViewById(R.id.layoutTetoEdson);
       // layoutRaioTeslaEdson.setBackgroundResource(0);
 
 
@@ -266,9 +262,6 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
 
                 if (btnPotenciaClick) {
-
-
-
 
                     btnPotenciaSelect.setImageResource(R.drawable.btn_potencia_off);
                     imgCampoVazioPotencia.setVisibility(View.GONE);
@@ -564,11 +557,11 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
                 if (isRaioVisible) {
                     layoutGeral.setBackgroundResource(R.color.corFundoPadrao);
-                    layoutRaioTeslaEdson.setBackgroundResource(0);
+                    layoutTetoEdson.setBackgroundResource(0);
 
                 } else {
                     layoutGeral.setBackgroundResource(R.color.black);
-                    layoutRaioTeslaEdson.setBackgroundResource(R.drawable.img_background_raio);
+                    layoutTetoEdson.setBackgroundResource(R.drawable.img_background_raio);
                 }
                 isRaioVisible = !isRaioVisible;
                 numPiscadas++;
@@ -593,8 +586,13 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
     public void erroSelecao (){
 
 
+        layoutTetoEdson.setVisibility(View.GONE);
+       // btnAvisoEdson.setVisibility(View.VISIBLE);
+        layoutResultaEdson.setVisibility(View.VISIBLE);
+        textViewAviso.setTextSize(20f);
+        textViewAviso.setTextColor(Color.BLACK);
+        textViewAviso.setText("Selecione apenas dois campos!");
 
-        btnAvisoEdson.setVisibility(View.VISIBLE);
 
     }
 

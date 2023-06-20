@@ -31,14 +31,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:layout_below="@+id/imgLeiDeOhms"
 
         android:orientation="vertical">
 
 
 
         <LinearLayout
-            android:id="@+id/layoutRaioTeslaEdson"
+            android:id="@+id/layoutTetoEdson"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:layout_gravity="center"
@@ -63,14 +62,44 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/layoutResultaEdson"
+            android:layout_width="440dp"
+            android:layout_height="210dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/resultado_corrente_edson"
 
+
+            >
+
+            <TextView
+                android:id="@+id/TextViewResultado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:text="0"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textSize="50dp"
+
+                />
+
+
+
+        </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/layoutBotoesOhmsContinua"
+            android:layout_width="400dp"
             style="@style/StyleLayoutCorpoPrincipal"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_gravity="center"
+            android:gravity="center"
+
             android:orientation="vertical">
 
 
@@ -91,17 +120,13 @@
                     android:background="@color/transparent"
                     android:src="@drawable/btn_tensao_off"
                     android:scaleType="fitCenter"
-
-
-
-
-
-
                     />
 
                 <FrameLayout
                     android:id="@+id/layoutCampoTensao"
                     android:layout_width="180dp"
+                    android:layout_gravity="center"
+
                     android:layout_height="match_parent">
 
                 <ImageView
@@ -109,6 +134,7 @@
                     android:layout_width="180dp"
                     android:layout_height="70dp"
                     android:layout_weight="1"
+
                     android:background="@color/transparent"
                     android:src="@drawable/ima_campo_vazio_ohms"
                     android:scaleType="fitCenter" ></ImageView>
