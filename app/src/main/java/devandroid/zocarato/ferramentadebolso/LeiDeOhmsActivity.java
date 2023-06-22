@@ -15,10 +15,6 @@ import android.widget.RelativeLayout;
 import view.MenuPrincipal;
 
 public class LeiDeOhmsActivity extends AppCompatActivity {
-
-
-
-
     private boolean isRaioVisible = false;
     private Handler handler;
     private Runnable raioRunnable;
@@ -56,7 +52,7 @@ public class LeiDeOhmsActivity extends AppCompatActivity {
     ImageButton btnLimpar;
     ImageButton btnCalcular;
 
-    String[] opcoesGrandezas = {"Tensão", "Corrente", "Potência", "Resistência"};
+
 
 
     @Override
@@ -79,7 +75,7 @@ public class LeiDeOhmsActivity extends AppCompatActivity {
 
         layoutGeral  = findViewById(R.id.layoutGeral);
 
-        layoutRaioTeslaEdson = findViewById(R.id.layoutTetoEdson);
+        layoutRaioTeslaEdson = findViewById(R.id.layoutTetoTesla);
         layoutRaioTeslaEdson.setBackgroundResource(0);
 
 

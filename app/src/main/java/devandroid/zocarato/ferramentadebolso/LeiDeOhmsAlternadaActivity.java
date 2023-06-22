@@ -2,7 +2,6 @@ package devandroid.zocarato.ferramentadebolso;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -23,26 +22,17 @@ import java.text.DecimalFormat;
 
 public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
-
-
-
     private boolean isRaioVisible = false;
     private Handler handler;
     private Runnable raioRunnable;
     private int numPiscadas = 0;
     private int maxPiscadas = 6; // Define o número máximo de piscadas desejadas
 
-
     RelativeLayout layoutGeral;
-
     TextView ControleT;
-
-    LinearLayout layoutRaioTeslaEdson;
+    LinearLayout layoutTetoTesla;
     LinearLayout layoutBotoesOhmsContinua;
-
     LinearLayout  layoutResultaTesla;
-
-
     FrameLayout layoutCampoTensao;
 
     //ImageButton btnTesla;
@@ -57,7 +47,6 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
     EditText editTextPotencia;
     boolean PotenciaOk = false;
 
-
     ImageView imageViewFatorPotencia;
     EditText editTextFatorPotencia;
     boolean fatorPotenciaOK = false;
@@ -66,15 +55,13 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
     EditText editTextRendimento;
     boolean rendimentoOK = false;
 
-
-
-
     ImageButton btnTrifasico;
     boolean trifasicoOK = false;
 
     ImageButton btnWattsHp;
     boolean wattsOK = true;
 
+    ImageButton bntCloseIcone;
     ImageButton btnVoltar;
     ImageButton btnLimpar;
     ImageButton btnCalcular;
@@ -85,30 +72,23 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
     EditText editTextPOtencia;
 
     ImageButton btnAvisoEdson;
-
     TextView resultadoOhmsAlternada;
-
-
-
-
     LinearLayout layotInferiorAviso;
-
     int Controle = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lei_de_ohms_alternada);
 
-
         layoutResultaTesla = findViewById(R.id.layoutResultaTesla);
         layoutResultaTesla.setVisibility(View.GONE);
+        bntCloseIcone = findViewById(R.id.btn_close_icone);
+        bntCloseIcone.setVisibility(View.GONE);
 
         btnLimpar = findViewById(R.id.btnLimpar);
         btnCalcular = findViewById(R.id.btnCalcular);
         btnVoltar = findViewById(R.id.btnVoltar);
-
 
         imgCampoTensao = findViewById(R.id.imgCampoVazioTensao);
         editTextTensao = findViewById(R.id.editTextTensao);
@@ -129,31 +109,8 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         editTextRendimento = findViewById(R.id.editTextRendimento);
         editTextRendimento.addTextChangedListener(textWatcher);
 
-
         resultadoOhmsAlternada = findViewById(R.id.TextViewResultado);
 
-
-        // btnCorrenteSelect = findViewById(R.id.btnCorrenteSelect);
-       // imgCampoVazioCorrente = findViewById(R.id.imgCampoVazioCorrente);
-      //  imgCampoVazioCorrente.setVisibility(View.GONE);
-      //  editTextCorrente= findViewById(R.id.editTextCorrente);
-       // editTextCorrente.setVisibility(View.GONE);
-
-
-       // btnResistenciaSelect = findViewById(R.id.btnResistenciaSelect);
-      //  imgCampoVazioResistencia = findViewById(R.id.imgCampoVazioResistencia);
-       // imgCampoVazioResistencia.setVisibility(View.GONE);
-      //  editTextResitencia= findViewById(R.id.editTextResistencia);
-      //  editTextResitencia.setVisibility(View.GONE);
-
-
-       // btnPotenciaSelect = findViewById(R.id.btnPotenciaSelect);
-       // imgCampoVazioPotencia = findViewById(R.id.imgCampoVazioPotencia);
-       // imgCampoVazioPotencia.setVisibility(View.GONE);
-       // editTextPOtencia= findViewById(R.id.editTextPOtencia);
-       // editTextPOtencia.setVisibility(View.GONE);
-
-        //btnTesla = findViewById(R.id.btnTesla);
         btnEdson = findViewById(R.id.btnEdson);
 
         btnAvisoEdson = findViewById(R.id.ButtonAvisoEdson);
@@ -164,24 +121,22 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         layoutGeral  = findViewById(R.id.layoutGeral);
 
         layoutCampoTensao  = findViewById(R.id.layoutCampoTensao);
-        // layoutCampoTensao.setVisibility(View.GONE);
 
-
-
-        layoutRaioTeslaEdson = findViewById(R.id.layoutTetoEdson);
-      // layoutRaioTeslaEdson.setBackgroundResource(0);
-
-
-      // layoutEditTextContinua = findViewById(R.id.layoutEditTextContinua);
-       // layoutEditTextContinua.setVisibility(View.GONE);
-
-
+        layoutTetoTesla = findViewById(R.id.layoutTetoTesla);
 
          layoutBotoesOhmsContinua = findViewById(R.id.layoutBotoesOhmsContinua);
-        // layoutBotoesOhmsContinua.setVisibility(View.GONE);
+
         ControleT = findViewById(R.id.Controle);
 
+        bntCloseIcone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layoutResultaTesla.setVisibility(View.GONE);
 
+                bntCloseIcone.setVisibility(View.GONE);
+                layoutTetoTesla.setVisibility(View.VISIBLE);
+            }
+        });
 
         btnTrifasico.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,7 +178,7 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 layoutResultaTesla.setVisibility(View.VISIBLE);
-                layoutRaioTeslaEdson.setVisibility(View.GONE);
+                layoutTetoTesla.setVisibility(View.GONE);
                 calcular();
             }
         });
@@ -264,43 +219,6 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
     }
 
-
-// ...
-
-
-
-
-    public void calculo (){
-        double tensao = 0;
-        double corrente = 0;
-        double resistencia = 0;
-        double potencia = 0;
-        // String editTextTensaoS = "0";
-        //String editTextCorrenteS = "0";
-        //String editTextPotenciaS ="0";
-        // String editTextResistenciaS ="0";
-
-        String editTextTensaoS = editTextTensao.getText().toString();
-        String editTextCorrenteS  = editTextCorrente.getText().toString();
-        String editTextPotenciaS  = editTextPOtencia.getText().toString();
-        String editTextResistenciaS = editTextResitencia.getText().toString();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
-
     public void piscaRaio() {
 
         handler = new Handler();
@@ -310,11 +228,11 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
                 if (isRaioVisible) {
                     layoutGeral.setBackgroundResource(R.color.corFundoPadrao);
-                    layoutRaioTeslaEdson.setBackgroundResource(0);
+                    layoutGeral.setBackgroundResource(0);
 
                 } else {
                     layoutGeral.setBackgroundResource(R.color.black);
-                    layoutRaioTeslaEdson.setBackgroundResource(R.drawable.img_background_raio);
+                    layoutGeral.setBackgroundResource(R.drawable.img_background_raio);
                 }
                 isRaioVisible = !isRaioVisible;
                 numPiscadas++;
@@ -324,26 +242,28 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
                 } else {
                     // Parar o pisca-pisca após o número desejado de piscadas
                     handler.removeCallbacks(this);
+                    layoutGeral.setBackgroundResource(R.color.corFundoPadrao);
                 }
+
+
             }
         };
 
+        layoutGeral.setBackgroundResource(R.color.corFundoPadrao);
+
+        isRaioVisible = false;
+        numPiscadas= 0;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 handler.post(raioRunnable);
             }
         }, 10); // Define um atraso de 1 segundo (1000ms) antes de iniciar o piscar
+
+        layoutGeral.setBackgroundResource(R.color.corFundoPadrao);
+
+        isRaioVisible = false;
     }
-
-    public void erroSelecao (){
-
-
-
-        btnAvisoEdson.setVisibility(View.VISIBLE);
-
-    }
-
     public void limpar (){
 
         recreate();
@@ -352,10 +272,9 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         editTextFatorPotencia.setText("1");
         editTextRendimento.setText("1");
     }
-
-
     public void calcular (){
 
+        bntCloseIcone.setVisibility(View.VISIBLE);
         String tensaoS = editTextTensao.getText().toString();
         String potenciaS = editTextPotencia.getText().toString();
         String fatorPotenciaS = editTextFatorPotencia.getText().toString();
@@ -366,7 +285,6 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         double fase = 0;
         double fatorPotencia = 0;
         double rendimento = 0;
-
 
         try {
              tensao = Double.parseDouble(tensaoS);
@@ -392,9 +310,18 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
             potencia = potencia * 1000;
         }
 
+        // verifica se os campos possuem dados validos
+        if ((tensao == 0) || (potencia ==0 )){
+
+            piscaRaio();
 
 
+            resultadoOhmsAlternada.setText("  Digite um valor válido") ;
+            resultadoOhmsAlternada.setTextSize(28f);
+            resultadoOhmsAlternada.setTextColor(Color.BLACK);
 
+            return;
+        }
 
         double resultadoCalculo;
         resultadoOhmsAlternada.setTextColor(Color.BLACK);
@@ -415,17 +342,7 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
             resultadoOhmsAlternada.setText(valorFormatado + " (A)") ;
         }
 
-
-
-
-
-
-
     }
-
-
-
-
     public void verificaCampo (){
        // EditText meuEditText = findViewById(R.id.meuEditText);
         String texto = editTextTensao.getText().toString();
@@ -471,14 +388,12 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
 
         }if (!TensaoOk){
             imgCampoTensao.setImageResource(R.drawable.img_tensao_alternada_off);
-
         }
         if (PotenciaOk) {
             imgCampoPotencia.setImageResource(R.drawable.img_potencia_alternada_on);
 
         }if (!PotenciaOk){
             imgCampoPotencia.setImageResource(R.drawable.img_potencia_alternada_off);
-
         }
         if (fatorPotenciaOK) {
             imageViewFatorPotencia.setImageResource(R.drawable.img_fator_potencia_trifasico_on);
@@ -487,22 +402,14 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         }if (!fatorPotenciaOK){
             imageViewFatorPotencia.setImageResource(R.drawable.img_fator_potencia_trifasico_off);
             editTextFatorPotencia.setTextColor(Color.BLACK);
-
         }
         if (rendimentoOK) {
             imageViewRendimento.setImageResource(R.drawable.img_rendimento_on);
             editTextRendimento.setTextColor(Color.parseColor("#2A3BBD"));
-
         }if (!rendimentoOK){
             imageViewRendimento.setImageResource(R.drawable.img_rendimento_off);
             editTextRendimento.setTextColor(Color.BLACK);
-
         }
-
-
-
-
-
 
     }
 
@@ -531,8 +438,7 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
         }
 
     }
-
-        TextWatcher textWatcher = new TextWatcher() {
+    TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // Método chamado antes de o texto ser alterado
@@ -553,9 +459,5 @@ public class LeiDeOhmsAlternadaActivity extends AppCompatActivity {
                 // Método chamado após o texto ser alterado
             }
         };
-
-
-
-
 
 }

@@ -13,7 +13,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/btn_close"
+        android:id="@+id/btn_close_icone"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="15dp"
@@ -35,16 +35,14 @@
         android:orientation="vertical">
 
 
-
         <LinearLayout
-            android:id="@+id/layoutTetoEdson"
+            android:id="@+id/layoutTetoTesla"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:layout_gravity="center"
             android:layout_margin="5dp"
 
             android:orientation="horizontal">
-
 
 
             <ImageButton
@@ -54,8 +52,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@color/transparent"
-                android:src="@drawable/img_icone_continua"
                 android:scaleType="fitCenter"
+                android:src="@drawable/img_icone_continua"
 
                 />
 
@@ -66,10 +64,10 @@
             android:id="@+id/layoutResultaEdson"
             android:layout_width="440dp"
             android:layout_height="210dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="8dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
             android:background="@drawable/resultado_corrente_edson"
+            android:orientation="horizontal"
 
 
             >
@@ -78,15 +76,14 @@
                 android:id="@+id/TextViewResultado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="38dp"
                 android:text="0"
-                android:textStyle="bold"
                 android:textAlignment="center"
-                android:layout_gravity="center"
                 android:textSize="50dp"
+                android:textStyle="bold"
 
                 />
-
 
 
         </LinearLayout>
@@ -94,8 +91,8 @@
 
         <LinearLayout
             android:id="@+id/layoutBotoesOhmsContinua"
-            android:layout_width="400dp"
             style="@style/StyleLayoutCorpoPrincipal"
+            android:layout_width="400dp"
             android:layout_height="300dp"
             android:layout_gravity="center"
             android:gravity="center"
@@ -118,26 +115,25 @@
                     android:layout_height="70dp"
                     android:layout_weight="1"
                     android:background="@color/transparent"
-                    android:src="@drawable/btn_tensao_off"
                     android:scaleType="fitCenter"
-                    />
+                    android:src="@drawable/btn_tensao_off" />
 
                 <FrameLayout
                     android:id="@+id/layoutCampoTensao"
                     android:layout_width="180dp"
-                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
 
-                    android:layout_height="match_parent">
+                    android:layout_gravity="center">
 
-                <ImageView
-                    android:id="@+id/imgCampoVazioTensao"
-                    android:layout_width="180dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
+                    <ImageView
+                        android:id="@+id/imgCampoVazioTensao"
+                        android:layout_width="180dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
 
-                    android:background="@color/transparent"
-                    android:src="@drawable/ima_campo_vazio_ohms"
-                    android:scaleType="fitCenter" ></ImageView>
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ima_campo_vazio_ohms"></ImageView>
 
 
                     <EditText
@@ -146,15 +142,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@null"
                         android:inputType="numberDecimal"
                         android:selectAllOnFocus="true"
-                        android:background="@null"
                         android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="22sp"
                         android:textStyle="bold" />
                     />
-            </FrameLayout>
+                </FrameLayout>
 
 
             </LinearLayout>
@@ -162,10 +158,10 @@
 
             <LinearLayout
                 android:id="@+id/layoutTesnaoCorrente"
+                style="@style/StyleLayoutBottonHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                style="@style/StyleLayoutBottonHorizontal"
                 android:background="@color/transparent"
                 android:orientation="horizontal">
 
@@ -175,9 +171,8 @@
                     android:layout_height="70dp"
                     android:layout_weight="1"
                     android:background="@color/transparent"
-                    android:src="@drawable/btn_corrente_off"
                     android:scaleType="fitCenter"
-                    />
+                    android:src="@drawable/btn_corrente_off" />
 
                 <FrameLayout
                     android:id="@+id/layoutCampoCorrente"
@@ -190,8 +185,8 @@
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:src="@drawable/ima_campo_vazio_ohms"
-                        android:scaleType="fitCenter" ></ImageView>
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ima_campo_vazio_ohms"></ImageView>
 
                     <EditText
                         android:id="@+id/editTextCorrente"
@@ -199,9 +194,9 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@null"
                         android:inputType="numberDecimal"
                         android:selectAllOnFocus="true"
-                        android:background="@null"
                         android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="22sp"
@@ -211,6 +206,7 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 style="@style/StyleLayoutBottonHorizontal"
                 android:layout_width="match_parent"
@@ -227,10 +223,11 @@
                     android:layout_height="70dp"
                     android:layout_weight="1"
                     android:background="@color/transparent"
-                    android:src="@drawable/btn_resistencia_off"
                     android:scaleType="fitCenter"
+                    android:src="@drawable/btn_resistencia_off"
 
                     />
+
                 <FrameLayout
                     android:id="@+id/layoutCampoResistencia"
                     android:layout_width="180dp"
@@ -242,8 +239,8 @@
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:src="@drawable/ima_campo_vazio_ohms"
-                        android:scaleType="fitCenter" ></ImageView>
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ima_campo_vazio_ohms"></ImageView>
 
 
                     <EditText
@@ -252,31 +249,27 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@color/transparent"
                         android:inputType="numberDecimal"
-                        android:selectAllOnFocus="true"
 
+                        android:selectAllOnFocus="true"
                         android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="22sp"
-                        android:background="@color/transparent"
                         android:textStyle="bold" />
                     />
                 </FrameLayout>
 
 
-
-
             </LinearLayout>
+
             <LinearLayout
                 style="@style/StyleLayoutBottonHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:orientation="horizontal">
-
-
-
 
 
                 <ImageButton
@@ -285,16 +278,17 @@
                     android:layout_height="70dp"
                     android:layout_weight="1"
                     android:background="@color/transparent"
-                    android:src="@drawable/btn_potencia_off"
                     android:scaleType="fitCenter"
+                    android:src="@drawable/btn_potencia_off"
 
                     />
+
                 <FrameLayout
                     android:id="@+id/layoutCampoPotencia"
                     android:layout_width="180dp"
-                    android:background="@color/transparent"
+                    android:layout_height="match_parent"
 
-                    android:layout_height="match_parent">
+                    android:background="@color/transparent">
 
                     <ImageView
                         android:id="@+id/imgCampoVazioPotencia"
@@ -302,8 +296,8 @@
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:src="@drawable/ima_campo_vazio_ohms"
-                        android:scaleType="fitCenter" ></ImageView>
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ima_campo_vazio_ohms"></ImageView>
 
 
                     <EditText
@@ -312,9 +306,9 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@color/transparent"
                         android:inputType="numberDecimal"
                         android:selectAllOnFocus="true"
-                        android:background="@color/transparent"
                         android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="22sp"
@@ -325,10 +319,7 @@
             </LinearLayout>
 
 
-
-
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -343,20 +334,12 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text=""
-                android:textSize="30dp"
-                />
-
-
-
+                android:textSize="30dp" />
 
 
             <ScrollView
                 android:layout_width="360dp"
                 android:layout_height="300dp">
-
-
-
-
 
 
                 <LinearLayout
@@ -369,30 +352,17 @@
                     android:orientation="vertical">
 
 
-
-
-
                     <ImageButton
                         android:id="@+id/ButtonAvisoEdson"
                         android:layout_width="340dp"
                         android:layout_height="200dp"
-                        android:src="@drawable/img_aviso_edson"
-                        android:scaleType="fitCenter"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_aviso_edson"
 
                         />
-
-
-
-
-
-
-
-
-
-
 
 
                 </LinearLayout>

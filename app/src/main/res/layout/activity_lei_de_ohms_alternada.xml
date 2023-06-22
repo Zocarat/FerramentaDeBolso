@@ -11,14 +11,14 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/btn_close"
+        android:id="@+id/btn_close_icone"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/btn_close"
         android:scaleType="fitCenter"
-        android:background="@color/corFundoPadrao"
+        android:background="@color/transparent"
         >
     </ImageButton>
 
@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
-            android:id="@+id/layoutTetoEdson"
+            android:id="@+id/layoutTetoTesla"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -209,34 +209,31 @@
 
 
 
-
-
-
-
             <LinearLayout
                 android:layout_marginTop="100dp"
                 android:id="@+id/layoutTesnaoCorrente"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 style="@style/StyleLayoutBottonHorizontal"
                 android:background="@color/transparent"
+
                 android:orientation="horizontal">
 
 
 
                 <FrameLayout
                     android:id="@+id/layoutFatorPotencia"
-                    android:layout_width="180dp"
+                    android:layout_width="170dp"
                     android:layout_height="90dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="5dp"
+
                     >
 
                     <ImageView
                         android:id="@+id/imgFatorPotencia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:background="@color/transparent"
                         android:src="@drawable/img_fator_potencia_trifasico_off"
                         android:scaleType="fitCenter" ></ImageView>
@@ -258,8 +255,8 @@
                 </FrameLayout>
                 <FrameLayout
                     android:id="@+id/layoutCampoCorrente"
-                    android:layout_width="180dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="170dp"
+
                     android:layout_height="90dp">
 
                     <ImageView

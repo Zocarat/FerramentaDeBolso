@@ -56,7 +56,6 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/img_button_grandezas" />
 
-
                 <ImageButton
                     android:id="@+id/btnDimensionamento"
                     android:layout_width="100dp"
@@ -68,7 +67,6 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/img_button_dimensionamento" />
 
-
                 <ImageButton
                     android:id="@+id/btnQuedaDeTensao"
                     android:layout_width="100dp"
@@ -79,6 +77,26 @@
                     android:contentDescription="Botão menu pressão"
                     android:scaleType="centerCrop"
                     android:src="@drawable/img_button_queda" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnLeiDeOhms"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@color/corFundoPadrao"
+                    android:contentDescription="Botão menu pressão"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/btn_lei_de_ohms" />
 
             </LinearLayout>
 

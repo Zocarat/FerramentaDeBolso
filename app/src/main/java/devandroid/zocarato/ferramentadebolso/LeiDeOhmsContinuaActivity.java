@@ -17,33 +17,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
 
-
-
-
     private boolean isRaioVisible = false;
     private Handler handler;
     private Runnable raioRunnable;
     private int numPiscadas = 0;
     private int maxPiscadas = 6; // Define o número máximo de piscadas desejadas
 
-
     RelativeLayout layoutGeral;
-
     TextView ControleT;
 
     LinearLayout layoutTetoEdson;
     LinearLayout layoutBotoesOhmsContinua;
-
     LinearLayout   layoutResultaEdson;
-
     FrameLayout layoutCampoTensao;
 
-    //ImageButton btnTesla;
     ImageButton btnEdson;
 
-
-
-
+    // ===================================================== [ BOTOES E BOLEANOS DAS GRANDEZAS ================================]
     ImageButton btnTensaoSelect;
     boolean btnTensaoClick = false;
     ImageButton btnCorrenteSelect;
@@ -55,30 +45,27 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
     ImageButton btnPotenciaSelect;
     boolean btnPotenciaClick = false;
 
+    // ============================================ [ IMAGE VIEW ] ============================================
     ImageView CampoVazioOhms;
     ImageView imgCampoVazioTensao;
     ImageView imgCampoVazioCorrente;
     ImageView imgCampoVazioResistencia;
     ImageView imgCampoVazioPotencia;
 
+    // =========================================== [ IMAGE BUTTON  UTILITARIOS] =====================================
 
-
+    ImageButton btnCloseIcone;
     ImageButton btnVoltar;
     ImageButton btnLimpar;
     ImageButton btnCalcular;
-
+   // ===============================================[ EDIT TEXT ] ==================================================
     EditText editTextTensao;
     EditText editTextCorrente;
     EditText editTextResitencia;
     EditText editTextPOtencia;
-
+    // ========================================================
     ImageButton btnAvisoEdson;
-
     TextView textViewAviso;
-
-
-
-
     LinearLayout layotInferiorAviso;
 
     int Controle = 0;
@@ -93,40 +80,56 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         layoutResultaEdson = findViewById(R.id.layoutResultaEdson);
         layoutResultaEdson.setVisibility(View.GONE);
 
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnCalcular = findViewById(R.id.btnCalcular);
 
-        btnVoltar = findViewById(R.id.btnVoltar);
+        btnCloseIcone = findViewById(R.id.btn_close_icone);
+        btnCloseIcone.setVisibility(View.GONE);
 
-        btnTensaoSelect = findViewById(R.id.btnTensaoSelect);
-        imgCampoVazioTensao = findViewById(R.id.imgCampoVazioTensao);
-        imgCampoVazioTensao.setVisibility(View.GONE);
-        editTextTensao = findViewById(R.id.editTextTensao);
-        editTextTensao.setVisibility(View.GONE);
+        // Itens Layout Inferior ( Limpar, Calcular, Fechar )
+        {
+            btnLimpar = findViewById(R.id.btnLimpar);
+            btnCalcular = findViewById(R.id.btnCalcular);
+            btnVoltar = findViewById(R.id.btnVoltar);
+        }
+
+         // Tensão itens inicial
+        {
+            btnTensaoSelect = findViewById(R.id.btnTensaoSelect);
+            imgCampoVazioTensao = findViewById(R.id.imgCampoVazioTensao);
+            imgCampoVazioTensao.setVisibility(View.GONE);
+            editTextTensao = findViewById(R.id.editTextTensao);
+            editTextTensao.setVisibility(View.GONE);
+        }
+
+        // Corrente Itens inicial
+        {
+            btnCorrenteSelect = findViewById(R.id.btnCorrenteSelect);
+            imgCampoVazioCorrente = findViewById(R.id.imgCampoVazioCorrente);
+            imgCampoVazioCorrente.setVisibility(View.GONE);
+            editTextCorrente = findViewById(R.id.editTextCorrente);
+            editTextCorrente.setVisibility(View.GONE);
+        }
+
+        // Resistencia Itens Iniciais
+        {
+            btnResistenciaSelect = findViewById(R.id.btnResistenciaSelect);
+            imgCampoVazioResistencia = findViewById(R.id.imgCampoVazioResistencia);
+            imgCampoVazioResistencia.setVisibility(View.GONE);
+            editTextResitencia = findViewById(R.id.editTextResistencia);
+            editTextResitencia.setVisibility(View.GONE);
+        }
+
+        // Potencia Itens Iniciais
+        {
+            btnPotenciaSelect = findViewById(R.id.btnPotenciaSelect);
+            imgCampoVazioPotencia = findViewById(R.id.imgCampoVazioPotencia);
+            imgCampoVazioPotencia.setVisibility(View.GONE);
+            editTextPOtencia = findViewById(R.id.editTextPOtencia);
+            editTextPOtencia.setVisibility(View.GONE);
+        }
 
 
-        btnCorrenteSelect = findViewById(R.id.btnCorrenteSelect);
-        imgCampoVazioCorrente = findViewById(R.id.imgCampoVazioCorrente);
-        imgCampoVazioCorrente.setVisibility(View.GONE);
-        editTextCorrente= findViewById(R.id.editTextCorrente);
-        editTextCorrente.setVisibility(View.GONE);
-
-
-        btnResistenciaSelect = findViewById(R.id.btnResistenciaSelect);
-        imgCampoVazioResistencia = findViewById(R.id.imgCampoVazioResistencia);
-        imgCampoVazioResistencia.setVisibility(View.GONE);
-        editTextResitencia= findViewById(R.id.editTextResistencia);
-        editTextResitencia.setVisibility(View.GONE);
-
-
-        btnPotenciaSelect = findViewById(R.id.btnPotenciaSelect);
-        imgCampoVazioPotencia = findViewById(R.id.imgCampoVazioPotencia);
-        imgCampoVazioPotencia.setVisibility(View.GONE);
-        editTextPOtencia= findViewById(R.id.editTextPOtencia);
-        editTextPOtencia.setVisibility(View.GONE);
-
-        //btnTesla = findViewById(R.id.btnTesla);
         btnEdson = findViewById(R.id.btnEdson);
+        btnEdson.setVisibility(View.VISIBLE);
 
         btnAvisoEdson = findViewById(R.id.ButtonAvisoEdson);
         btnAvisoEdson.setVisibility(View.GONE);
@@ -138,25 +141,22 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         layoutCampoTensao  = findViewById(R.id.layoutCampoTensao);
         // layoutCampoTensao.setVisibility(View.GONE);
 
-
-
-        layoutTetoEdson = findViewById(R.id.layoutTetoEdson);
+        layoutTetoEdson = findViewById(R.id.layoutTetoTesla);
       // layoutRaioTeslaEdson.setBackgroundResource(0);
-
-
-      // layoutEditTextContinua = findViewById(R.id.layoutEditTextContinua);
-       // layoutEditTextContinua.setVisibility(View.GONE);
-
-
 
          layoutBotoesOhmsContinua = findViewById(R.id.layoutBotoesOhmsContinua);
         // layoutBotoesOhmsContinua.setVisibility(View.GONE);
         ControleT = findViewById(R.id.Controle);
 
 
-
-
-
+        btnCloseIcone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnCloseIcone.setVisibility(View.GONE);
+                layoutResultaEdson.setVisibility(View.GONE);
+                layoutTetoEdson.setVisibility(View.VISIBLE);
+            }
+        });
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,6 +172,8 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
                 //layoutCampoTensao.setBackgroundResource(R.color.black);
             }
         });
+
+
         btnTensaoSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -297,18 +299,13 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         btnAvisoEdson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Controle = 2;
-               // layoutGeral.setBackgroundResource(0);
-               // layoutGeral.setBackground(R.color.black);
+
                 btnAvisoEdson.setVisibility(View.GONE);
-               /// layoutGeral.setBackgroundResource(R.color.corFundoPadrao);
-               // layoutRaioTeslaEdson.setBackgroundResource(0);
 
 
             }
 
         });
-
         btnEdson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -321,11 +318,6 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         });
 
     }
-
-
-// ...
-
-
 
 
     public void calculo (){
@@ -592,6 +584,7 @@ public class LeiDeOhmsContinuaActivity extends AppCompatActivity {
         textViewAviso.setTextSize(20f);
         textViewAviso.setTextColor(Color.BLACK);
         textViewAviso.setText("Selecione apenas dois campos!");
+        btnCloseIcone.setVisibility(View.VISIBLE);
 
 
     }

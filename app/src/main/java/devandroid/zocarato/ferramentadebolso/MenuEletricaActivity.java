@@ -17,6 +17,7 @@ public class MenuEletricaActivity extends AppCompatActivity {
     ImageButton btnGrandezasEletricas;
     ImageButton btnDimensionamento;
     ImageButton btnQuedaDeTensao;
+    ImageButton btnLeiDeOhms;
     ImageButton btnVoltar;
 
     @Override
@@ -27,9 +28,8 @@ public class MenuEletricaActivity extends AppCompatActivity {
         btnGrandezasEletricas = findViewById(R.id.btnGrandezasEletricas);
         btnDimensionamento = findViewById(R.id.btnDimensionamento);
         btnQuedaDeTensao = findViewById(R.id.btnQuedaDeTensao);
+        btnLeiDeOhms = findViewById(R.id.btnLeiDeOhms);
         btnVoltar = findViewById(R.id.btnVoltarMenuEletrica2);
-
-
 
 
         btnGrandezasEletricas.setOnClickListener(new View.OnClickListener() {
@@ -46,8 +46,6 @@ public class MenuEletricaActivity extends AppCompatActivity {
                 },0);
             }
         });
-
-
         btnDimensionamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +60,6 @@ public class MenuEletricaActivity extends AppCompatActivity {
                 },0);
             }
         });
-
         btnQuedaDeTensao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,10 +75,14 @@ public class MenuEletricaActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
+        btnLeiDeOhms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent telaPrincipal = new Intent(MenuEletricaActivity.this, LeiDeOhmsActivity.class);
+                startActivity(telaPrincipal);
+                finish();
+            }
+        });
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +97,6 @@ public class MenuEletricaActivity extends AppCompatActivity {
                 },0);
             }
         });
-
 
     }
 }
