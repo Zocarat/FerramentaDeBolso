@@ -18,15 +18,17 @@ import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
 import devandroid.zocarato.ferramentadebolso.PesoActivity;
 import devandroid.zocarato.ferramentadebolso.PorcentagemActivity;
 import devandroid.zocarato.ferramentadebolso.R;
+import devandroid.zocarato.novonodulo.QuedaTensaoActivity;
 import util.UltilidadesGeral;
+
+import devandroid.zocarato.novonodulo.defaultee;
+
 
 public class MenuPrincipal extends AppCompatActivity {
 
     String bloqueio = ("28/06/2023");
     String TAG = "Layout principal";
-
     UltilidadesGeral dataHoraSistema;
-
     private Handler handler;
     private Runnable runnable;
     ImageButton btn_Eletrica_Menu;
@@ -40,25 +42,17 @@ public class MenuPrincipal extends AppCompatActivity {
     ImageButton btn_Juros_Composto;
     ImageButton btn_Contador;
     ImageButton btn_LeiDeOhms;
-
-
+    ImageButton btnProvisorio;
 
     TextView txtDataSistema;
     TextView txtHoraSistema;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         dataHoraSistema = new UltilidadesGeral();
-        //horaSistema = new UltilidadesGeral();
-
-        //dataSistema.dataDoSistema();
 
         txtDataSistema = findViewById(R.id.txtDataSistemaXml);
         txtHoraSistema = findViewById(R.id.txtHoraSistemaXml);
@@ -73,6 +67,8 @@ public class MenuPrincipal extends AppCompatActivity {
         btn_Juros_Composto = findViewById(R.id.btn_juros_composto);
         btn_Contador = findViewById(R.id.btn_contador);
         btn_LeiDeOhms = findViewById(R.id.btnLeiDeOhms);
+        btnProvisorio = findViewById(R.id.btnProvisorio);
+
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -84,11 +80,6 @@ public class MenuPrincipal extends AppCompatActivity {
         };
 
         txtDataSistema.setText(dataHoraSistema.dataDoSistema());
-       // txtHoraSistema.setText(dataHoraSistema.horarioDoSistema());
-        // Pegar Click dos Botoes
-
-
-
 
         btn_Eletrica_Menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,8 +218,6 @@ public class MenuPrincipal extends AppCompatActivity {
                 },0);
             }
         });
-
-
         btn_Contador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -258,10 +247,22 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
+        btnProvisorio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
 
 
-
+                       Intent intentModulo = new Intent(MenuPrincipal.this,  QuedaTensaoActivity.class);
+                       startActivity(intentModulo);
+                       finish();
+                    }
+                },0);
+            }
+        });
 
 
 
@@ -278,7 +279,6 @@ public class MenuPrincipal extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl)));
         }
     }
-
 
     public void abrirInsta(View view) {
         String instagramUrl = "https://instagram.com/zocarato_dev?igshid=MzRlODBiNWFlZA=="; // Substitua pelo URL do perfil do Facebook desejado

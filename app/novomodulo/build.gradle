@@ -3,18 +3,17 @@ plugins {
 }
 
 android {
-    namespace 'devandroid.zocarato.ferramentadebolso'
+    namespace 'devandroid.zocarato.novomodulo'
     compileSdk 33
 
     defaultConfig {
-        applicationId "devandroid.zocarato.ferramentadebolso"
+        applicationId "devandroid.zocarato.novomodulo"
         minSdk 26
         targetSdk 33
-        versionCode 12
-        versionName "2.9.5"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -28,9 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-repositories {
 
-}
 dependencies {
 
 
@@ -39,12 +36,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation project(path: ':novomodulo')
-
+    implementation project(path: ':app:novomodulo')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    // Adicione a dependência para o novo módulo
-     //implementation project(':devandroid')
 }

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FFFFFF"
+    android:backgroundTint="#007C1D1D"
+    android:backgroundTintMode="multiply"
+    android:textAlignment="center"
+    tools:context=".QuedaTensaoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="912dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="99dp"
+                android:layout_height="70dp"
+                android:src="@drawable/img_icone_queda" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnQuedaAdmissivel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#009A1111"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/button_img_queda_admissivel_off" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnQuedaTensao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/button_img_queda_tensao_off" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="348dp"
+                android:layout_height="82dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnCorrenteContinua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_continua_off" />
+
+                <ImageButton
+                    android:id="@+id/btnMonoBifaisico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_monofasico_off" />
+
+                <ImageButton
+                    android:id="@+id/btnTrifasico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/btn_trifasico_off" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#1C0A0A" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="270dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#00FFFFFF"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="174dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+
+                >
+
+
+                <ImageButton
+                    android:id="@+id/btnCobre"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_cobre_off" />
+
+                <ImageButton
+                    android:id="@+id/btnAluminio"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_aluminio_off" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="354dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="176dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewCampoTensao"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#00FFFFFF"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_campo_tensao_off" />
+
+                    <EditText
+                        android:id="@+id/editTextTensao"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="#00FFFFFF"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textColorHighlight="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="170dp"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewCampoComprimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_campo_metros_off" />
+
+                    <EditText
+                        android:id="@+id/editTextComprimento"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:backgroundTint="#00FFFFFF"
+                        android:defaultFocusHighlightEnabled="false"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:outlineProvider="none"
+                        android:selectAllOnFocus="false"
+                        android:textAlignment="center"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="354dp"
+                android:layout_height="102dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="177dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageViewCampoCorrente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/img_campo_corrente_off" />
+
+                        <EditText
+                            android:id="@+id/editTextCorrente"
+                            android:layout_width="113dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#08FFFFFF"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:textColorHint="#00FFFFFF"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/imageButton"
+                            android:layout_width="148dp"
+                            android:layout_height="69dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#00FFFFFF"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/img_campo_bitola_off" />
+
+                        <EditText
+                            android:id="@+id/editTextNumberDecimal"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#00FFFFFF"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:textAlignment="gravity"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <ImageButton
+                            android:id="@+id/btnMenosBitola"
+                            android:layout_width="49dp"
+                            android:layout_height="43dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="33dp"
+                            android:background="#00FFFFFF"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/btn_menos" />
+
+                        <ImageButton
+                            android:id="@+id/btnMaisBitola"
+                            android:layout_width="40dp"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="138dp"
+                            android:layout_marginTop="33dp"
+                            android:background="#05FFFFFF"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/btn_mais" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,12 +57,10 @@
             android:contentDescription="Icone do menu principal"
             app:srcCompat="@drawable/logo_menu_principal_fb" />
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-
             >
 
             <LinearLayout
@@ -163,8 +161,6 @@
                     android:orientation="horizontal"
                     android:gravity="center"
                     style="@style/StyleLayoutBottonHorizontal"
-
-
                     >
 
                     <ImageButton
@@ -189,8 +185,6 @@
                         android:background="@color/corFundoPadrao"
                         />
 
-
-
                     <ImageButton
                         android:id="@+id/btn_contador"
                         android:layout_width="100dp"
@@ -204,14 +198,11 @@
 
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:gravity="center"
                     style="@style/StyleLayoutBottonHorizontal"
-
-
                     >
 
                     <ImageButton
@@ -225,18 +216,20 @@
                         android:layout_gravity="center"
                         />
 
-
-
-
-
+                    <ImageButton
+                        android:id="@+id/btnProvisorio"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/btn_provisorio"
+                        android:scaleType="fitEnd"
+                        android:background="@color/corFundoPadrao"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_gravity="center"
+                        />
 
                 </LinearLayout>
 
-
             </LinearLayout>
-
-
-
 
         </ScrollView>
 
@@ -246,9 +239,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:background="#FBD670"
-
             >
-
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -259,16 +250,12 @@
                 android:onClick="abrirInsta"
                 app:srcCompat="@drawable/logo_instagram" />
 
-
-
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/logo_zocarato" />
-
-
 
             <ImageView
                 android:id="@+id/imageView3"
