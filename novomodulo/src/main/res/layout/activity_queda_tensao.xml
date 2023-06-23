@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00FFFFFF"
-    android:backgroundTint="#007C1D1D"
-    android:backgroundTintMode="multiply"
-    android:textAlignment="center"
     tools:context=".QuedaTensaoActivity">
 
     <LinearLayout
@@ -25,11 +23,27 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="99dp"
-                android:layout_height="70dp"
-                android:src="@drawable/img_icone_queda" />
+            <FrameLayout
+                android:layout_width="162dp"
+                android:layout_height="86dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_icone_queda" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnSom"
+                android:layout_width="54dp"
+                android:layout_height="43dp"
+
+                android:layout_marginLeft="100dp"
+                android:background="#00FFFFFF"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_som_on" />
         </LinearLayout>
 
         <LinearLayout
@@ -114,46 +128,72 @@
             </LinearLayout>
         </LinearLayout>
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#1C0A0A" />
-
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="270dp"
+            android:layout_height="368dp"
             android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#00FFFFFF"
-
             android:gravity="center"
             android:orientation="vertical">
 
 
             <LinearLayout
-                android:layout_width="174dp"
-                android:layout_height="60dp"
-                android:gravity="center"
-
-                >
+                android:layout_width="354dp"
+                android:layout_height="79dp">
 
 
-                <ImageButton
-                    android:id="@+id/btnCobre"
-                    android:layout_width="85dp"
+                <LinearLayout
+                    android:layout_width="177dp"
                     android:layout_height="match_parent"
-                    android:background="#00FFFFFF"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/img_cobre_off" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/btnAluminio"
-                    android:layout_width="85dp"
-                    android:layout_height="match_parent"
-                    android:background="#00FFFFFF"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/img_aluminio_off" />
+                    <ImageButton
+                        android:id="@+id/btnCobre"
+                        android:layout_width="76dp"
+                        android:layout_height="69dp"
+                        android:background="#00FFFFFF"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_cobre_off" />
+
+                    <ImageButton
+                        android:id="@+id/btnAluminio"
+                        android:layout_width="77dp"
+                        android:layout_height="79dp"
+                        android:background="#00FFFFFF"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_aluminio_off" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/editTextTemperatura"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:backgroundTint="#00FFFFFF"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:text="20"
+                        android:textColor="#8B878B"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imageViewTemperatura"
+                        android:layout_width="170dp"
+                        android:layout_height="84dp"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_campo_temperatura_off" />
+                </FrameLayout>
             </LinearLayout>
 
 
@@ -274,20 +314,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <ImageButton
-                            android:id="@+id/imageButton"
-                            android:layout_width="148dp"
-                            android:layout_height="69dp"
+                        <ImageView
+                            android:id="@+id/imageViewCampoBitola"
+                            android:layout_width="156dp"
+                            android:layout_height="88dp"
                             android:layout_gravity="center"
                             android:layout_marginLeft="0dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="0dp"
                             android:background="#00FFFFFF"
-                            android:scaleType="centerInside"
+                            android:scaleType="fitXY"
                             android:src="@drawable/img_campo_bitola_off" />
 
                         <EditText
-                            android:id="@+id/editTextNumberDecimal"
-                            android:layout_width="74dp"
+                            android:id="@+id/editTextBitola"
+                            android:layout_width="101dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
@@ -301,18 +341,18 @@
 
                         <ImageButton
                             android:id="@+id/btnMenosBitola"
-                            android:layout_width="49dp"
-                            android:layout_height="43dp"
+                            android:layout_width="40dp"
+                            android:layout_height="38dp"
                             android:layout_marginLeft="0dp"
-                            android:layout_marginTop="33dp"
+                            android:layout_marginTop="37dp"
                             android:background="#00FFFFFF"
                             android:scaleType="centerInside"
                             android:src="@drawable/btn_menos" />
 
                         <ImageButton
                             android:id="@+id/btnMaisBitola"
-                            android:layout_width="40dp"
-                            android:layout_height="45dp"
+                            android:layout_width="35dp"
+                            android:layout_height="49dp"
                             android:layout_marginLeft="138dp"
                             android:layout_marginTop="33dp"
                             android:background="#05FFFFFF"
@@ -324,11 +364,111 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+
+
+                >
+
+
+                <LinearLayout
+                    android:layout_width="177dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_campo_fatorpotencia_off" />
+
+                        <EditText
+                            android:id="@+id/editTextNumberDecimal3"
+                            android:layout_width="113dp"
+                            android:layout_height="58dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:backgroundTint="#00FFFFFF"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="1"
+                            android:textColor="#8B878B"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="392dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnLimparDimensionamento"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_limpar" />
+
+        <ImageButton
+            android:id="@+id/btnCalcular"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_calcular" />
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="40dp"
+
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_voltar" />
 
     </LinearLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

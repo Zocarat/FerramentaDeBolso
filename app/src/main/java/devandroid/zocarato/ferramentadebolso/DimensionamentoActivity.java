@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -37,7 +36,7 @@ public class DimensionamentoActivity extends AppCompatActivity {
         dimensionamentoCabo = new UltilidadeEletrica();
         dimensionamentoDsjuntor = new UltilidadeEletrica();
 
-        btnCalcular = findViewById(R.id.btnCalcularDimensionamento);
+        btnCalcular = findViewById(R.id.btnCalcular);
         btnVoltar = findViewById(R.id.btnVoltarDimensionamento);
         btnLimpar = findViewById(R.id.btnLimparDimensionamento);
 
