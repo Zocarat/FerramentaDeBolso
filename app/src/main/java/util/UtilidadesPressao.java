@@ -5,7 +5,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import view.MenuPrincipal;
+import devandroid.zocarato.ferramentadebolso.MenuPrincipal;
 
 public class UtilidadesPressao extends AppCompatActivity {
 

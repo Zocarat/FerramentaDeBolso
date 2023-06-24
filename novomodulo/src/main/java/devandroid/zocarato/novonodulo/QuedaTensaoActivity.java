@@ -1,10 +1,6 @@
 package devandroid.zocarato.novonodulo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,11 +8,17 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import devandroid.zocarato.ferramentadebolso.*;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 
 public class QuedaTensaoActivity extends AppCompatActivity {
@@ -50,6 +52,10 @@ public class QuedaTensaoActivity extends AppCompatActivity {
 
     ImageButton btnVoltar;
 
+    ImageButton btnLimpar;
+
+    ImageButton btnFecharLayoutResult;
+
     ImageView imageViewTemperatura;
     EditText editTextTemperatura;
     boolean temperaturaOk;
@@ -70,13 +76,27 @@ public class QuedaTensaoActivity extends AppCompatActivity {
     EditText editTextBitola;
     boolean bitolaOK;
 
-    boolean SomConfig = true;
-    boolean calculoContinuaOk;
+    ImageView imageViewFatorPotencia;
+    EditText editTextFatorPotencia;
+    boolean fatorPotenciaOk;
 
     TextView textViewResultado;
 
+    ScrollView scrollViewResultado;
+
+    LinearLayout layoutAdmissivelQueda;
+    LinearLayout LayoutResultadoQuedaTensao;
+    LinearLayout layoutDasCorrentes;
+
+    float temperaturaLocal;
 
 
+    boolean SomConfig = true;
+    boolean calculoContinuaOk;
+
+    boolean isCalculoMonoBifasicoOk;
+
+    boolean isCalculoTrifasico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +105,17 @@ public class QuedaTensaoActivity extends AppCompatActivity {
 
         MediaPlayer ironSound = MediaPlayer.create(this, R.raw.ferro_sound);
 
+        LayoutResultadoQuedaTensao = findViewById(R.id.layoutExibeResultado );
+        layoutDasCorrentes = findViewById(R.id.layoutDasCorrentes );
+        layoutAdmissivelQueda = findViewById(R.id.layoutAdmissivelQueda );
+
+        //temperaturaLocal
+       // cotroles();
+
+
         btnSom = findViewById(R.id.btnSom);
+
+        btnFecharLayoutResult = findViewById(R.id.imageButtonFecharResultado);
 
         btnQuedaAdmissivel = findViewById(R.id.btnQuedaAdmissivel);
         setBtnQuedaAdmissivel = false;
@@ -122,6 +152,9 @@ public class QuedaTensaoActivity extends AppCompatActivity {
         editTextBitola = findViewById(R.id.editTextBitola);
         editTextBitola.addTextChangedListener(textWatcher);
 
+        scrollViewResultado =  findViewById(R.id.ScrollResultado);
+        scrollViewResultado.setVisibility(View.GONE);
+
 
 
         btnCobre = findViewById(R.id.btnCobre);
@@ -133,177 +166,204 @@ public class QuedaTensaoActivity extends AppCompatActivity {
         btnMenosBitola = findViewById(R.id.btnMenosBitola);
         btnMenosBitola.setVisibility(View.GONE);
 
-        textViewResultado = findViewById(R.id.textViewResultado);
+        imageViewFatorPotencia = findViewById(R.id.ImageViewFatorPotencia);
+        editTextFatorPotencia = findViewById(R.id.editTextFatorPotencia);
+       // btnMenosBitola.setVisibility(View.GONE);
+
+       // textViewResultado = findViewById(R.id.textViewResultado);
 
         btnCalcular  = findViewById(R.id.btnCalcular);
         btnVoltar  = findViewById(R.id.btnVoltar);
+        btnLimpar  = findViewById(R.id.btnLimpar);
 
 
+        inicializar();
 
+        // =====================================[ CONFIG BOTOES ] ==========================================
+        {
+            btnSom.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    if (SomConfig) {
+                        btnSom.setImageResource(R.drawable.btn_som_off);
+                        SomConfig = false;
+                    } else {
+                        btnSom.setImageResource(R.drawable.btn_som_on);
+                        SomConfig = true;
+                    }
 
-        btnSom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (SomConfig){
-                    btnSom.setImageResource(R.drawable.btn_som_off);
-                    SomConfig = false;
-                }else {
-                    btnSom.setImageResource(R.drawable.btn_som_on);
-                    SomConfig = true;
                 }
+            });
+            btnCorrenteContinua.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-            }
-        });
-        btnCorrenteContinua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cotroles();
-                btnCorrenteContinua.setImageResource(R.drawable.btn_continua_on);
-                setBtnCorrenteContinua = true;
-                btnMonoBifaisico.setImageResource(R.drawable.btn_monofasico_off);
-                setBtnMonoBifaisico = false;
-                btnTrifasico.setImageResource(R.drawable.btn_trifasico_off);
-                setBtnTrifasico = false;
-            }
-        });
-        btnMonoBifaisico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                cotroles();
-                btnMonoBifaisico.setImageResource(R.drawable.btn_monofasico_on);
-                setBtnMonoBifaisico = true;
-                btnCorrenteContinua.setImageResource(R.drawable.btn_continua_off);
-                setBtnCorrenteContinua = false;
-
-                btnTrifasico.setImageResource(R.drawable.btn_trifasico_off);
-                setBtnTrifasico = false;
-            }
-        });
-        btnTrifasico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                cotroles();
-                btnTrifasico.setImageResource(R.drawable.btn_trifasico_on);
-                setBtnTrifasico = true;
-                btnMonoBifaisico.setImageResource(R.drawable.btn_monofasico_off);
-                setBtnMonoBifaisico = false;
-                btnCorrenteContinua.setImageResource(R.drawable.btn_continua_off);
-                setBtnCorrenteContinua = false;
-
-
-            }
-        });
-        btnQuedaAdmissivel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                cotroles();
-                if (setBtnQuedaAdmissivel){
-                    btnQuedaAdmissivel.setImageResource(R.drawable.button_img_queda_admissivel_off);
-                    setBtnQuedaAdmissivel = false;
-                    return;
+                    btnCorrenteContinua.setImageResource(R.drawable.btn_continua_on);
+                    setBtnCorrenteContinua = true;
+                    btnMonoBifaisico.setImageResource(R.drawable.btn_monofasico_off);
+                    setBtnMonoBifaisico = false;
+                    btnTrifasico.setImageResource(R.drawable.btn_trifasico_off);
+                    setBtnTrifasico = false;
+                    cotroles();
                 }
-                if(!setBtnQuedaAdmissivel) {
-                    btnQuedaAdmissivel.setImageResource(R.drawable.button_img_queda_admissivel_on);
-                    setBtnQuedaAdmissivel = true;
-                    btnQuedaTesao.setImageResource(R.drawable.button_img_queda_tensao_off);
-                    setBtnQuedaTensao = false;
-                }
+            });
+            btnMonoBifaisico.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-            }
-        });
-        btnQuedaTesao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                cotroles();
-                if (setBtnQuedaTensao){
-                    btnQuedaTesao.setImageResource(R.drawable.button_img_queda_tensao_off);
-                    setBtnQuedaTensao = false;
-                    return;
-                }
-                if(!setBtnQuedaTensao) {
-                    btnQuedaTesao.setImageResource(R.drawable.button_img_queda_tensao_on);
-                    setBtnQuedaTensao = true;
-                    btnQuedaAdmissivel.setImageResource(R.drawable.button_img_queda_admissivel_off);
-                    setBtnQuedaAdmissivel = false;
-                }
+                    btnMonoBifaisico.setImageResource(R.drawable.btn_monofasico_on);
+                    setBtnMonoBifaisico = true;
+                    btnCorrenteContinua.setImageResource(R.drawable.btn_continua_off);
+                    setBtnCorrenteContinua = false;
 
-            }
-        });
-        btnCobre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (SomConfig) {ironSound.start();}
-                //cotroles();
-                if (setCobre){
-                    btnCobre.setImageResource(R.drawable.img_cobre_off);
-                    setCobre = false;
-                }else{
-                    btnCobre.setImageResource(R.drawable.img_cobre_on);
-                    setCobre = true;
-                    btnAluminio.setImageResource(R.drawable.img_aluminio_off);
-                    setAluminio = false;
+                    btnTrifasico.setImageResource(R.drawable.btn_trifasico_off);
+                    setBtnTrifasico = false;
+                    cotroles();
                 }
-            }
-        });
-        btnAluminio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            });
+            btnTrifasico.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                if (SomConfig) {ironSound.start();}
-                //cotroles();
-                if (setAluminio){
-                    btnAluminio.setImageResource(R.drawable.img_aluminio_off);
-                    setAluminio = false;
-                }else{
-                    btnAluminio.setImageResource(R.drawable.img_aluminio_on);
-                    setAluminio = true;
-                    btnCobre.setImageResource(R.drawable.img_cobre_off);
-                    setCobre = false;
-                }
-            }
-        });
-        btnMaisBitola.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                cotroles();
-                setBitola = setBitola + 1;
-                bitolas();
-            }
-        });
-        btnMenosBitola.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cotroles();
-                setBitola = setBitola - 1;
-                bitolas();
-                if (setBitola <=  0 ){
-                    setBitola = 1 ;
-                    btnMenosBitola.setVisibility(View.GONE);
+                    btnTrifasico.setImageResource(R.drawable.btn_trifasico_on);
+                    setBtnTrifasico = true;
+                    btnMonoBifaisico.setImageResource(R.drawable.btn_monofasico_off);
+                    setBtnMonoBifaisico = false;
+                    btnCorrenteContinua.setImageResource(R.drawable.btn_continua_off);
+                    setBtnCorrenteContinua = false;
+                    cotroles();
+
                 }
-            }
-        });
-        btnCalcular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculo();
-            }
-        });
-        btnCalcular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentModulo = new Intent(QuedaTensaoActivity.this,  MenuPrincipal.class);
-                startActivity(intentModulo);
-                finish();
-            }
-        });
+            });
+            btnQuedaAdmissivel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    if (setBtnQuedaAdmissivel) {
+                        btnQuedaAdmissivel.setImageResource(R.drawable.button_img_queda_admissivel_off);
+                        setBtnQuedaAdmissivel = false;
+                        return;
+                    }
+                    if (!setBtnQuedaAdmissivel) {
+                        btnQuedaAdmissivel.setImageResource(R.drawable.button_img_queda_admissivel_on);
+                        setBtnQuedaAdmissivel = true;
+                        btnQuedaTesao.setImageResource(R.drawable.button_img_queda_tensao_off);
+                        setBtnQuedaTensao = false;
+                    }
+                    cotroles();
+                }
+            });
+            btnQuedaTesao.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    if (setBtnQuedaTensao) {
+                        btnQuedaTesao.setImageResource(R.drawable.button_img_queda_tensao_off);
+                        setBtnQuedaTensao = false;
+                        return;
+                    }
+                    if (!setBtnQuedaTensao) {
+                        btnQuedaTesao.setImageResource(R.drawable.button_img_queda_tensao_on);
+                        setBtnQuedaTensao = true;
+                        btnQuedaAdmissivel.setImageResource(R.drawable.button_img_queda_admissivel_off);
+                        setBtnQuedaAdmissivel = false;
+                    }
+                    cotroles();
+                }
+            });
+            btnCobre.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (SomConfig) {
+                        ironSound.start();
+                    }
+                    //cotroles();
+                    if (setCobre) {
+                        btnCobre.setImageResource(R.drawable.img_cobre_off);
+                        setCobre = false;
+                    } else {
+                        btnCobre.setImageResource(R.drawable.img_cobre_on);
+                        setCobre = true;
+                        btnAluminio.setImageResource(R.drawable.img_aluminio_off);
+                        setAluminio = false;
+                    }
+                }
+            });
+            btnAluminio.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (SomConfig) {
+                        ironSound.start();
+                    }
+                    //cotroles();
+                    if (setAluminio) {
+                        btnAluminio.setImageResource(R.drawable.img_aluminio_off);
+                        setAluminio = false;
+                    } else {
+                        btnAluminio.setImageResource(R.drawable.img_aluminio_on);
+                        setAluminio = true;
+                        btnCobre.setImageResource(R.drawable.img_cobre_off);
+                        setCobre = false;
+                    }
+                }
+            });
+            btnMaisBitola.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                   // cotroles();
+                    setBitola = setBitola + 1;
+                    bitolas();
+                }
+            });
+            btnMenosBitola.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //cotroles();
+                    setBitola = setBitola - 1;
+                    bitolas();
+                    if (setBitola <= 0) {
+                        setBitola = 1;
+                        btnMenosBitola.setVisibility(View.GONE);
+                    }
+                }
+            });
+            btnCalcular.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    calculo();
+                }
+            });
+            btnVoltar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+            btnLimpar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    limpar();
+                }
+            });
+            btnFecharLayoutResult.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //LayoutResultadoQuedaTensao.setVisibility(View.GONE);
+                    scrollViewResultado.setVisibility(View.GONE);
+                    layoutAdmissivelQueda.setVisibility(View.VISIBLE);
+                    layoutDasCorrentes.setVisibility(View.VISIBLE);
+                }
+            });
+
+        }
 
     }
 
@@ -314,6 +374,7 @@ public class QuedaTensaoActivity extends AppCompatActivity {
         String tensao = editTextTensao.getText().toString();
         String corrente = editTextCorrente.getText().toString();
         String bitola = editTextBitola.getText().toString();
+        String fatorPotecia = editTextFatorPotencia.getText().toString();
 
         if (!TextUtils.isEmpty(comprimento)) {
             // O EditText não está vazio
@@ -355,6 +416,15 @@ public class QuedaTensaoActivity extends AppCompatActivity {
             temperaturaOk = false;
 
         }
+        if (!TextUtils.isEmpty(fatorPotecia)) {
+            // O EditText não está vazio
+            fatorPotenciaOk = true;
+
+        } else {
+            // O EditText está vazio
+            fatorPotenciaOk = false;
+
+        }
 
 
 
@@ -390,6 +460,14 @@ public class QuedaTensaoActivity extends AppCompatActivity {
         }else {
             imageViewTemperatura.setImageResource(R.drawable.img_campo_temperatura_off);
         }
+        if (fatorPotenciaOk){
+            imageViewFatorPotencia.setImageResource(R.drawable.img_campo_fatorpotencia_on);
+            editTextFatorPotencia.setTextColor(Color.BLACK);
+        }else {
+            imageViewFatorPotencia.setImageResource(R.drawable.img_campo_fatorpotencia_on);
+        }
+
+
 
     }
 
@@ -416,17 +494,21 @@ public class QuedaTensaoActivity extends AppCompatActivity {
         String comprimentoS =  editTextComprimento.getText().toString();
         String correnteS = editTextCorrente.getText().toString();
         String bitolaS = editTextBitola.getText().toString();
+        String fatorPotenciaS = editTextFatorPotencia.getText().toString();
+        String tipoCorrente = "";
 
         double temperatura = 0;
         double tensao = 0;
+        double quedaVoltsTotal = 0;
         double comprimento = 0;
         double corrente = 0;
         double bitola = 0;
+        double fatorPotencia = 0;
         double resistenciaMaterial = 0;
         double resistividadeAcumulada = 0;
 
-        double quedaVolts;
-        double porcentagemVolts;
+        double quedaVoltsPorcentagem = 0;
+
 
         try {
             tensao = Double.parseDouble(tensaoS);
@@ -443,54 +525,148 @@ public class QuedaTensaoActivity extends AppCompatActivity {
         try {
             temperatura = Double.parseDouble(temperaturaS);
         } catch (NumberFormatException e) {        }
+        try {
+            fatorPotencia = Double.parseDouble(fatorPotenciaS);
+        } catch (NumberFormatException e) {        }
 
 
 
 
+        // calculo da resistencia de acordo com a temperatura
+        if (setCobre){ resistenciaMaterial = 0.0172 * ( 1 + ( 0.00393 * (temperatura - 20)));}
+        if (setAluminio) { resistenciaMaterial = 0.0282  * ( 1 + ( 0.00391 * (temperatura - 20))) ; }
         // Confirma todos os campos ok pra dar condição pro calculo de corrente continua
-        if ( setBtnQuedaTensao && setBtnCorrenteContinua && tensaoOK && correnteOK && bitolaOK && ( setCobre || setAluminio)  ){
 
+        if ( setBtnQuedaTensao && setBtnCorrenteContinua && tensaoOK && correnteOK && bitolaOK && ( setCobre || setAluminio)  ){
             calculoContinuaOk = true;
+        }
+
+        if ( setBtnQuedaTensao && setBtnMonoBifaisico && tensaoOK && correnteOK && bitolaOK && fatorPotenciaOk && ( setCobre || setAluminio)  ){
+            isCalculoMonoBifasicoOk = true;
+        }
+        if ( setBtnQuedaTensao && setBtnTrifasico && tensaoOK && correnteOK && bitolaOK && fatorPotenciaOk && ( setCobre || setAluminio)  ){
+            isCalculoTrifasico = true;
         }
 
         // Calculo corrente continua
         if (calculoContinuaOk) {
-
-             // calculo da resistencia de acordo com a temperatura
-            if (setCobre){ resistenciaMaterial = 0.0172 * ( 1 + ( 0.00393 * (temperatura - 20)));}
-            if (setAluminio) { resistenciaMaterial = 0.0282  * ( 1 + ( 0.00391 * (temperatura - 20))) ; }
-
+            tipoCorrente = "Corrente continua";
             resistividadeAcumulada = resistenciaMaterial * ( comprimento / bitola );
+           quedaVoltsPorcentagem = 2 * resistividadeAcumulada * corrente * comprimento ;
+            calculoContinuaOk = false;
+        }
 
-
-
-           quedaVolts = 2 * resistividadeAcumulada * corrente * comprimento ;
-
-
-            textViewResultado.setText("Queda Volts  : "+ quedaVolts + "Resistencia Total : " + resistividadeAcumulada +
-
-            " ResistenciaTemperatura: " + resistenciaMaterial);
-
-
-
-
+        if ( isCalculoMonoBifasicoOk) {
+            tipoCorrente = "Monofasico / Bifasico";
+            resistividadeAcumulada = (resistenciaMaterial * comprimento) / bitola;
+            quedaVoltsPorcentagem = 2 * resistividadeAcumulada * corrente * fatorPotencia;
+            quedaVoltsTotal = tensao * (quedaVoltsPorcentagem / 100);
+            isCalculoMonoBifasicoOk = false ;
+        }
+        if ( isCalculoTrifasico){
+            tipoCorrente = "Trifasico";
+            resistividadeAcumulada = (resistenciaMaterial * (comprimento * 1.73205081) / bitola);
+            quedaVoltsTotal =  (resistividadeAcumulada * corrente) * fatorPotencia;
+            quedaVoltsPorcentagem = (100  / tensao ) * quedaVoltsTotal;
+            isCalculoTrifasico = false;
 
         }
 
 
+        setResultados(tipoCorrente, quedaVoltsPorcentagem, quedaVoltsTotal, resistividadeAcumulada , tensao);
+        scrollViewResultado.setVisibility(View.VISIBLE);
+
 
     }
-
-
 
     public void cotroles (){
 
+        LinearLayout layoutSetConfigSecundaria = findViewById(R.id.layoutSetConfigSecundaria);
+        FrameLayout layoutFatorPotencia = findViewById(R.id.layoutFatorPotencia);
+
         if (SomConfig) {
             MediaPlayer click = MediaPlayer.create(this, R.raw.click);
+
             click.start();
+            //click.release();
+
+        }
+
+        if ( ( setBtnQuedaAdmissivel ) || ( setBtnQuedaTensao) ){
+            layoutDasCorrentes.setVisibility(View.VISIBLE);
+        }
+
+        if ((setBtnCorrenteContinua)||(setBtnMonoBifaisico)||(setBtnTrifasico)){
+
+            layoutSetConfigSecundaria.setVisibility(View.VISIBLE);
+        }else {
+            layoutSetConfigSecundaria.setVisibility(View.GONE);
+        }
+        if (setBtnCorrenteContinua){
+             // no caso da corrente continua nao se usa fator de potencia
+            layoutFatorPotencia.setVisibility(View.GONE);
+        }else{
+            layoutFatorPotencia.setVisibility(View.VISIBLE);
         }
 
     }
+
+    public void limpar (){
+
+        recreate();
+        onRestart();
+
+    }
+
+    public void setResultados (String tipoCorrente, double tensaoPorcentagemD, double tensaoTotal ,
+                               double resistividadeTotal , double tensaoEditDouble){
+
+        // Definir o formato desejado
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+        symbols.setDecimalSeparator(',');
+        DecimalFormat formato = new DecimalFormat("#,##0.##", symbols);
+
+        // Definir o número de casas decimais após o zero
+        formato.setMinimumFractionDigits(1);
+        formato.setMaximumFractionDigits(3);
+
+        String numeroFormatado;
+
+        TextView editTextTrasferidor = findViewById(R.id.textViewTipoCorrente);
+        //numeroFormatado = formato.format(tensaoPorcentagemD);
+        editTextTrasferidor.setText(tipoCorrente);
+
+        editTextTrasferidor = findViewById(R.id.ResultTextTensaoPorcentagem);
+        numeroFormatado = formato.format(tensaoPorcentagemD);
+        editTextTrasferidor.setText(numeroFormatado);
+
+        editTextTrasferidor = findViewById(R.id.ResultTextTensaoVolts);
+        numeroFormatado = formato.format(tensaoTotal);
+        editTextTrasferidor.setText( numeroFormatado);
+
+        editTextTrasferidor = findViewById(R.id.resultTextResistenciaTotal);
+        numeroFormatado = formato.format(resistividadeTotal);
+        editTextTrasferidor.setText( numeroFormatado);
+
+        editTextTrasferidor = findViewById(R.id.resultTextTensaoFinal);
+        numeroFormatado = formato.format(tensaoEditDouble - tensaoTotal);
+        editTextTrasferidor.setText( numeroFormatado);
+
+
+
+
+
+
+        layoutAdmissivelQueda.setVisibility(View.GONE);
+        layoutDasCorrentes.setVisibility(View.GONE);
+
+    }
+
+
+
+
+
+
 
     TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -503,6 +679,7 @@ public class QuedaTensaoActivity extends AppCompatActivity {
 
             verificaCampo();
             alteraCampo();
+            cotroles();
           //  garantidorConformidade();
         }
 
@@ -511,4 +688,29 @@ public class QuedaTensaoActivity extends AppCompatActivity {
             // Método chamado após o texto ser alterado
         }
     };
+
+
+    public void inicializar (){
+        layoutDasCorrentes.setVisibility(View.GONE);
+
+        //SomConfig = false;
+        setBtnTrifasico = false;
+        setBtnCorrenteContinua = false;
+        setBtnTrifasico = false;
+        cotroles();
+
+        verificaCampo();
+        alteraCampo();
+        corEditText();
+    }
+
+
+    public void corEditText (){
+
+        editTextBitola.setTextColor(Color.BLACK);
+        editTextCorrente.setTextColor(Color.BLACK);
+        editTextComprimento.setTextColor(Color.BLACK);
+        editTextTensao.setTextColor(Color.BLACK);
+
+    }
 }

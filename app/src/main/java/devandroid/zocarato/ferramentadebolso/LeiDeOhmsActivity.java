@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import view.MenuPrincipal;
-
 public class LeiDeOhmsActivity extends AppCompatActivity {
     private boolean isRaioVisible = false;
     private Handler handler;

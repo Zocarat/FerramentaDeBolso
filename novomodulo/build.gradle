@@ -1,8 +1,18 @@
 plugins {
     id 'com.android.library'
+
+
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Windows\\2023FontesGitAndroid\\CursoDesenvolvimentoAndroid\\FerramentaDeBolso\\FerramentaDeBolsoRecuperado\\app\\novomodulo\\src\\main\\java\\devandroid\\zocarato\\novomodulo\\TesteNovoModulo.java')
+            storePassword 'Master123-'
+            keyAlias 'Master123-'
+            keyPassword 'Master123-'
+        }
+    }
     namespace 'devandroid.zocarato.novonodulo'
     compileSdk 33
 
@@ -26,11 +36,13 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    //api project(path: ':app')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

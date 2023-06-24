@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutGeralQuedaTensao"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00FFFFFF"
+    android:background="@color/corFundoPadrao"
     tools:context=".QuedaTensaoActivity">
 
     <LinearLayout
@@ -17,15 +18,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="97dp"
+            android:layout_height="72dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <FrameLayout
-                android:layout_width="162dp"
-                android:layout_height="86dp"
+                android:layout_width="159dp"
+                android:layout_height="49dp"
                 android:layout_gravity="center">
 
                 <ImageView
@@ -47,6 +48,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutAdmissivelQueda"
             android:layout_width="match_parent"
             android:layout_height="79dp"
             android:gravity="center"
@@ -89,8 +91,9 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutDasCorrentes"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="64dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -129,315 +132,347 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="368dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#00FFFFFF"
-            android:gravity="center"
-            android:orientation="vertical">
+        <ScrollView
+            android:id="@+id/ScrollResultado"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+            <LinearLayout
+                android:id="@+id/layoutExibeResultado"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical">
+
+                <!-- Outros elementos do layout pai -->
+
+
+
+                <include
+                    layout="@layout/resultado_queda_tensao"
+                    />
+
+                <!-- Outros elementos do layout pai -->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <ScrollView
+            android:id="@+id/ScrowConfig"
+            android:layout_width="match_parent"
+            android:layout_height="443dp"
+            android:layout_below="@id/ScrollResultado"
+
+            android:layout_gravity="center">
 
 
             <LinearLayout
-                android:layout_width="354dp"
-                android:layout_height="79dp">
+                android:id="@+id/layoutSetConfigSecundaria"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:backgroundTint="#00FFFFFF"
+                android:gravity="center"
+                android:orientation="vertical">
 
 
                 <LinearLayout
-                    android:layout_width="177dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center">
+
 
                     <ImageButton
                         android:id="@+id/btnCobre"
-                        android:layout_width="76dp"
-                        android:layout_height="69dp"
+                        android:layout_width="121dp"
+                        android:layout_height="match_parent"
                         android:background="#00FFFFFF"
                         android:scaleType="centerInside"
                         android:src="@drawable/img_cobre_off" />
 
                     <ImageButton
                         android:id="@+id/btnAluminio"
-                        android:layout_width="77dp"
-                        android:layout_height="79dp"
+                        android:layout_width="108dp"
+                        android:layout_height="match_parent"
                         android:background="#00FFFFFF"
                         android:scaleType="centerInside"
                         android:src="@drawable/img_aluminio_off" />
                 </LinearLayout>
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <EditText
-                        android:id="@+id/editTextTemperatura"
-                        android:layout_width="104dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="12dp"
-                        android:backgroundTint="#00FFFFFF"
-                        android:ems="10"
-                        android:gravity="center"
-                        android:inputType="numberDecimal"
-                        android:text="20"
-                        android:textColor="#8B878B"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
-
-                    <ImageButton
-                        android:id="@+id/imageViewTemperatura"
-                        android:layout_width="170dp"
-                        android:layout_height="84dp"
-                        android:background="#00FFFFFF"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_campo_temperatura_off" />
-                </FrameLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="354dp"
-                android:layout_height="66dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <FrameLayout
-                    android:layout_width="176dp"
-                    android:layout_height="85dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp">
-
-                    <ImageView
-                        android:id="@+id/imageViewCampoTensao"
-                        android:layout_width="match_parent"
-                        android:layout_height="90dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="#00FFFFFF"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_campo_tensao_off" />
-
-                    <EditText
-                        android:id="@+id/editTextTensao"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="15dp"
-                        android:backgroundTint="#00FFFFFF"
-                        android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:textAlignment="center"
-                        android:textColorHighlight="#00FFFFFF"
-                        android:textColorHint="#00FFFFFF"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
-                </FrameLayout>
-
-
-                <FrameLayout
-                    android:layout_width="170dp"
-                    android:layout_height="80dp">
-
-                    <ImageView
-                        android:id="@+id/imageViewCampoComprimento"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_campo_metros_off" />
-
-                    <EditText
-                        android:id="@+id/editTextComprimento"
-                        android:layout_width="104dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="0dp"
-                        android:backgroundTint="#00FFFFFF"
-                        android:defaultFocusHighlightEnabled="false"
-                        android:ems="10"
-                        android:inputType="numberDecimal"
-                        android:outlineProvider="none"
-                        android:selectAllOnFocus="false"
-                        android:textAlignment="center"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="354dp"
-                android:layout_height="102dp"
-                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="177dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_width="354dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_width="176dp"
+                        android:layout_height="85dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp">
 
                         <ImageView
-                            android:id="@+id/imageViewCampoCorrente"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/img_campo_corrente_off" />
+                            android:id="@+id/imageViewCampoTensao"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="#00FFFFFF"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_campo_tensao_off" />
 
                         <EditText
-                            android:id="@+id/editTextCorrente"
-                            android:layout_width="113dp"
+                            android:id="@+id/editTextTensao"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:backgroundTint="#08FFFFFF"
+                            android:layout_marginTop="15dp"
+                            android:backgroundTint="#00FFFFFF"
                             android:ems="10"
-                            android:gravity="center"
                             android:inputType="numberDecimal"
+                            android:textAlignment="center"
+                            android:textColorHighlight="#00FFFFFF"
                             android:textColorHint="#00FFFFFF"
                             android:textSize="28sp"
                             android:textStyle="bold" />
                     </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="170dp"
+                        android:layout_height="80dp">
+
+                        <ImageView
+                            android:id="@+id/imageViewCampoComprimento"
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_campo_metros_off" />
+
+                        <EditText
+                            android:id="@+id/editTextComprimento"
+                            android:layout_width="104dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="0dp"
+                            android:backgroundTint="#00FFFFFF"
+                            android:defaultFocusHighlightEnabled="false"
+                            android:ems="10"
+                            android:inputType="numberDecimal"
+                            android:outlineProvider="none"
+                            android:selectAllOnFocus="false"
+                            android:textAlignment="center"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="354dp"
+                    android:layout_height="102dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="177dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageViewCampoCorrente"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/img_campo_corrente_off" />
+
+                            <EditText
+                                android:id="@+id/editTextCorrente"
+                                android:layout_width="113dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="#08FFFFFF"
+                                android:ems="10"
+
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                android:textColorHighlight="#000000"
+                                android:textColorHint="#00FFFFFF"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageViewCampoBitola"
+                                android:layout_width="156dp"
+                                android:layout_height="88dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="0dp"
+                                android:background="#00FFFFFF"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_campo_bitola_off" />
+
+                            <EditText
+                                android:id="@+id/editTextBitola"
+                                android:layout_width="101dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="#00FFFFFF"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                android:textAlignment="gravity"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+
+                            <ImageButton
+                                android:id="@+id/btnMenosBitola"
+                                android:layout_width="40dp"
+                                android:layout_height="38dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="37dp"
+                                android:background="#00FFFFFF"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/btn_menos" />
+
+                            <ImageButton
+                                android:id="@+id/btnMaisBitola"
+                                android:layout_width="35dp"
+                                android:layout_height="49dp"
+                                android:layout_marginLeft="138dp"
+                                android:layout_marginTop="33dp"
+                                android:background="#05FFFFFF"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/btn_mais" />
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="212dp"
+
+
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="177dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/layoutFatorPotencia"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp">
+
+                            <ImageView
+                                android:id="@+id/ImageViewFatorPotencia"
+                                android:layout_width="match_parent"
+                                android:layout_height="85dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_campo_fatorpotencia_off" />
+
+                            <EditText
+                                android:id="@+id/editTextFatorPotencia"
+                                android:layout_width="112dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="3dp"
+                                android:backgroundTint="#00FFFFFF"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:inputType="numberDecimal"
+                                android:text="1"
+                                android:textColor="#8B878B"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="187dp"
+                        android:layout_height="88dp">
+
+                        <ImageButton
+                            android:id="@+id/imageViewTemperatura"
+                            android:layout_width="174dp"
+                            android:layout_height="85dp"
+                            android:background="#00FFFFFF"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_campo_temperatura_off" />
+
+                        <EditText
+                            android:id="@+id/editTextTemperatura"
+                            android:layout_width="104dp"
+                            android:layout_height="72dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:backgroundTint="#00FFFFFF"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="20"
+                            android:textColor="#8B878B"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/imageViewCampoBitola"
-                            android:layout_width="156dp"
-                            android:layout_height="88dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="0dp"
-                            android:layout_marginTop="0dp"
-                            android:background="#00FFFFFF"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_campo_bitola_off" />
-
-                        <EditText
-                            android:id="@+id/editTextBitola"
-                            android:layout_width="101dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:backgroundTint="#00FFFFFF"
-                            android:ems="10"
-                            android:gravity="center"
-                            android:inputType="numberDecimal"
-                            android:textAlignment="gravity"
-                            android:textSize="28sp"
-                            android:textStyle="bold" />
-
-                        <ImageButton
-                            android:id="@+id/btnMenosBitola"
-                            android:layout_width="40dp"
-                            android:layout_height="38dp"
-                            android:layout_marginLeft="0dp"
-                            android:layout_marginTop="37dp"
-                            android:background="#00FFFFFF"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/btn_menos" />
-
-                        <ImageButton
-                            android:id="@+id/btnMaisBitola"
-                            android:layout_width="35dp"
-                            android:layout_height="49dp"
-                            android:layout_marginLeft="138dp"
-                            android:layout_marginTop="33dp"
-                            android:background="#05FFFFFF"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/btn_mais" />
-
-                    </FrameLayout>
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-
-
-                >
-
+                    android:orientation="horizontal"></LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="177dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"></LinearLayout>
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp">
-
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_campo_fatorpotencia_off" />
-
-                        <EditText
-                            android:id="@+id/editTextNumberDecimal3"
-                            android:layout_width="113dp"
-                            android:layout_height="58dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:backgroundTint="#00FFFFFF"
-                            android:ems="10"
-                            android:gravity="center"
-                            android:inputType="numberDecimal"
-                            android:text="1"
-                            android:textColor="#8B878B"
-                            android:textSize="28sp"
-                            android:textStyle="bold" />
-                    </FrameLayout>
-                </LinearLayout>
 
             </LinearLayout>
+        </ScrollView>
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textViewResultado"
-            android:layout_width="392dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="TextView"
-            android:textSize="24sp" />
 
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linearLayoutBotoes"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="61dp"
         android:layout_alignParentBottom="true"
+        android:background="@color/corFundoPadrao"
         android:gravity="center"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/btnLimparDimensionamento"
+            android:id="@+id/btnLimpar"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="40dp"

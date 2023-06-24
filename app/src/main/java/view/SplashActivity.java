@@ -7,6 +7,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import devandroid.zocarato.ferramentadebolso.MenuPrincipal;
 import devandroid.zocarato.ferramentadebolso.R;
 
 public class SplashActivity extends AppCompatActivity {

@@ -11,9 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import view.MenuPrincipal;
-import view.TemperaturaActivity;
-
 public class PorcentagemActivity extends AppCompatActivity {
 
     ImageButton btnVoltar;

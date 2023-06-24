@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import view.MenuPrincipal;
-
 public class PesoActivity extends AppCompatActivity {
 
     ImageButton btnVoltar;

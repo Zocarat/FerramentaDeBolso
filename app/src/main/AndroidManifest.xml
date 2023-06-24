@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissão pra acessar temperatura local do app -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,6 +19,9 @@
         android:theme="@style/Theme.FerramentaDeBolso"
         tools:targetApi="31"
         android:forceDarkAllowed="false">
+
+
+
         <activity
             android:name=".LeiDeOhmsAlternadaActivity"
             android:forceDarkAllowed="false"
@@ -97,7 +106,7 @@
             android:name="view.dddddddddddddddddddPressaoActivity"
             android:exported="false" />
         <activity
-            android:name="view.MenuPrincipal"
+            android:name=".MenuPrincipal"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

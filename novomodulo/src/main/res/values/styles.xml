@@ -1,0 +1,6 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Outros atributos do tema -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>

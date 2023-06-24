@@ -1,7 +1,5 @@
 package devandroid.zocarato.ferramentadebolso;
 
-import static devandroid.zocarato.ferramentadebolso.R.id.btnMenosContador;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -9,15 +7,12 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.content.Intent;
 
 import android.os.Handler;
 
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import view.MenuPrincipal;
 
 public class ContadorActivity extends AppCompatActivity {
 

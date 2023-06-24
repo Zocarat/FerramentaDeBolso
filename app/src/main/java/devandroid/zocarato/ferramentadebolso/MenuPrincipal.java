@@ -1,6 +1,4 @@
-package view;
-
-import androidx.appcompat.app.AppCompatActivity;
+package devandroid.zocarato.ferramentadebolso;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,18 +8,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import devandroid.zocarato.ferramentadebolso.AreaActivity;
-import devandroid.zocarato.ferramentadebolso.ContadorActivity;
-import devandroid.zocarato.ferramentadebolso.JurosCompostoActivity;
-import devandroid.zocarato.ferramentadebolso.LeiDeOhmsActivity;
-import devandroid.zocarato.ferramentadebolso.MenuEletricaActivity;
-import devandroid.zocarato.ferramentadebolso.PesoActivity;
-import devandroid.zocarato.ferramentadebolso.PorcentagemActivity;
-import devandroid.zocarato.ferramentadebolso.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import devandroid.zocarato.novonodulo.QuedaTensaoActivity;
 import util.UltilidadesGeral;
-
-import devandroid.zocarato.novonodulo.defaultee;
+import view.ComprimentoNewActivity;
+import view.PressaoActivity;
+import view.TemperaturaActivity;
 
 
 public class MenuPrincipal extends AppCompatActivity {
@@ -253,12 +246,9 @@ public class MenuPrincipal extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
-
-
                        Intent intentModulo = new Intent(MenuPrincipal.this,  QuedaTensaoActivity.class);
                        startActivity(intentModulo);
-                       finish();
+                       //finish();
                     }
                 },0);
             }

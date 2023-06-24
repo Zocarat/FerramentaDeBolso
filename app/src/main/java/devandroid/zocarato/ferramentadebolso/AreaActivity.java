@@ -12,10 +12,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import view.MenuPrincipal;
-
-
-
 
 public class AreaActivity extends AppCompatActivity {
     ImageButton btnVoltar;
